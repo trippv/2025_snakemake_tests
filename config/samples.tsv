@@ -1,0 +1,7 @@
+sample_id	group	fastq1	fastq2	include
+Ch14_1	Ch14	data/raw/Ch14_1_R1.fq.gz	data/raw/Ch14_1_R2.fq.gz	0
+Ch14_2	Ch14	data/raw/Ch14_2_R1.fq.gz	data/raw/Ch14_2_R2.fq.gz	1
+Ch14_3	Ch14	data/raw/Ch14_3_R1.fq.gz	data/raw/Ch14_3_R2.fq.gz	1
+EP08_1	EP08	data/raw/EP08_1_R1.fq.gz	data/raw/EP08_1_R2.fq.gz	1
+EP08_2	EP08	data/raw/EP08_2_R1.fq.gz	data/raw/EP08_2_R2.fq.gz	1
+EP08_3	EP08	data/raw/EP08_3_R1.fq.gz	data/raw/EP08_3_R2.fq.gz	1
