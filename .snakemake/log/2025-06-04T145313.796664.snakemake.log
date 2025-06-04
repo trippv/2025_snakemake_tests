@@ -1,0 +1,138 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 8
+Rules claiming more threads will be scaled down.
+Conda environments: ignored
+Job stats:
+job                           count
+--------------------------  -------
+all                               1
+build_quant_sample_table          1
+build_samples_table               1
+fastp                             2
+gffcompare                        2
+hisat2_align                      2
+hisat2_extract_splicesites        1
+hisat2_index                      1
+pca_html                          1
+prepDE                            1
+samtools_stats                    2
+stringtie_final_quant             2
+stringtie_merge                   1
+stringtie_quant                   2
+total                            20
+
+Select jobs to execute...
+
+[Wed Jun  4 14:53:14 2025]
+rule fastp:
+    input: testdata/raw/my_sample2_1.fastq.gz, testdata/raw/my_sample2_2.fastq.gz
+    output: results/fastp/sample2_R1.clean.fastq.gz, results/fastp/sample2_R2.clean.fastq.gz, results/summary_qc/sample2_fastp.json, results/summary_qc/sample2_fastp.html
+    jobid: 8
+    reason: Missing output files: results/summary_qc/sample2_fastp.html, results/fastp/sample2_R1.clean.fastq.gz, results/summary_qc/sample2_fastp.json, results/fastp/sample2_R2.clean.fastq.gz
+    wildcards: sample=sample2
+    threads: 4
+    resources: tmpdir=/tmp
+
+
+[Wed Jun  4 14:53:14 2025]
+rule fastp:
+    input: testdata/raw/my_sample1_1.fastq.gz, testdata/raw/my_sample1_2.fastq.gz
+    output: results/fastp/sample1_R1.clean.fastq.gz, results/fastp/sample1_R2.clean.fastq.gz, results/summary_qc/sample1_fastp.json, results/summary_qc/sample1_fastp.html
+    jobid: 3
+    reason: Missing output files: results/fastp/sample1_R2.clean.fastq.gz, results/summary_qc/sample1_fastp.json, results/summary_qc/sample1_fastp.html, results/fastp/sample1_R1.clean.fastq.gz
+    wildcards: sample=sample1
+    threads: 4
+    resources: tmpdir=/tmp
+
+[Wed Jun  4 14:53:15 2025]
+Finished job 8.
+1 of 20 steps (5%) done
+Select jobs to execute...
+
+[Wed Jun  4 14:53:15 2025]
+rule hisat2_extract_splicesites:
+    input: testdata/genome/genome.gtf
+    output: results/hisat2/splice_sites.txt
+    jobid: 5
+    reason: Missing output files: results/hisat2/splice_sites.txt
+    resources: tmpdir=/tmp
+
+[Wed Jun  4 14:53:16 2025]
+Finished job 3.
+2 of 20 steps (10%) done
+[Wed Jun  4 14:53:16 2025]
+Finished job 5.
+3 of 20 steps (15%) done
+Select jobs to execute...
+
+[Wed Jun  4 14:53:16 2025]
+rule hisat2_index:
+    input: testdata/genome/genome.fna, results/hisat2/splice_sites.txt
+    output: results/hisat2_index
+    jobid: 4
+    reason: Missing output files: results/hisat2_index; Input files updated by another job: results/hisat2/splice_sites.txt
+    threads: 8
+    resources: tmpdir=/tmp
+
+[Wed Jun  4 14:53:23 2025]
+Finished job 4.
+4 of 20 steps (20%) done
+Select jobs to execute...
+
+[Wed Jun  4 14:53:23 2025]
+rule hisat2_align:
+    input: results/fastp/sample2_R1.clean.fastq.gz, results/fastp/sample2_R2.clean.fastq.gz, results/hisat2_index, results/hisat2/splice_sites.txt
+    output: results/align/sample2.bam, results/align/sample2.bam.bai, results/summary_qc/sample2.hisat2.log
+    jobid: 7
+    reason: Missing output files: results/align/sample2.bam, results/summary_qc/sample2.hisat2.log; Input files updated by another job: results/hisat2_index, results/fastp/sample2_R1.clean.fastq.gz, results/hisat2/splice_sites.txt, results/fastp/sample2_R2.clean.fastq.gz
+    wildcards: sample=sample2
+    threads: 8
+    resources: tmpdir=/tmp
+
+[Wed Jun  4 14:53:23 2025]
+Finished job 7.
+5 of 20 steps (25%) done
+Select jobs to execute...
+
+[Wed Jun  4 14:53:23 2025]
+rule hisat2_align:
+    input: results/fastp/sample1_R1.clean.fastq.gz, results/fastp/sample1_R2.clean.fastq.gz, results/hisat2_index, results/hisat2/splice_sites.txt
+    output: results/align/sample1.bam, results/align/sample1.bam.bai, results/summary_qc/sample1.hisat2.log
+    jobid: 2
+    reason: Missing output files: results/align/sample1.bam, results/summary_qc/sample1.hisat2.log; Input files updated by another job: results/fastp/sample1_R2.clean.fastq.gz, results/fastp/sample1_R1.clean.fastq.gz, results/hisat2_index, results/hisat2/splice_sites.txt
+    wildcards: sample=sample1
+    threads: 8
+    resources: tmpdir=/tmp
+
+[Wed Jun  4 14:53:23 2025]
+Finished job 2.
+6 of 20 steps (30%) done
+Select jobs to execute...
+
+[Wed Jun  4 14:53:23 2025]
+rule stringtie_quant:
+    input: results/align/sample2.bam, testdata/genome/genome.gtf
+    output: results/quant/sample2/sample2.gtf
+    jobid: 6
+    reason: Missing output files: results/quant/sample2/sample2.gtf; Input files updated by another job: results/align/sample2.bam
+    wildcards: sample=sample2
+    threads: 8
+    resources: tmpdir=/tmp
+
+[Wed Jun  4 14:53:23 2025]
+Error in rule stringtie_quant:
+    jobid: 6
+    input: results/align/sample2.bam, testdata/genome/genome.gtf
+    output: results/quant/sample2/sample2.gtf
+    conda-env: /home/tripp/GENOMICA/2025_snakemake_tests/.snakemake/conda/6899a344b763834a9fd7a2f0634f2206_
+    shell:
+        
+        mkdir -p results/quant/sample2
+        stringtie -p 8 -G testdata/genome/genome.gtf -o results/quant/sample2/sample2.gtf -l sample2 results/align/sample2.bam
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Complete log: .snakemake/log/2025-06-04T145313.796664.snakemake.log

@@ -1,0 +1,14 @@
+name: r_env
+channels:
+  - conda-forge
+  - bioconda
+dependencies:
+  - r-base
+  - r-deseq2
+  - r-ggplot2
+  - r-plotly
+  - r-readr
+  - r-here
+  - r-rmarkdown
+  - bioconductor-glimma
+

@@ -1,0 +1,49 @@
+---
+title: "PCA de expresión génica"
+format: html
+params:
+  counts: NULL
+  metadata: NULL
+  project_root: NULL
+---
+
+```{r setup, include=FALSE}
+library(DESeq2)
+library(ggplot2)
+library(readr)
+library(plotly)
+library(here)
+
+
+# Definir rutas absolutas basadas en el parámetro 'main'
+main_path <- here(params$main)
+metadata_path <- file.path(main_path, params$metadata)
+counts_path <- file.path(main_path, params$counts)
+
+# Cargar metadatos y matriz de cuentas
+samples <- read.table(metadata_path, header = TRUE, sep = "\t", stringsAsFactors = FALSE)
+rownames(samples) <- samples$sample
+
+counts <- read.csv(counts_path, header = TRUE, row.names = 1)
+counts <- counts[, samples$sample, drop = FALSE]  # Asegura que el orden y las muestras coincidan
+
+
+# Crear objeto DESeq y transformar con VST
+dds <- DESeqDataSetFromMatrix(countData = counts, colData = samples, design = ~ group)
+vsd <- vst(dds)
+
+# Extraer datos de la PCA
+pcaData <- plotPCA(vsd, intgroup = "group", returnData = TRUE)
+percentVar <- round(100 * attr(pcaData, "percentVar"))
+
+# Graficar PCA con ggplot2 + plotly
+gg <- ggplot(pcaData, aes(x = PC1, y = PC2, color = group)) +
+  geom_point(size = 3) +
+  xlab(paste0("PC1: ", percentVar[1], "% var")) +
+  ylab(paste0("PC2: ", percentVar[2], "% var")) +
+  theme_minimal() +
+  ggtitle("PCA de muestras (vst)")
+
+ggplotly(gg)
+
+```
