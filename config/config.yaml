@@ -1,3 +1,3 @@
 samples_file: "config/samples.tsv"
-genome_fasta: "data/genome/c_gigas_genome.fasta.fna"
-gtf: "data/genome/c_gigas.gtf"
+genome_fasta: "testdata/genome/genome.fna"
+gtf: "testdata/genome/genes.gtf"

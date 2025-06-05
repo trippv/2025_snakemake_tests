@@ -46,7 +46,7 @@ rule all:
         "results/quant/samples_quant_table.txt",
         "results/quant/gene_count_matrix.csv",
         "results/quant/transcript_count_matrix.csv",
-        "results/summary_qc/pca_plot.html"
+        "results/summary_qc/pca_plot_mqc.html"
 
 # Regla para control de calidad y eliminación de adaptadores con fastp
 rule fastp:
@@ -282,7 +282,7 @@ rule pca_html:
         metadata = "data/metadata.tsv",
         rmd = "scripts/pca_plot.Rmd"
     output:
-        html = "results/summary_qc/pca_plot.html"
+        html = "results/summary_qc/pca_plot_mqc.html"
     conda:
         "envs/r.yaml"
     shell:

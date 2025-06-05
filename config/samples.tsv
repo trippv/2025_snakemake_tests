@@ -1,7 +1,7 @@
 sample_id	group	fastq1	fastq2	include
-Ch14_1	Ch14	data/raw/Ch14_1_R1.fq.gz	data/raw/Ch14_1_R2.fq.gz	0
-Ch14_2	Ch14	data/raw/Ch14_2_R1.fq.gz	data/raw/Ch14_2_R2.fq.gz	1
-Ch14_3	Ch14	data/raw/Ch14_3_R1.fq.gz	data/raw/Ch14_3_R2.fq.gz	1
-EP08_1	EP08	data/raw/EP08_1_R1.fq.gz	data/raw/EP08_1_R2.fq.gz	1
-EP08_2	EP08	data/raw/EP08_2_R1.fq.gz	data/raw/EP08_2_R2.fq.gz	1
-EP08_3	EP08	data/raw/EP08_3_R1.fq.gz	data/raw/EP08_3_R2.fq.gz	1
+batch1	batch	testdata/raw/batch1_chrI_1.fastq	testdata/raw/batch1_chrI_2.fastq	1
+batch2	batch	testdata/raw/batch2_chrI_1.fastq	testdata/raw/batch2_chrI_2.fastq	1
+batch3	batch	testdata/raw/batch3_chrI_1.fastq	testdata/raw/batch3_chrI_2.fastq	1
+chem1	chem	testdata/raw/chem1_chrI_1.fastq	testdata/raw/chem1_chrI_2.fastq	1
+chem2	chem	testdata/raw/chem2_chrI_1.fastq	testdata/raw/chem2_chrI_2.fastq	1
+chem3	chem	testdata/raw/chem3_chrI_1.fastq	testdata/raw/chem3_chrI_2.fastq	1

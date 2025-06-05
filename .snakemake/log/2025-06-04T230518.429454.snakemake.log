@@ -1,0 +1,38 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 8
+Rules claiming more threads will be scaled down.
+Conda environments: ignored
+Job stats:
+job         count
+--------  -------
+all             1
+pca_html        1
+total           2
+
+Select jobs to execute...
+
+[Wed Jun  4 23:05:19 2025]
+rule pca_html:
+    input: results/quant/gene_count_matrix.csv, data/metadata.tsv, scripts/pca_plot.Rmd
+    output: results/summary_qc/pca_plot_mqc.html
+    jobid: 43
+    reason: Missing output files: results/summary_qc/pca_plot_mqc.html
+    resources: tmpdir=/tmp
+
+[Wed Jun  4 23:05:30 2025]
+Finished job 43.
+1 of 2 steps (50%) done
+Select jobs to execute...
+
+[Wed Jun  4 23:05:30 2025]
+localrule all:
+    input: results/quant/batch1/batch1.gtf, results/quant/batch2/batch2.gtf, results/quant/batch3/batch3.gtf, results/quant/chem1/chem1.gtf, results/quant/chem2/chem2.gtf, results/quant/chem3/chem3.gtf, results/summary_qc/batch1.annotated.gtf, results/summary_qc/batch2.annotated.gtf, results/summary_qc/batch3.annotated.gtf, results/summary_qc/chem1.annotated.gtf, results/summary_qc/chem2.annotated.gtf, results/summary_qc/chem3.annotated.gtf, results/summary_qc/batch1.stats, results/summary_qc/batch2.stats, results/summary_qc/batch3.stats, results/summary_qc/chem1.stats, results/summary_qc/chem2.stats, results/summary_qc/chem3.stats, results/summary_qc/batch1.loci, results/summary_qc/batch2.loci, results/summary_qc/batch3.loci, results/summary_qc/chem1.loci, results/summary_qc/chem2.loci, results/summary_qc/chem3.loci, results/summary_qc/batch1.tracking, results/summary_qc/batch2.tracking, results/summary_qc/batch3.tracking, results/summary_qc/chem1.tracking, results/summary_qc/chem2.tracking, results/summary_qc/chem3.tracking, results/summary_qc/batch1_fastp.html, results/summary_qc/batch2_fastp.html, results/summary_qc/batch3_fastp.html, results/summary_qc/chem1_fastp.html, results/summary_qc/chem2_fastp.html, results/summary_qc/chem3_fastp.html, results/summary_qc/batch1_fastp.json, results/summary_qc/batch2_fastp.json, results/summary_qc/batch3_fastp.json, results/summary_qc/chem1_fastp.json, results/summary_qc/chem2_fastp.json, results/summary_qc/chem3_fastp.json, results/summary_qc/batch1.hisat2.log, results/summary_qc/batch2.hisat2.log, results/summary_qc/batch3.hisat2.log, results/summary_qc/chem1.hisat2.log, results/summary_qc/chem2.hisat2.log, results/summary_qc/chem3.hisat2.log, results/summary_qc/batch1.samtools.stats, results/summary_qc/batch2.samtools.stats, results/summary_qc/batch3.samtools.stats, results/summary_qc/chem1.samtools.stats, results/summary_qc/chem2.samtools.stats, results/summary_qc/chem3.samtools.stats, results/quant/samples_table.txt, results/quant/stringtie_merged.gtf, results/quant/samples_quant_table.txt, results/quant/gene_count_matrix.csv, results/quant/transcript_count_matrix.csv, results/summary_qc/pca_plot_mqc.html
+    jobid: 0
+    reason: Input files updated by another job: results/summary_qc/pca_plot_mqc.html
+    resources: tmpdir=/tmp
+
+[Wed Jun  4 23:05:30 2025]
+Finished job 0.
+2 of 2 steps (100%) done
+Complete log: .snakemake/log/2025-06-04T230518.429454.snakemake.log

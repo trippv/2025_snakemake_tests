@@ -7,7 +7,7 @@ params:
   main: NULL
 ---
 
-```{r setup, include=FALSE}
+```{r setup, include=TRUE, echo=FALSE, message=FALSE, warning=FALSE}
 library(DESeq2)
 library(ggplot2)
 library(readr)
@@ -28,9 +28,16 @@ counts <- read.csv(counts_path, header = TRUE, row.names = 1)
 counts <- counts[, samples$sample, drop = FALSE]  # Asegura que el orden y las muestras coincidan
 
 
+# filtrar genes con poca repreesntacion
+keep <- rowSums(counts >= 10) >= 2
+counts_filtered <- counts[keep, ]
+dds <- DESeqDataSetFromMatrix(countData = counts_filtered, colData = samples, design = ~ group)
+vsd <- varianceStabilizingTransformation(dds)
+
+
 # Crear objeto DESeq y transformar con VST
-dds <- DESeqDataSetFromMatrix(countData = counts, colData = samples, design = ~ group)
-vsd <- vst(dds)
+#dds <- DESeqDataSetFromMatrix(countData = counts, colData = samples, design = ~ group)
+#vsd <- vst(dds)
 
 # Extraer datos de la PCA
 pcaData <- plotPCA(vsd, intgroup = "group", returnData = TRUE)
