@@ -1,0 +1,11 @@
+executor: slurm
+use-conda: true
+jobs: 2                      # Máximo de jobs en paralelo (ajusta según tu cluster)
+latency-wait: 100           # Espera en segundos para que aparezcan archivos de salida
+retries: 2                  # Número de reintentos si falla una regla
+
+default-resources:
+  mem_mb: attempt * 16000             # Memoria RAM asignada (en MB). Cambia si tu workflow es más ligero
+  slurm_partition: "cicese"           # Cambia a la partición que tú usas (ej. "d30")
+  runtime: 8640                       # Tiempo límite por regla en minutos (8640 min = 6 días)
+  slurm_account: "clarissa"
