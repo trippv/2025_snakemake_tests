@@ -1,5 +1,0 @@
-Building DAG of jobs...
-MissingInputException in rule all in file /home/tripp/GENOMICA/2025_snakemake_tests/snakefile, line 33:
-Missing input files for rule all:
-    affected files:
-        results/summary_qc/pca_plot.html
