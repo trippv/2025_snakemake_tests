@@ -1,7 +1,0 @@
-Sample	Missing features
-batch1	6939.0
-batch2	6939.0
-batch3	6939.0
-chem1	6939.0
-chem2	6939.0
-chem3	6939.0

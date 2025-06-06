@@ -1,7 +1,0 @@
-Name	X	Y
-batch1: Locus	0.0	0.0
-batch2: Locus	0.0	0.0
-batch3: Locus	0.0	0.0
-chem1: Locus	0.0	0.0
-chem2: Locus	0.0	0.0
-chem3: Locus	0.0	0.0
