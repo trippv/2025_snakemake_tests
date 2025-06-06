@@ -19,6 +19,18 @@ conda create -n snakemake_env -c conda-forge -c bioconda snakemake
 conda activate snakemake_env
 ```
 
+### Descarga de proyecto
+
+Primero, crea un directorio para tu proyecto (si aún no lo has hecho) y clona el repositorio desde GitHub dentro de él:
+
+```bash
+mkdir -p mi_proyecto
+cd mi_proyecto
+git clone https://github.com/trippv/2025_snakemake_tests.git
+cd 2025_snakemake_tests
+```
+
+
 ## 2. Proceso
 El flujo de trabajo automatiza las siguientes etapas:
 
@@ -41,6 +53,9 @@ El flujo de trabajo automatiza las siguientes etapas:
 9. Generación de metadata y análisis PCA: script en Rmarkdown
 
 10. Todos los pasos se ejecutan dentro de entornos conda definidos en la carpeta envs/.
+
+
+
 
 ## Estructura de archivos
 ```bash
