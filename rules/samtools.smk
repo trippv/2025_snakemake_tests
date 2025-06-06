@@ -2,7 +2,7 @@ rule samtools_stats:
     input:
         bam="results/align/{sample}.bam"
     output:
-        stats="results/summary_qc/{sample}.samtools.stats"
+        stats="results/summary_qc/samtools/{sample}.samtools.stats"
     conda:
         "../envs/samtools.yaml"
     shell:

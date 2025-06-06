@@ -1,0 +1,6 @@
+results/quant/batch1/batch1.gtf
+results/quant/batch2/batch2.gtf
+results/quant/batch3/batch3.gtf
+results/quant/chem1/chem1.gtf
+results/quant/chem2/chem2.gtf
+results/quant/chem3/chem3.gtf

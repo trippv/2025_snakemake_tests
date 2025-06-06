@@ -1,0 +1,7 @@
+Sample	Passed Filter	Low Quality	Too Many N	Low Complexity	Too Short	Too Long
+batch1_chrI	87572.0	0.0	0.0	nan	528.0	0.0
+batch2_chrI	119800.0	0.0	0.0	nan	0.0	0.0
+batch3_chrI	93038.0	2.0	0.0	nan	510.0	0.0
+chem1_chrI	76650.0	0.0	0.0	nan	0.0	0.0
+chem2_chrI	94324.0	0.0	0.0	nan	0.0	0.0
+chem3_chrI	113730.0	0.0	0.0	nan	0.0	0.0

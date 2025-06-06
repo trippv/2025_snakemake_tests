@@ -1,5 +1,3 @@
-# Snakefile
-
 import pandas as pd
 
 # Cargar archivo de configuración
@@ -35,20 +33,21 @@ def get_fastq2(wildcards):
 rule all:
     input:
         expand("results/quant/{sample}/{sample}.gtf", sample=SAMPLES),
-        expand("results/summary_qc/{sample}.annotated.gtf", sample=SAMPLES),
-        expand("results/summary_qc/{sample}.stats", sample=SAMPLES),
-        expand("results/summary_qc/{sample}.loci", sample=SAMPLES),
-        expand("results/summary_qc/{sample}.tracking", sample=SAMPLES),
+        expand("results/summary_qc/gffcompare/{sample}.annotated.gtf", sample=SAMPLES),
+        expand("results/summary_qc/gffcompare/{sample}.stats", sample=SAMPLES),
+        expand("results/summary_qc/gffcompare/{sample}.loci", sample=SAMPLES),
+        expand("results/summary_qc/gffcompare/{sample}.tracking", sample=SAMPLES),
         expand("results/summary_qc/{sample}_fastp.html", sample=SAMPLES),
         expand("results/summary_qc/{sample}_fastp.json", sample=SAMPLES),
         expand("results/summary_qc/{sample}.hisat2.log", sample=SAMPLES),
-        expand("results/summary_qc/{sample}.samtools.stats", sample=SAMPLES),
+        expand("results/summary_qc/samtools/{sample}.samtools.stats", sample=SAMPLES),
         "results/quant/samples_table.txt",
         "results/quant/stringtie_merged.gtf",
         "results/quant/samples_quant_table.txt",
         "results/quant/gene_count_matrix.csv",
         "results/quant/transcript_count_matrix.csv",
-        "results/summary_qc/pca_plot_mqc.html"
+        "results/summary_qc/pca_plot_mqc.html",
+        "results/summary_qc/multiqc_report.html"
 
 
 # Incluir reglas desde archivos
@@ -60,3 +59,4 @@ include: "rules/gffcompare.smk"
 include: "rules/prepde.smk"
 include: "rules/metadata.smk"
 include: "rules/pca.smk"
+include: "rules/multiqc.smk"

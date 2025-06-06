@@ -1,0 +1,7 @@
+Sample	Novel features
+batch1	4.0
+batch2	4.0
+batch3	4.0
+chem1	5.0
+chem2	4.0
+chem3	4.0

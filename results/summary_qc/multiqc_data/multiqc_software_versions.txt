@@ -1,0 +1,4 @@
+Sample	GffCompare	Samtools	HTSlib	fastp
+GffCompare	0.12.9			
+Samtools		1.20	1.21	
+fastp				0.23.4

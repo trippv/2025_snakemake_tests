@@ -1,0 +1,7 @@
+Name	X	Y
+batch1: Transcript	0.0	0.0
+batch2: Transcript	0.0	0.0
+batch3: Transcript	0.0	0.0
+chem1: Transcript	0.0	0.0
+chem2: Transcript	0.0	0.0
+chem3: Transcript	0.0	0.0

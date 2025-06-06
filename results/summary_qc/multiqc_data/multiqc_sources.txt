@@ -1,0 +1,25 @@
+Module	Section	Sample Name	Source
+GffCompare	all_sections	batch1	/home/tripp/GENOMICA/2025_snakemake_tests/results/summary_qc/gffcompare/batch1.stats
+GffCompare	all_sections	batch2	/home/tripp/GENOMICA/2025_snakemake_tests/results/summary_qc/gffcompare/batch2.stats
+GffCompare	all_sections	batch3	/home/tripp/GENOMICA/2025_snakemake_tests/results/summary_qc/gffcompare/batch3.stats
+GffCompare	all_sections	chem1	/home/tripp/GENOMICA/2025_snakemake_tests/results/summary_qc/gffcompare/chem1.stats
+GffCompare	all_sections	chem2	/home/tripp/GENOMICA/2025_snakemake_tests/results/summary_qc/gffcompare/chem2.stats
+GffCompare	all_sections	chem3	/home/tripp/GENOMICA/2025_snakemake_tests/results/summary_qc/gffcompare/chem3.stats
+Samtools	stats	batch1	/home/tripp/GENOMICA/2025_snakemake_tests/results/summary_qc/samtools/batch1.samtools.stats
+Samtools	stats	batch2	/home/tripp/GENOMICA/2025_snakemake_tests/results/summary_qc/samtools/batch2.samtools.stats
+Samtools	stats	batch3	/home/tripp/GENOMICA/2025_snakemake_tests/results/summary_qc/samtools/batch3.samtools.stats
+Samtools	stats	chem1	/home/tripp/GENOMICA/2025_snakemake_tests/results/summary_qc/samtools/chem1.samtools.stats
+Samtools	stats	chem2	/home/tripp/GENOMICA/2025_snakemake_tests/results/summary_qc/samtools/chem2.samtools.stats
+Samtools	stats	chem3	/home/tripp/GENOMICA/2025_snakemake_tests/results/summary_qc/samtools/chem3.samtools.stats
+Bowtie 2 / HiSAT2	all_sections	batch1	/home/tripp/GENOMICA/2025_snakemake_tests/results/summary_qc/batch1.hisat2.log
+Bowtie 2 / HiSAT2	all_sections	batch2	/home/tripp/GENOMICA/2025_snakemake_tests/results/summary_qc/batch2.hisat2.log
+Bowtie 2 / HiSAT2	all_sections	batch3	/home/tripp/GENOMICA/2025_snakemake_tests/results/summary_qc/batch3.hisat2.log
+Bowtie 2 / HiSAT2	all_sections	chem1	/home/tripp/GENOMICA/2025_snakemake_tests/results/summary_qc/chem1.hisat2.log
+Bowtie 2 / HiSAT2	all_sections	chem2	/home/tripp/GENOMICA/2025_snakemake_tests/results/summary_qc/chem2.hisat2.log
+Bowtie 2 / HiSAT2	all_sections	chem3	/home/tripp/GENOMICA/2025_snakemake_tests/results/summary_qc/chem3.hisat2.log
+fastp	all_sections	batch1_chrI	/home/tripp/GENOMICA/2025_snakemake_tests/results/summary_qc/batch1_fastp.json
+fastp	all_sections	batch2_chrI	/home/tripp/GENOMICA/2025_snakemake_tests/results/summary_qc/batch2_fastp.json
+fastp	all_sections	batch3_chrI	/home/tripp/GENOMICA/2025_snakemake_tests/results/summary_qc/batch3_fastp.json
+fastp	all_sections	chem1_chrI	/home/tripp/GENOMICA/2025_snakemake_tests/results/summary_qc/chem1_fastp.json
+fastp	all_sections	chem2_chrI	/home/tripp/GENOMICA/2025_snakemake_tests/results/summary_qc/chem2_fastp.json
+fastp	all_sections	chem3_chrI	/home/tripp/GENOMICA/2025_snakemake_tests/results/summary_qc/chem3_fastp.json

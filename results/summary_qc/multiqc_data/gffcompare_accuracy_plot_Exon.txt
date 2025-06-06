@@ -1,0 +1,7 @@
+Name	X	Y
+batch1: Exon	0.0	0.0
+batch2: Exon	0.0	0.0
+batch3: Exon	0.0	0.0
+chem1: Exon	0.0	0.0
+chem2: Exon	0.0	0.0
+chem3: Exon	0.0	0.0

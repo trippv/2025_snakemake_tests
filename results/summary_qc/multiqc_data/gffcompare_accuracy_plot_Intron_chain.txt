@@ -1,0 +1,7 @@
+Name	X	Y
+batch1: Intron_chain	0.0	0.0
+batch2: Intron_chain	0.0	0.0
+batch3: Intron_chain	0.0	0.0
+chem1: Intron_chain	0.0	0.0
+chem2: Intron_chain	0.0	0.0
+chem3: Intron_chain	0.0	0.0
