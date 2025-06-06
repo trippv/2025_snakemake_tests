@@ -43,7 +43,7 @@ El flujo de trabajo automatiza las siguientes etapas:
 10. Todos los pasos se ejecutan dentro de entornos conda definidos en la carpeta envs/.
 
 ## Estructura de archivos
-
+```bash
 project/
 ├── config/
 │   ├── config.yaml        # Rutas de genoma y archivo de muestras
@@ -56,7 +56,7 @@ project/
 ├── scripts/               # Scripts auxiliares (e.g., PCA)
 ├── profiles/slurm/        # Configuración de ejecución en SLURM
 └── Snakefile              # Punto de entrada del workflow
-
+```
 
 # Definir objetos
 
