@@ -16,8 +16,10 @@ conda activate miworkflow_env  # cambia al entorno que uses
 
 cd $SLURM_SUBMIT_DIR
 
-snakemake -d ./ \
- --snakefile snakefile \
+
+snakemake --snakefile snakefile \
+ --directory ./ \
  --workflow-profile ./profiles/slurm \
- --cores 24 \
- --use-conda
+ --use-conda \
+ --jobs 4 \
+ --resources mem_mb=100000 threads=24

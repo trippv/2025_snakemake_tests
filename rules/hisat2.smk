@@ -21,6 +21,8 @@ rule hisat2_index:
     conda:
         "../envs/hisat2.yaml"
     threads: 8
+    params:
+        memory=28
     shell:
         """
         mkdir -p {output}

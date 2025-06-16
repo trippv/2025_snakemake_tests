@@ -35,6 +35,8 @@ rule stringtie_merge:
     conda:
         "../envs/stringtie.yaml"
     threads: 8
+    params:
+        memory=16
     shell:
         """
         stringtie --merge -p {threads} -G {input.gtf} -o {output.merged} {input.table}
