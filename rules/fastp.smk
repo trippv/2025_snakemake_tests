@@ -10,6 +10,8 @@ rule fastp:
     conda:
         "../envs/fastp.yaml"
     threads: 4
+    params:
+        memory=8
     shell:
         """
         fastp --in1 {input.r1} --in2 {input.r2} \

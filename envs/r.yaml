@@ -10,5 +10,5 @@ dependencies:
   - r-readr
   - r-here
   - r-rmarkdown
-  - bioconductor-glimma
+  - bioconductor-deseq
 
