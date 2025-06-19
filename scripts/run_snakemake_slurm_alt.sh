@@ -9,17 +9,13 @@
 
 # Cargar Conda/Mamba
 source /LUSTRE/apps/Miniforge/2024/miniforge3/etc/profile.d/conda.sh
-source /LUSTRE/apps/Miniforge/2024/miniforge3/etc/profile.d/mamba.sh
-CONDA_BASE=$(conda info --base)
+
 
 conda activate snakemake  # cambia al entorno que uses
 
 cd $SLURM_SUBMIT_DIR
 
 
-snakemake --snakefile snakefile \
- --directory ./ \
- --workflow-profile ./profiles/slurm \
- --use-conda \
- --jobs 4 \
- --resources mem_mb=100000 threads=24
+# Ejecutar Snakemake en modo local con 24 núcleos
+snakemake --cores 24 --use-conda
+
