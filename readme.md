@@ -79,7 +79,7 @@ Crea el archivo samples.tsv dentro de `config/`. Ejemplo de contenido
 
 ## Archivo de configuración
 
-Archivo de configuración ubicado en `confi/congi.yaml`. Ejemplo
+Archivo de configuración ubicado en `config/config.yaml`. Ejemplo
 
 ```bash
 samples_file: "config/samples.tsv"
@@ -91,5 +91,36 @@ gtf: "testdata/genome/genes.gtf"
 
 ```bash
 snakemake --use-conda --cores 8
+
+```
+
+## Ejecutar desde un administrador SLURM
+
+Cuando se tienen limitantes en el acceso a multiples tareas en un administrador, la forma mas fácil de ejecutar snakemake es solicitando un solo nodo con el máximo de capacidad permitida. 
+
+Un script se encuentra disponible en `scripts/run_snakemake_slurm_alt.sh`
+
+```
+#!/bin/bash
+#SBATCH --job-name=RnaseqSnake
+#SBATCH --output=rnaseq_snake_%j.log
+#SBATCH --error=rnaseq_snake_%j.err
+#SBATCH -p cicese
+#SBATCH --ntasks-per-node=24
+#SBATCH --mem=100GB
+#SBATCH -t 6-00:00:00  # Cambia esto según lo que necesites
+
+# Cargar Conda/Mamba
+source /LUSTRE/apps/Miniforge/2024/miniforge3/etc/profile.d/conda.sh
+
+
+conda activate snakemake  # cambia al entorno que uses
+
+cd $SLURM_SUBMIT_DIR
+
+
+# Ejecutar Snakemake en modo local con 24 núcleos
+snakemake --cores 24 --use-conda
+
 
 ```
