@@ -1,6 +1,6 @@
 executor: slurm
 use-conda: true
-jobs: 6                      # Máximo de jobs en paralelo (ajusta según tu cluster)
+jobs: 1                      # Máximo de jobs en paralelo (ajusta según tu cluster)
 latency-wait: 2           # Espera en segundos para que aparezcan archivos de salida
 retries: 2                  # Número de reintentos si falla una regla
 
