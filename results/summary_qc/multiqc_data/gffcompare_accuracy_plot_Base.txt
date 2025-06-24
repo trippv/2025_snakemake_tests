@@ -1,7 +1,0 @@
-Name	X	Y
-batch1: Base	0.0	0.0
-batch2: Base	0.0	0.0
-batch3: Base	0.0	0.0
-chem1: Base	0.0	0.0
-chem2: Base	0.0	0.0
-chem3: Base	0.0	0.0
