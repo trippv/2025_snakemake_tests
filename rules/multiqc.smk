@@ -19,5 +19,5 @@ rule multiqc:
     threads: 4
     shell:
         """
-        multiqc results/summary_qc -o results/summary_qc -f
+        multiqc results/summary_qc -o results/summary_qc -f --config config/multiqc_config.yaml --custom-css-file config/custom.css
         """

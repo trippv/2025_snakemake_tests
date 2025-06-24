@@ -1,0 +1,32 @@
+# Configuración personalizada para MultiQC
+# Configurar el logotipo personalizado
+custom_logo: "./config/logo.png"  # Ruta al archivo del logo (puede ser relativa o absoluta)
+custom_logo_url: "https://github.com/trippv/integrity_massively"  # URL opcional a la que enlazará el logo
+
+intro_text: " "
+
+# Información del encabezado del informe
+report_header_info:
+  - Nombre: "Thalassomics"
+  - Contacto: "info@thalassomics.com"
+  - Website: "Sitio web: https://github.com/trippv/integrity_massively"
+  - Tipo de proyecto: "RNA-seq"
+  - Platafora de secuenciación: "HiSeq 2500 High Output V4"
+  - Setup: "2x125"
+
+
+
+# Opcional: Configuración adicional para personalizar el informe
+show_analysis_paths: False  # No mostrar rutas de archivos en el informe
+show_analysis_time: True   # Mostrar la fecha y hora del análisis
+
+# orden de los modulos
+top_modules:
+  - "fastp"
+  - "samtools"
+  - "bowtie"
+  - "gffcompare"
+  - "busco"
+
+section_comments:
+  gffcompare: "Este es un comentario que puede incluir descripción en español"
