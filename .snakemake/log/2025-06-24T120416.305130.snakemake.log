@@ -1,0 +1,636 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 4
+Rules claiming more threads will be scaled down.
+Conda environments: ignored
+Job stats:
+job                         count
+------------------------  -------
+all                             1
+build_quant_sample_table        1
+build_samples_table             1
+fastp                           6
+gffcompare                      6
+hisat2_align                    6
+multiqc                         1
+pca_html                        1
+prepDE                          1
+samtools_stats                  6
+stringtie_final_quant           6
+stringtie_merge                 1
+stringtie_quant                 6
+total                          43
+
+Select jobs to execute...
+
+[Tue Jun 24 12:04:20 2025]
+rule fastp:
+    input: testdata/raw/chem3_chrI_1.fastq, testdata/raw/chem3_chrI_2.fastq
+    output: results/fastp/chem3_R1.clean.fastq.gz, results/fastp/chem3_R2.clean.fastq.gz, results/summary_qc/chem3_fastp.json, results/summary_qc/chem3_fastp.html
+    jobid: 20
+    reason: Missing output files: results/summary_qc/chem3_fastp.html, results/summary_qc/chem3_fastp.json
+    wildcards: sample=chem3
+    threads: 4
+    resources: tmpdir=/tmp
+
+[Tue Jun 24 12:04:30 2025]
+Finished job 20.
+1 of 43 steps (2%) done
+Select jobs to execute...
+
+[Tue Jun 24 12:04:30 2025]
+rule fastp:
+    input: testdata/raw/chem1_chrI_1.fastq, testdata/raw/chem1_chrI_2.fastq
+    output: results/fastp/chem1_R1.clean.fastq.gz, results/fastp/chem1_R2.clean.fastq.gz, results/summary_qc/chem1_fastp.json, results/summary_qc/chem1_fastp.html
+    jobid: 14
+    reason: Missing output files: results/summary_qc/chem1_fastp.html, results/summary_qc/chem1_fastp.json
+    wildcards: sample=chem1
+    threads: 4
+    resources: tmpdir=/tmp
+
+[Tue Jun 24 12:04:41 2025]
+Finished job 14.
+2 of 43 steps (5%) done
+Select jobs to execute...
+
+[Tue Jun 24 12:04:41 2025]
+rule hisat2_align:
+    input: results/fastp/chem3_R1.clean.fastq.gz, results/fastp/chem3_R2.clean.fastq.gz, results/hisat2_index, results/hisat2/splice_sites.txt
+    output: results/align/chem3.bam, results/align/chem3.bam.bai, results/summary_qc/chem3.hisat2.log
+    jobid: 19
+    reason: Missing output files: results/summary_qc/chem3.hisat2.log; Input files updated by another job: results/fastp/chem3_R2.clean.fastq.gz, results/fastp/chem3_R1.clean.fastq.gz
+    wildcards: sample=chem3
+    threads: 4
+    resources: tmpdir=/tmp
+
+[Tue Jun 24 12:04:53 2025]
+Finished job 19.
+3 of 43 steps (7%) done
+Select jobs to execute...
+
+[Tue Jun 24 12:04:53 2025]
+rule stringtie_quant:
+    input: results/align/chem3.bam, testdata/genome/genes.gtf
+    output: results/quant/chem3/chem3.gtf
+    jobid: 18
+    reason: Input files updated by another job: results/align/chem3.bam
+    wildcards: sample=chem3
+    threads: 4
+    resources: tmpdir=/tmp
+
+[Tue Jun 24 12:04:54 2025]
+Finished job 18.
+4 of 43 steps (9%) done
+Select jobs to execute...
+
+[Tue Jun 24 12:04:54 2025]
+rule fastp:
+    input: testdata/raw/chem2_chrI_1.fastq, testdata/raw/chem2_chrI_2.fastq
+    output: results/fastp/chem2_R1.clean.fastq.gz, results/fastp/chem2_R2.clean.fastq.gz, results/summary_qc/chem2_fastp.json, results/summary_qc/chem2_fastp.html
+    jobid: 17
+    reason: Missing output files: results/summary_qc/chem2_fastp.json, results/summary_qc/chem2_fastp.html
+    wildcards: sample=chem2
+    threads: 4
+    resources: tmpdir=/tmp
+
+[Tue Jun 24 12:05:02 2025]
+Finished job 17.
+5 of 43 steps (12%) done
+Select jobs to execute...
+
+[Tue Jun 24 12:05:02 2025]
+rule hisat2_align:
+    input: results/fastp/chem2_R1.clean.fastq.gz, results/fastp/chem2_R2.clean.fastq.gz, results/hisat2_index, results/hisat2/splice_sites.txt
+    output: results/align/chem2.bam, results/align/chem2.bam.bai, results/summary_qc/chem2.hisat2.log
+    jobid: 16
+    reason: Missing output files: results/summary_qc/chem2.hisat2.log; Input files updated by another job: results/fastp/chem2_R1.clean.fastq.gz, results/fastp/chem2_R2.clean.fastq.gz
+    wildcards: sample=chem2
+    threads: 4
+    resources: tmpdir=/tmp
+
+[Tue Jun 24 12:05:20 2025]
+Finished job 16.
+6 of 43 steps (14%) done
+Select jobs to execute...
+
+[Tue Jun 24 12:05:20 2025]
+rule fastp:
+    input: testdata/raw/batch1_chrI_1.fastq, testdata/raw/batch1_chrI_2.fastq
+    output: results/fastp/batch1_R1.clean.fastq.gz, results/fastp/batch1_R2.clean.fastq.gz, results/summary_qc/batch1_fastp.json, results/summary_qc/batch1_fastp.html
+    jobid: 3
+    reason: Missing output files: results/summary_qc/batch1_fastp.json, results/summary_qc/batch1_fastp.html
+    wildcards: sample=batch1
+    threads: 4
+    resources: tmpdir=/tmp
+
+[Tue Jun 24 12:05:27 2025]
+Finished job 3.
+7 of 43 steps (16%) done
+Select jobs to execute...
+
+[Tue Jun 24 12:05:27 2025]
+rule hisat2_align:
+    input: results/fastp/batch1_R1.clean.fastq.gz, results/fastp/batch1_R2.clean.fastq.gz, results/hisat2_index, results/hisat2/splice_sites.txt
+    output: results/align/batch1.bam, results/align/batch1.bam.bai, results/summary_qc/batch1.hisat2.log
+    jobid: 2
+    reason: Missing output files: results/summary_qc/batch1.hisat2.log; Input files updated by another job: results/fastp/batch1_R1.clean.fastq.gz, results/fastp/batch1_R2.clean.fastq.gz
+    wildcards: sample=batch1
+    threads: 4
+    resources: tmpdir=/tmp
+
+[Tue Jun 24 12:05:36 2025]
+Finished job 2.
+8 of 43 steps (19%) done
+Select jobs to execute...
+
+[Tue Jun 24 12:05:37 2025]
+rule stringtie_quant:
+    input: results/align/chem2.bam, testdata/genome/genes.gtf
+    output: results/quant/chem2/chem2.gtf
+    jobid: 15
+    reason: Input files updated by another job: results/align/chem2.bam
+    wildcards: sample=chem2
+    threads: 4
+    resources: tmpdir=/tmp
+
+[Tue Jun 24 12:05:37 2025]
+Finished job 15.
+9 of 43 steps (21%) done
+Select jobs to execute...
+
+[Tue Jun 24 12:05:38 2025]
+rule samtools_stats:
+    input: results/align/batch1.bam
+    output: results/summary_qc/samtools/batch1.samtools.stats
+    jobid: 27
+    reason: Missing output files: results/summary_qc/samtools/batch1.samtools.stats; Input files updated by another job: results/align/batch1.bam
+    wildcards: sample=batch1
+    resources: tmpdir=/tmp
+
+
+[Tue Jun 24 12:05:38 2025]
+rule samtools_stats:
+    input: results/align/chem2.bam
+    output: results/summary_qc/samtools/chem2.samtools.stats
+    jobid: 31
+    reason: Missing output files: results/summary_qc/samtools/chem2.samtools.stats; Input files updated by another job: results/align/chem2.bam
+    wildcards: sample=chem2
+    resources: tmpdir=/tmp
+
+
+[Tue Jun 24 12:05:38 2025]
+rule gffcompare:
+    input: results/quant/chem2/chem2.gtf, testdata/genome/genes.gtf
+    output: results/summary_qc/gffcompare/chem2.stats, results/summary_qc/gffcompare/chem2.loci, results/summary_qc/gffcompare/chem2.annotated.gtf, results/summary_qc/gffcompare/chem2.tracking
+    jobid: 25
+    reason: Missing output files: results/summary_qc/gffcompare/chem2.loci, results/summary_qc/gffcompare/chem2.annotated.gtf, results/summary_qc/gffcompare/chem2.stats, results/summary_qc/gffcompare/chem2.tracking; Input files updated by another job: results/quant/chem2/chem2.gtf
+    wildcards: sample=chem2
+    resources: tmpdir=/tmp
+
+
+[Tue Jun 24 12:05:38 2025]
+rule gffcompare:
+    input: results/quant/chem3/chem3.gtf, testdata/genome/genes.gtf
+    output: results/summary_qc/gffcompare/chem3.stats, results/summary_qc/gffcompare/chem3.loci, results/summary_qc/gffcompare/chem3.annotated.gtf, results/summary_qc/gffcompare/chem3.tracking
+    jobid: 26
+    reason: Missing output files: results/summary_qc/gffcompare/chem3.stats, results/summary_qc/gffcompare/chem3.loci, results/summary_qc/gffcompare/chem3.annotated.gtf, results/summary_qc/gffcompare/chem3.tracking; Input files updated by another job: results/quant/chem3/chem3.gtf
+    wildcards: sample=chem3
+    resources: tmpdir=/tmp
+
+[Tue Jun 24 12:05:38 2025]
+Finished job 25.
+10 of 43 steps (23%) done
+Select jobs to execute...
+
+[Tue Jun 24 12:05:38 2025]
+rule samtools_stats:
+    input: results/align/chem3.bam
+    output: results/summary_qc/samtools/chem3.samtools.stats
+    jobid: 32
+    reason: Missing output files: results/summary_qc/samtools/chem3.samtools.stats; Input files updated by another job: results/align/chem3.bam
+    wildcards: sample=chem3
+    resources: tmpdir=/tmp
+
+[Tue Jun 24 12:05:39 2025]
+Finished job 26.
+11 of 43 steps (26%) done
+Select jobs to execute...
+[Tue Jun 24 12:05:39 2025]
+Finished job 27.
+12 of 43 steps (28%) done
+[Tue Jun 24 12:05:39 2025]
+Finished job 31.
+13 of 43 steps (30%) done
+[Tue Jun 24 12:05:40 2025]
+Finished job 32.
+14 of 43 steps (33%) done
+
+[Tue Jun 24 12:05:40 2025]
+rule fastp:
+    input: testdata/raw/batch3_chrI_1.fastq, testdata/raw/batch3_chrI_2.fastq
+    output: results/fastp/batch3_R1.clean.fastq.gz, results/fastp/batch3_R2.clean.fastq.gz, results/summary_qc/batch3_fastp.json, results/summary_qc/batch3_fastp.html
+    jobid: 11
+    reason: Missing output files: results/summary_qc/batch3_fastp.html, results/summary_qc/batch3_fastp.json
+    wildcards: sample=batch3
+    threads: 4
+    resources: tmpdir=/tmp
+
+[Tue Jun 24 12:05:47 2025]
+Finished job 11.
+15 of 43 steps (35%) done
+Select jobs to execute...
+
+[Tue Jun 24 12:05:47 2025]
+rule stringtie_quant:
+    input: results/align/batch1.bam, testdata/genome/genes.gtf
+    output: results/quant/batch1/batch1.gtf
+    jobid: 1
+    reason: Input files updated by another job: results/align/batch1.bam
+    wildcards: sample=batch1
+    threads: 4
+    resources: tmpdir=/tmp
+
+[Tue Jun 24 12:05:49 2025]
+Finished job 1.
+16 of 43 steps (37%) done
+Select jobs to execute...
+
+[Tue Jun 24 12:05:50 2025]
+rule hisat2_align:
+    input: results/fastp/batch3_R1.clean.fastq.gz, results/fastp/batch3_R2.clean.fastq.gz, results/hisat2_index, results/hisat2/splice_sites.txt
+    output: results/align/batch3.bam, results/align/batch3.bam.bai, results/summary_qc/batch3.hisat2.log
+    jobid: 10
+    reason: Missing output files: results/summary_qc/batch3.hisat2.log; Input files updated by another job: results/fastp/batch3_R1.clean.fastq.gz, results/fastp/batch3_R2.clean.fastq.gz
+    wildcards: sample=batch3
+    threads: 4
+    resources: tmpdir=/tmp
+
+[Tue Jun 24 12:05:59 2025]
+Finished job 10.
+17 of 43 steps (40%) done
+Select jobs to execute...
+
+[Tue Jun 24 12:05:59 2025]
+rule hisat2_align:
+    input: results/fastp/chem1_R1.clean.fastq.gz, results/fastp/chem1_R2.clean.fastq.gz, results/hisat2_index, results/hisat2/splice_sites.txt
+    output: results/align/chem1.bam, results/align/chem1.bam.bai, results/summary_qc/chem1.hisat2.log
+    jobid: 13
+    reason: Missing output files: results/summary_qc/chem1.hisat2.log; Input files updated by another job: results/fastp/chem1_R1.clean.fastq.gz, results/fastp/chem1_R2.clean.fastq.gz
+    wildcards: sample=chem1
+    threads: 4
+    resources: tmpdir=/tmp
+
+[Tue Jun 24 12:06:05 2025]
+Finished job 13.
+18 of 43 steps (42%) done
+Select jobs to execute...
+
+[Tue Jun 24 12:06:06 2025]
+rule stringtie_quant:
+    input: results/align/chem1.bam, testdata/genome/genes.gtf
+    output: results/quant/chem1/chem1.gtf
+    jobid: 12
+    reason: Input files updated by another job: results/align/chem1.bam
+    wildcards: sample=chem1
+    threads: 4
+    resources: tmpdir=/tmp
+
+[Tue Jun 24 12:06:07 2025]
+Finished job 12.
+19 of 43 steps (44%) done
+Select jobs to execute...
+
+[Tue Jun 24 12:06:08 2025]
+rule fastp:
+    input: testdata/raw/batch2_chrI_1.fastq, testdata/raw/batch2_chrI_2.fastq
+    output: results/fastp/batch2_R1.clean.fastq.gz, results/fastp/batch2_R2.clean.fastq.gz, results/summary_qc/batch2_fastp.json, results/summary_qc/batch2_fastp.html
+    jobid: 8
+    reason: Missing output files: results/summary_qc/batch2_fastp.html, results/summary_qc/batch2_fastp.json
+    wildcards: sample=batch2
+    threads: 4
+    resources: tmpdir=/tmp
+
+[Tue Jun 24 12:06:20 2025]
+Finished job 8.
+20 of 43 steps (47%) done
+Select jobs to execute...
+
+[Tue Jun 24 12:06:20 2025]
+rule stringtie_quant:
+    input: results/align/batch3.bam, testdata/genome/genes.gtf
+    output: results/quant/batch3/batch3.gtf
+    jobid: 9
+    reason: Input files updated by another job: results/align/batch3.bam
+    wildcards: sample=batch3
+    threads: 4
+    resources: tmpdir=/tmp
+
+[Tue Jun 24 12:06:22 2025]
+Finished job 9.
+21 of 43 steps (49%) done
+Select jobs to execute...
+
+[Tue Jun 24 12:06:22 2025]
+rule gffcompare:
+    input: results/quant/batch1/batch1.gtf, testdata/genome/genes.gtf
+    output: results/summary_qc/gffcompare/batch1.stats, results/summary_qc/gffcompare/batch1.loci, results/summary_qc/gffcompare/batch1.annotated.gtf, results/summary_qc/gffcompare/batch1.tracking
+    jobid: 21
+    reason: Missing output files: results/summary_qc/gffcompare/batch1.annotated.gtf, results/summary_qc/gffcompare/batch1.loci, results/summary_qc/gffcompare/batch1.stats, results/summary_qc/gffcompare/batch1.tracking; Input files updated by another job: results/quant/batch1/batch1.gtf
+    wildcards: sample=batch1
+    resources: tmpdir=/tmp
+
+
+[Tue Jun 24 12:06:22 2025]
+rule samtools_stats:
+    input: results/align/batch3.bam
+    output: results/summary_qc/samtools/batch3.samtools.stats
+    jobid: 29
+    reason: Missing output files: results/summary_qc/samtools/batch3.samtools.stats; Input files updated by another job: results/align/batch3.bam
+    wildcards: sample=batch3
+    resources: tmpdir=/tmp
+
+
+[Tue Jun 24 12:06:23 2025]
+rule gffcompare:
+    input: results/quant/batch3/batch3.gtf, testdata/genome/genes.gtf
+    output: results/summary_qc/gffcompare/batch3.stats, results/summary_qc/gffcompare/batch3.loci, results/summary_qc/gffcompare/batch3.annotated.gtf, results/summary_qc/gffcompare/batch3.tracking
+    jobid: 23
+    reason: Missing output files: results/summary_qc/gffcompare/batch3.loci, results/summary_qc/gffcompare/batch3.annotated.gtf, results/summary_qc/gffcompare/batch3.stats, results/summary_qc/gffcompare/batch3.tracking; Input files updated by another job: results/quant/batch3/batch3.gtf
+    wildcards: sample=batch3
+    resources: tmpdir=/tmp
+
+
+[Tue Jun 24 12:06:23 2025]
+rule gffcompare:
+    input: results/quant/chem1/chem1.gtf, testdata/genome/genes.gtf
+    output: results/summary_qc/gffcompare/chem1.stats, results/summary_qc/gffcompare/chem1.loci, results/summary_qc/gffcompare/chem1.annotated.gtf, results/summary_qc/gffcompare/chem1.tracking
+    jobid: 24
+    reason: Missing output files: results/summary_qc/gffcompare/chem1.annotated.gtf, results/summary_qc/gffcompare/chem1.loci, results/summary_qc/gffcompare/chem1.tracking, results/summary_qc/gffcompare/chem1.stats; Input files updated by another job: results/quant/chem1/chem1.gtf
+    wildcards: sample=chem1
+    resources: tmpdir=/tmp
+
+[Tue Jun 24 12:06:24 2025]
+Finished job 21.
+22 of 43 steps (51%) done
+Select jobs to execute...
+
+[Tue Jun 24 12:06:24 2025]
+rule samtools_stats:
+    input: results/align/chem1.bam
+    output: results/summary_qc/samtools/chem1.samtools.stats
+    jobid: 30
+    reason: Missing output files: results/summary_qc/samtools/chem1.samtools.stats; Input files updated by another job: results/align/chem1.bam
+    wildcards: sample=chem1
+    resources: tmpdir=/tmp
+
+[Tue Jun 24 12:06:24 2025]
+Finished job 24.
+23 of 43 steps (53%) done
+Select jobs to execute...
+[Tue Jun 24 12:06:24 2025]
+Finished job 23.
+24 of 43 steps (56%) done
+[Tue Jun 24 12:06:25 2025]
+Finished job 29.
+25 of 43 steps (58%) done
+[Tue Jun 24 12:06:26 2025]
+Finished job 30.
+26 of 43 steps (60%) done
+
+[Tue Jun 24 12:06:26 2025]
+rule hisat2_align:
+    input: results/fastp/batch2_R1.clean.fastq.gz, results/fastp/batch2_R2.clean.fastq.gz, results/hisat2_index, results/hisat2/splice_sites.txt
+    output: results/align/batch2.bam, results/align/batch2.bam.bai, results/summary_qc/batch2.hisat2.log
+    jobid: 7
+    reason: Missing output files: results/summary_qc/batch2.hisat2.log; Input files updated by another job: results/fastp/batch2_R1.clean.fastq.gz, results/fastp/batch2_R2.clean.fastq.gz
+    wildcards: sample=batch2
+    threads: 4
+    resources: tmpdir=/tmp
+
+[Tue Jun 24 12:06:35 2025]
+Finished job 7.
+27 of 43 steps (63%) done
+Select jobs to execute...
+
+[Tue Jun 24 12:06:35 2025]
+rule stringtie_quant:
+    input: results/align/batch2.bam, testdata/genome/genes.gtf
+    output: results/quant/batch2/batch2.gtf
+    jobid: 6
+    reason: Input files updated by another job: results/align/batch2.bam
+    wildcards: sample=batch2
+    threads: 4
+    resources: tmpdir=/tmp
+
+[Tue Jun 24 12:06:37 2025]
+Finished job 6.
+28 of 43 steps (65%) done
+Select jobs to execute...
+
+[Tue Jun 24 12:06:37 2025]
+rule samtools_stats:
+    input: results/align/batch2.bam
+    output: results/summary_qc/samtools/batch2.samtools.stats
+    jobid: 28
+    reason: Missing output files: results/summary_qc/samtools/batch2.samtools.stats; Input files updated by another job: results/align/batch2.bam
+    wildcards: sample=batch2
+    resources: tmpdir=/tmp
+
+
+[Tue Jun 24 12:06:37 2025]
+rule gffcompare:
+    input: results/quant/batch2/batch2.gtf, testdata/genome/genes.gtf
+    output: results/summary_qc/gffcompare/batch2.stats, results/summary_qc/gffcompare/batch2.loci, results/summary_qc/gffcompare/batch2.annotated.gtf, results/summary_qc/gffcompare/batch2.tracking
+    jobid: 22
+    reason: Missing output files: results/summary_qc/gffcompare/batch2.stats, results/summary_qc/gffcompare/batch2.loci, results/summary_qc/gffcompare/batch2.annotated.gtf, results/summary_qc/gffcompare/batch2.tracking; Input files updated by another job: results/quant/batch2/batch2.gtf
+    wildcards: sample=batch2
+    resources: tmpdir=/tmp
+
+
+[Tue Jun 24 12:06:37 2025]
+rule build_samples_table:
+    input: results/quant/batch1/batch1.gtf, results/quant/batch2/batch2.gtf, results/quant/batch3/batch3.gtf, results/quant/chem1/chem1.gtf, results/quant/chem2/chem2.gtf, results/quant/chem3/chem3.gtf
+    output: results/quant/samples_table.txt
+    jobid: 33
+    reason: Input files updated by another job: results/quant/batch2/batch2.gtf, results/quant/chem1/chem1.gtf, results/quant/chem3/chem3.gtf, results/quant/batch1/batch1.gtf, results/quant/batch3/batch3.gtf, results/quant/chem2/chem2.gtf
+    resources: tmpdir=/tmp
+
+[Tue Jun 24 12:06:37 2025]
+Finished job 22.
+29 of 43 steps (67%) done
+[Tue Jun 24 12:06:38 2025]
+Finished job 28.
+30 of 43 steps (70%) done
+[Tue Jun 24 12:06:41 2025]
+Finished job 33.
+31 of 43 steps (72%) done
+Select jobs to execute...
+
+[Tue Jun 24 12:06:41 2025]
+rule stringtie_merge:
+    input: results/quant/samples_table.txt, testdata/genome/genes.gtf
+    output: results/quant/stringtie_merged.gtf
+    jobid: 34
+    reason: Input files updated by another job: results/quant/samples_table.txt
+    threads: 4
+    resources: tmpdir=/tmp
+
+[Tue Jun 24 12:06:41 2025]
+Finished job 34.
+32 of 43 steps (74%) done
+Select jobs to execute...
+
+[Tue Jun 24 12:06:41 2025]
+rule stringtie_final_quant:
+    input: results/align/chem2.bam, results/quant/stringtie_merged.gtf
+    output: results/quant_final/chem2/chem2.gtf
+    jobid: 40
+    reason: Input files updated by another job: results/quant/stringtie_merged.gtf, results/align/chem2.bam
+    wildcards: sample=chem2
+    threads: 4
+    resources: tmpdir=/tmp
+
+[Tue Jun 24 12:06:42 2025]
+Finished job 40.
+33 of 43 steps (77%) done
+Select jobs to execute...
+
+[Tue Jun 24 12:06:42 2025]
+rule stringtie_final_quant:
+    input: results/align/batch3.bam, results/quant/stringtie_merged.gtf
+    output: results/quant_final/batch3/batch3.gtf
+    jobid: 38
+    reason: Input files updated by another job: results/quant/stringtie_merged.gtf, results/align/batch3.bam
+    wildcards: sample=batch3
+    threads: 4
+    resources: tmpdir=/tmp
+
+[Tue Jun 24 12:06:43 2025]
+Finished job 38.
+34 of 43 steps (79%) done
+Select jobs to execute...
+
+[Tue Jun 24 12:06:43 2025]
+rule stringtie_final_quant:
+    input: results/align/chem1.bam, results/quant/stringtie_merged.gtf
+    output: results/quant_final/chem1/chem1.gtf
+    jobid: 39
+    reason: Input files updated by another job: results/quant/stringtie_merged.gtf, results/align/chem1.bam
+    wildcards: sample=chem1
+    threads: 4
+    resources: tmpdir=/tmp
+
+[Tue Jun 24 12:06:44 2025]
+Finished job 39.
+35 of 43 steps (81%) done
+Select jobs to execute...
+
+[Tue Jun 24 12:06:44 2025]
+rule stringtie_final_quant:
+    input: results/align/batch2.bam, results/quant/stringtie_merged.gtf
+    output: results/quant_final/batch2/batch2.gtf
+    jobid: 37
+    reason: Input files updated by another job: results/quant/stringtie_merged.gtf, results/align/batch2.bam
+    wildcards: sample=batch2
+    threads: 4
+    resources: tmpdir=/tmp
+
+[Tue Jun 24 12:06:45 2025]
+Finished job 37.
+36 of 43 steps (84%) done
+Select jobs to execute...
+
+[Tue Jun 24 12:06:46 2025]
+rule stringtie_final_quant:
+    input: results/align/chem3.bam, results/quant/stringtie_merged.gtf
+    output: results/quant_final/chem3/chem3.gtf
+    jobid: 41
+    reason: Input files updated by another job: results/quant/stringtie_merged.gtf, results/align/chem3.bam
+    wildcards: sample=chem3
+    threads: 4
+    resources: tmpdir=/tmp
+
+[Tue Jun 24 12:06:47 2025]
+Finished job 41.
+37 of 43 steps (86%) done
+Select jobs to execute...
+
+[Tue Jun 24 12:06:47 2025]
+rule stringtie_final_quant:
+    input: results/align/batch1.bam, results/quant/stringtie_merged.gtf
+    output: results/quant_final/batch1/batch1.gtf
+    jobid: 36
+    reason: Input files updated by another job: results/quant/stringtie_merged.gtf, results/align/batch1.bam
+    wildcards: sample=batch1
+    threads: 4
+    resources: tmpdir=/tmp
+
+[Tue Jun 24 12:06:48 2025]
+Finished job 36.
+38 of 43 steps (88%) done
+Select jobs to execute...
+
+[Tue Jun 24 12:06:48 2025]
+rule build_quant_sample_table:
+    input: results/quant_final/batch1/batch1.gtf, results/quant_final/batch2/batch2.gtf, results/quant_final/batch3/batch3.gtf, results/quant_final/chem1/chem1.gtf, results/quant_final/chem2/chem2.gtf, results/quant_final/chem3/chem3.gtf
+    output: results/quant/samples_quant_table.txt
+    jobid: 35
+    reason: Input files updated by another job: results/quant_final/chem2/chem2.gtf, results/quant_final/batch2/batch2.gtf, results/quant_final/batch3/batch3.gtf, results/quant_final/chem3/chem3.gtf, results/quant_final/batch1/batch1.gtf, results/quant_final/chem1/chem1.gtf
+    resources: tmpdir=/tmp
+
+[Tue Jun 24 12:06:51 2025]
+Finished job 35.
+39 of 43 steps (91%) done
+Select jobs to execute...
+
+[Tue Jun 24 12:06:51 2025]
+rule prepDE:
+    input: results/quant/samples_quant_table.txt
+    output: results/quant/gene_count_matrix.csv, results/quant/transcript_count_matrix.csv
+    jobid: 42
+    reason: Input files updated by another job: results/quant/samples_quant_table.txt
+    resources: tmpdir=/tmp
+
+[Tue Jun 24 12:06:53 2025]
+Finished job 42.
+40 of 43 steps (93%) done
+Select jobs to execute...
+
+[Tue Jun 24 12:06:53 2025]
+rule pca_html:
+    input: results/quant/gene_count_matrix.csv, data/metadata.tsv, scripts/pca_plot.Rmd
+    output: results/summary_qc/pca_plot_mqc.html
+    jobid: 43
+    reason: Missing output files: results/summary_qc/pca_plot_mqc.html; Input files updated by another job: results/quant/gene_count_matrix.csv
+    resources: tmpdir=/tmp
+
+[Tue Jun 24 12:07:18 2025]
+Finished job 43.
+41 of 43 steps (95%) done
+Select jobs to execute...
+
+[Tue Jun 24 12:07:18 2025]
+rule multiqc:
+    input: results/summary_qc/batch1_fastp.json, results/summary_qc/batch2_fastp.json, results/summary_qc/batch3_fastp.json, results/summary_qc/chem1_fastp.json, results/summary_qc/chem2_fastp.json, results/summary_qc/chem3_fastp.json, results/summary_qc/batch1_fastp.html, results/summary_qc/batch2_fastp.html, results/summary_qc/batch3_fastp.html, results/summary_qc/chem1_fastp.html, results/summary_qc/chem2_fastp.html, results/summary_qc/chem3_fastp.html, results/summary_qc/batch1.hisat2.log, results/summary_qc/batch2.hisat2.log, results/summary_qc/batch3.hisat2.log, results/summary_qc/chem1.hisat2.log, results/summary_qc/chem2.hisat2.log, results/summary_qc/chem3.hisat2.log, results/summary_qc/samtools/batch1.samtools.stats, results/summary_qc/samtools/batch2.samtools.stats, results/summary_qc/samtools/batch3.samtools.stats, results/summary_qc/samtools/chem1.samtools.stats, results/summary_qc/samtools/chem2.samtools.stats, results/summary_qc/samtools/chem3.samtools.stats, results/summary_qc/gffcompare/batch1.stats, results/summary_qc/gffcompare/batch2.stats, results/summary_qc/gffcompare/batch3.stats, results/summary_qc/gffcompare/chem1.stats, results/summary_qc/gffcompare/chem2.stats, results/summary_qc/gffcompare/chem3.stats, results/summary_qc/gffcompare/batch1.tracking, results/summary_qc/gffcompare/batch2.tracking, results/summary_qc/gffcompare/batch3.tracking, results/summary_qc/gffcompare/chem1.tracking, results/summary_qc/gffcompare/chem2.tracking, results/summary_qc/gffcompare/chem3.tracking, results/summary_qc/gffcompare/batch1.loci, results/summary_qc/gffcompare/batch2.loci, results/summary_qc/gffcompare/batch3.loci, results/summary_qc/gffcompare/chem1.loci, results/summary_qc/gffcompare/chem2.loci, results/summary_qc/gffcompare/chem3.loci, results/summary_qc/pca_plot_mqc.html
+    output: results/summary_qc/multiqc_report.html
+    jobid: 45
+    reason: Missing output files: results/summary_qc/multiqc_report.html; Input files updated by another job: results/summary_qc/batch1.hisat2.log, results/summary_qc/chem1.hisat2.log, results/summary_qc/samtools/chem1.samtools.stats, results/summary_qc/chem3_fastp.html, results/summary_qc/gffcompare/batch2.tracking, results/summary_qc/chem3_fastp.json, results/summary_qc/samtools/batch3.samtools.stats, results/summary_qc/gffcompare/chem1.tracking, results/summary_qc/batch1_fastp.json, results/summary_qc/samtools/batch2.samtools.stats, results/summary_qc/gffcompare/batch2.loci, results/summary_qc/gffcompare/chem2.stats, results/summary_qc/pca_plot_mqc.html, results/summary_qc/chem1_fastp.html, results/summary_qc/batch2_fastp.json, results/summary_qc/chem1_fastp.json, results/summary_qc/gffcompare/chem1.stats, results/summary_qc/gffcompare/batch3.tracking, results/summary_qc/batch3_fastp.json, results/summary_qc/batch3_fastp.html, results/summary_qc/gffcompare/chem2.tracking, results/summary_qc/chem3.hisat2.log, results/summary_qc/samtools/chem2.samtools.stats, results/summary_qc/gffcompare/batch2.stats, results/summary_qc/batch2_fastp.html, results/summary_qc/samtools/chem3.samtools.stats, results/summary_qc/gffcompare/batch1.stats, results/summary_qc/gffcompare/chem3.stats, results/summary_qc/chem2_fastp.html, results/summary_qc/gffcompare/batch1.tracking, results/summary_qc/gffcompare/chem2.loci, results/summary_qc/gffcompare/batch3.stats, results/summary_qc/batch2.hisat2.log, results/summary_qc/samtools/batch1.samtools.stats, results/summary_qc/chem2_fastp.json, results/summary_qc/gffcompare/batch3.loci, results/summary_qc/gffcompare/chem3.loci, results/summary_qc/gffcompare/chem3.tracking, results/summary_qc/gffcompare/batch1.loci, results/summary_qc/gffcompare/chem1.loci, results/summary_qc/chem2.hisat2.log, results/summary_qc/batch3.hisat2.log, results/summary_qc/batch1_fastp.html
+    threads: 4
+    resources: tmpdir=/tmp
+
+[Tue Jun 24 12:07:32 2025]
+Finished job 45.
+42 of 43 steps (98%) done
+Select jobs to execute...
+
+[Tue Jun 24 12:07:32 2025]
+localrule all:
+    input: results/quant/batch1/batch1.gtf, results/quant/batch2/batch2.gtf, results/quant/batch3/batch3.gtf, results/quant/chem1/chem1.gtf, results/quant/chem2/chem2.gtf, results/quant/chem3/chem3.gtf, results/summary_qc/gffcompare/batch1.annotated.gtf, results/summary_qc/gffcompare/batch2.annotated.gtf, results/summary_qc/gffcompare/batch3.annotated.gtf, results/summary_qc/gffcompare/chem1.annotated.gtf, results/summary_qc/gffcompare/chem2.annotated.gtf, results/summary_qc/gffcompare/chem3.annotated.gtf, results/summary_qc/gffcompare/batch1.stats, results/summary_qc/gffcompare/batch2.stats, results/summary_qc/gffcompare/batch3.stats, results/summary_qc/gffcompare/chem1.stats, results/summary_qc/gffcompare/chem2.stats, results/summary_qc/gffcompare/chem3.stats, results/summary_qc/gffcompare/batch1.loci, results/summary_qc/gffcompare/batch2.loci, results/summary_qc/gffcompare/batch3.loci, results/summary_qc/gffcompare/chem1.loci, results/summary_qc/gffcompare/chem2.loci, results/summary_qc/gffcompare/chem3.loci, results/summary_qc/gffcompare/batch1.tracking, results/summary_qc/gffcompare/batch2.tracking, results/summary_qc/gffcompare/batch3.tracking, results/summary_qc/gffcompare/chem1.tracking, results/summary_qc/gffcompare/chem2.tracking, results/summary_qc/gffcompare/chem3.tracking, results/summary_qc/batch1_fastp.html, results/summary_qc/batch2_fastp.html, results/summary_qc/batch3_fastp.html, results/summary_qc/chem1_fastp.html, results/summary_qc/chem2_fastp.html, results/summary_qc/chem3_fastp.html, results/summary_qc/batch1_fastp.json, results/summary_qc/batch2_fastp.json, results/summary_qc/batch3_fastp.json, results/summary_qc/chem1_fastp.json, results/summary_qc/chem2_fastp.json, results/summary_qc/chem3_fastp.json, results/summary_qc/batch1.hisat2.log, results/summary_qc/batch2.hisat2.log, results/summary_qc/batch3.hisat2.log, results/summary_qc/chem1.hisat2.log, results/summary_qc/chem2.hisat2.log, results/summary_qc/chem3.hisat2.log, results/summary_qc/samtools/batch1.samtools.stats, results/summary_qc/samtools/batch2.samtools.stats, results/summary_qc/samtools/batch3.samtools.stats, results/summary_qc/samtools/chem1.samtools.stats, results/summary_qc/samtools/chem2.samtools.stats, results/summary_qc/samtools/chem3.samtools.stats, results/quant/samples_table.txt, results/quant/stringtie_merged.gtf, results/quant/samples_quant_table.txt, results/quant/gene_count_matrix.csv, results/quant/transcript_count_matrix.csv, results/summary_qc/pca_plot_mqc.html, results/summary_qc/multiqc_report.html
+    jobid: 0
+    reason: Input files updated by another job: results/summary_qc/batch1.hisat2.log, results/summary_qc/chem1.hisat2.log, results/summary_qc/samtools/chem1.samtools.stats, results/summary_qc/chem3_fastp.html, results/summary_qc/gffcompare/chem1.annotated.gtf, results/summary_qc/gffcompare/batch2.tracking, results/summary_qc/chem3_fastp.json, results/summary_qc/gffcompare/batch3.annotated.gtf, results/summary_qc/samtools/batch3.samtools.stats, results/summary_qc/gffcompare/chem1.tracking, results/summary_qc/batch1_fastp.json, results/summary_qc/samtools/batch2.samtools.stats, results/summary_qc/gffcompare/chem2.stats, results/summary_qc/gffcompare/batch2.loci, results/summary_qc/pca_plot_mqc.html, results/summary_qc/chem1_fastp.html, results/summary_qc/batch2_fastp.json, results/quant/batch2/batch2.gtf, results/summary_qc/chem1_fastp.json, results/summary_qc/gffcompare/chem1.stats, results/quant/chem3/chem3.gtf, results/summary_qc/batch3.hisat2.log, results/quant/transcript_count_matrix.csv, results/summary_qc/gffcompare/batch3.tracking, results/summary_qc/gffcompare/chem2.tracking, results/summary_qc/batch3_fastp.html, results/summary_qc/batch3_fastp.json, results/quant/samples_quant_table.txt, results/quant/chem1/chem1.gtf, results/summary_qc/gffcompare/chem3.annotated.gtf, results/quant/stringtie_merged.gtf, results/summary_qc/chem3.hisat2.log, results/summary_qc/samtools/chem2.samtools.stats, results/quant/chem2/chem2.gtf, results/summary_qc/gffcompare/batch2.stats, results/summary_qc/batch2_fastp.html, results/quant/gene_count_matrix.csv, results/summary_qc/gffcompare/batch1.annotated.gtf, results/summary_qc/samtools/chem3.samtools.stats, results/summary_qc/gffcompare/batch1.stats, results/quant/samples_table.txt, results/summary_qc/gffcompare/chem3.stats, results/summary_qc/chem2_fastp.html, results/summary_qc/gffcompare/batch1.tracking, results/summary_qc/gffcompare/chem2.loci, results/summary_qc/multiqc_report.html, results/quant/batch3/batch3.gtf, results/summary_qc/gffcompare/batch3.stats, results/summary_qc/batch2.hisat2.log, results/summary_qc/samtools/batch1.samtools.stats, results/summary_qc/gffcompare/batch3.loci, results/summary_qc/gffcompare/chem3.loci, results/summary_qc/gffcompare/chem3.tracking, results/summary_qc/gffcompare/batch2.annotated.gtf, results/summary_qc/chem2_fastp.json, results/quant/batch1/batch1.gtf, results/summary_qc/gffcompare/batch1.loci, results/summary_qc/gffcompare/chem1.loci, results/summary_qc/chem2.hisat2.log, results/summary_qc/gffcompare/chem2.annotated.gtf, results/summary_qc/batch1_fastp.html
+    resources: tmpdir=/tmp
+
+[Tue Jun 24 12:07:32 2025]
+Finished job 0.
+43 of 43 steps (100%) done
+Complete log: .snakemake/log/2025-06-24T120416.305130.snakemake.log

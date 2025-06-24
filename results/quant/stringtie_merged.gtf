@@ -1,4 +1,4 @@
-# stringtie --merge -p 8 -G testdata/genome/genes.gtf -o results/quant/stringtie_merged.gtf results/quant/samples_table.txt
+# stringtie --merge -p 4 -G testdata/genome/genes.gtf -o results/quant/stringtie_merged.gtf results/quant/samples_table.txt
 # StringTie version 3.0.0
 NC_001133.9	StringTie	transcript	31522	33000	1000	.	.	gene_id "MSTRG.1"; transcript_id "MSTRG.1.1"; 
 NC_001133.9	StringTie	exon	31522	33000	1000	.	.	gene_id "MSTRG.1"; transcript_id "MSTRG.1.1"; exon_number "1"; 

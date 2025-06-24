@@ -1,4 +1,4 @@
-# stringtie -p 8 -G testdata/genome/genes.gtf -o results/quant/batch1/batch1.gtf -l batch1 results/align/batch1.bam
+# stringtie -p 4 -G testdata/genome/genes.gtf -o results/quant/batch1/batch1.gtf -l batch1 results/align/batch1.bam
 # StringTie version 3.0.0
 NC_001133.9	StringTie	transcript	35067	42510	1000	.	.	gene_id "batch1.1"; transcript_id "batch1.1.1"; cov "28.865664"; FPKM "3508.452148"; TPM "9776.734375";
 NC_001133.9	StringTie	exon	35067	42510	1000	.	.	gene_id "batch1.1"; transcript_id "batch1.1.1"; exon_number "1"; cov "28.865664";
@@ -16,21 +16,21 @@ NC_001133.9	StringTie	transcript	61328	67833	1000	.	.	gene_id "batch1.7"; transc
 NC_001133.9	StringTie	exon	61328	67833	1000	.	.	gene_id "batch1.7"; transcript_id "batch1.7.1"; exon_number "1"; cov "40.531048";
 NC_001133.9	StringTie	transcript	68735	69595	1000	.	.	gene_id "batch1.8"; transcript_id "batch1.8.1"; cov "43.528454"; FPKM "5290.628418"; TPM "14742.986328";
 NC_001133.9	StringTie	exon	68735	69595	1000	.	.	gene_id "batch1.8"; transcript_id "batch1.8.1"; exon_number "1"; cov "43.528454";
-NC_001133.9	StringTie	transcript	87275	92540	1000	+	.	gene_id "batch1.9"; transcript_id "batch1.9.1"; cov "23.442266"; FPKM "2849.270020"; TPM "7939.841797";
-NC_001133.9	StringTie	exon	87275	87387	1000	+	.	gene_id "batch1.9"; transcript_id "batch1.9.1"; exon_number "1"; cov "40.008850";
-NC_001133.9	StringTie	exon	87501	92540	1000	+	.	gene_id "batch1.9"; transcript_id "batch1.9.1"; exon_number "2"; cov "23.070833";
-NC_001133.9	StringTie	transcript	71722	73403	1000	.	.	gene_id "batch1.10"; transcript_id "batch1.10.1"; cov "1149.754517"; FPKM "139745.921875"; TPM "389419.218750";
-NC_001133.9	StringTie	exon	71722	73403	1000	.	.	gene_id "batch1.10"; transcript_id "batch1.10.1"; exon_number "1"; cov "1149.754517";
-NC_001133.9	StringTie	transcript	76402	87057	1000	.	.	gene_id "batch1.11"; transcript_id "batch1.11.1"; cov "35.630909"; FPKM "4330.728027"; TPM "12068.106445";
-NC_001133.9	StringTie	exon	76402	87057	1000	.	.	gene_id "batch1.11"; transcript_id "batch1.11.1"; exon_number "1"; cov "35.630909";
+NC_001133.9	StringTie	transcript	71722	73403	1000	.	.	gene_id "batch1.9"; transcript_id "batch1.9.1"; cov "1149.754517"; FPKM "139745.921875"; TPM "389419.218750";
+NC_001133.9	StringTie	exon	71722	73403	1000	.	.	gene_id "batch1.9"; transcript_id "batch1.9.1"; exon_number "1"; cov "1149.754517";
+NC_001133.9	StringTie	transcript	76402	87057	1000	.	.	gene_id "batch1.10"; transcript_id "batch1.10.1"; cov "35.630909"; FPKM "4330.728027"; TPM "12068.106445";
+NC_001133.9	StringTie	exon	76402	87057	1000	.	.	gene_id "batch1.10"; transcript_id "batch1.10.1"; exon_number "1"; cov "35.630909";
+NC_001133.9	StringTie	transcript	87275	92540	1000	+	.	gene_id "batch1.11"; transcript_id "batch1.11.1"; cov "23.442266"; FPKM "2849.270020"; TPM "7939.841797";
+NC_001133.9	StringTie	exon	87275	87387	1000	+	.	gene_id "batch1.11"; transcript_id "batch1.11.1"; exon_number "1"; cov "40.008850";
+NC_001133.9	StringTie	exon	87501	92540	1000	+	.	gene_id "batch1.11"; transcript_id "batch1.11.1"; exon_number "2"; cov "23.070833";
 NC_001133.9	StringTie	transcript	100074	101147	1000	.	.	gene_id "batch1.12"; transcript_id "batch1.12.1"; cov "83.439476"; FPKM "10141.579102"; TPM "28260.759766";
 NC_001133.9	StringTie	exon	100074	101147	1000	.	.	gene_id "batch1.12"; transcript_id "batch1.12.1"; exon_number "1"; cov "83.439476";
 NC_001133.9	StringTie	transcript	101457	105948	1000	.	.	gene_id "batch1.13"; transcript_id "batch1.13.1"; cov "5.680098"; FPKM "690.382629"; TPM "1923.836182";
 NC_001133.9	StringTie	exon	101457	105948	1000	.	.	gene_id "batch1.13"; transcript_id "batch1.13.1"; exon_number "1"; cov "5.680098";
-NC_001133.9	StringTie	transcript	119887	124481	1000	.	.	gene_id "batch1.14"; transcript_id "batch1.14.1"; cov "12.049401"; FPKM "1464.534058"; TPM "4081.104492";
-NC_001133.9	StringTie	exon	119887	124481	1000	.	.	gene_id "batch1.14"; transcript_id "batch1.14.1"; exon_number "1"; cov "12.049401";
-NC_001133.9	StringTie	transcript	106203	118375	1000	.	.	gene_id "batch1.15"; transcript_id "batch1.15.1"; cov "36.642651"; FPKM "4453.699707"; TPM "12410.782227";
-NC_001133.9	StringTie	exon	106203	118375	1000	.	.	gene_id "batch1.15"; transcript_id "batch1.15.1"; exon_number "1"; cov "36.642651";
+NC_001133.9	StringTie	transcript	106203	118375	1000	.	.	gene_id "batch1.14"; transcript_id "batch1.14.1"; cov "36.642651"; FPKM "4453.699707"; TPM "12410.782227";
+NC_001133.9	StringTie	exon	106203	118375	1000	.	.	gene_id "batch1.14"; transcript_id "batch1.14.1"; exon_number "1"; cov "36.642651";
+NC_001133.9	StringTie	transcript	119887	124481	1000	.	.	gene_id "batch1.15"; transcript_id "batch1.15.1"; cov "12.049401"; FPKM "1464.534058"; TPM "4081.104492";
+NC_001133.9	StringTie	exon	119887	124481	1000	.	.	gene_id "batch1.15"; transcript_id "batch1.15.1"; exon_number "1"; cov "12.049401";
 NC_001133.9	StringTie	transcript	124801	138427	1000	.	.	gene_id "batch1.16"; transcript_id "batch1.16.1"; cov "44.127762"; FPKM "5363.470703"; TPM "14945.970703";
 NC_001133.9	StringTie	exon	124801	138427	1000	.	.	gene_id "batch1.16"; transcript_id "batch1.16.1"; exon_number "1"; cov "44.127762";
 NC_001133.9	StringTie	transcript	139398	141519	1000	.	.	gene_id "batch1.17"; transcript_id "batch1.17.1"; cov "186.636444"; FPKM "22684.566406"; TPM "63213.335938";

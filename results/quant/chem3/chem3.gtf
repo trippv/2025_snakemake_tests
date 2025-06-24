@@ -1,4 +1,4 @@
-# stringtie -p 8 -G testdata/genome/genes.gtf -o results/quant/chem3/chem3.gtf -l chem3 results/align/chem3.bam
+# stringtie -p 4 -G testdata/genome/genes.gtf -o results/quant/chem3/chem3.gtf -l chem3 results/align/chem3.bam
 # StringTie version 3.0.0
 NC_001133.9	StringTie	transcript	31522	32958	1000	.	.	gene_id "chem3.1"; transcript_id "chem3.1.1"; cov "81.230339"; FPKM "7529.576172"; TPM "22012.109375";
 NC_001133.9	StringTie	exon	31522	32958	1000	.	.	gene_id "chem3.1"; transcript_id "chem3.1.1"; exon_number "1"; cov "81.230339";
@@ -18,11 +18,11 @@ NC_001133.9	StringTie	transcript	68713	69597	1000	.	.	gene_id "chem3.8"; transcr
 NC_001133.9	StringTie	exon	68713	69597	1000	.	.	gene_id "chem3.8"; transcript_id "chem3.8.1"; exon_number "1"; cov "62.204514";
 NC_001133.9	StringTie	transcript	71739	73407	1000	.	.	gene_id "chem3.9"; transcript_id "chem3.9.1"; cov "837.747131"; FPKM "77654.250000"; TPM "227015.953125";
 NC_001133.9	StringTie	exon	71739	73407	1000	.	.	gene_id "chem3.9"; transcript_id "chem3.9.1"; exon_number "1"; cov "837.747131";
-NC_001133.9	StringTie	transcript	92880	99776	1000	.	.	gene_id "chem3.10"; transcript_id "chem3.10.1"; cov "16.375671"; FPKM "1517.928711"; TPM "4437.542480";
-NC_001133.9	StringTie	exon	92880	99776	1000	.	.	gene_id "chem3.10"; transcript_id "chem3.10.1"; exon_number "1"; cov "16.375671";
-NC_001133.9	StringTie	transcript	87278	92507	1000	+	.	gene_id "chem3.11"; transcript_id "chem3.11.1"; cov "20.645300"; FPKM "1913.698242"; TPM "5594.542969";
-NC_001133.9	StringTie	exon	87278	87387	1000	+	.	gene_id "chem3.11"; transcript_id "chem3.11.1"; exon_number "1"; cov "103.363640";
-NC_001133.9	StringTie	exon	87501	92507	1000	+	.	gene_id "chem3.11"; transcript_id "chem3.11.1"; exon_number "2"; cov "18.828041";
+NC_001133.9	StringTie	transcript	87278	92507	1000	+	.	gene_id "chem3.10"; transcript_id "chem3.10.1"; cov "20.645300"; FPKM "1913.698242"; TPM "5594.542969";
+NC_001133.9	StringTie	exon	87278	87387	1000	+	.	gene_id "chem3.10"; transcript_id "chem3.10.1"; exon_number "1"; cov "103.363640";
+NC_001133.9	StringTie	exon	87501	92507	1000	+	.	gene_id "chem3.10"; transcript_id "chem3.10.1"; exon_number "2"; cov "18.828041";
+NC_001133.9	StringTie	transcript	92880	99776	1000	.	.	gene_id "chem3.11"; transcript_id "chem3.11.1"; cov "16.375671"; FPKM "1517.928711"; TPM "4437.542480";
+NC_001133.9	StringTie	exon	92880	99776	1000	.	.	gene_id "chem3.11"; transcript_id "chem3.11.1"; exon_number "1"; cov "16.375671";
 NC_001133.9	StringTie	transcript	100050	101185	1000	.	.	gene_id "chem3.12"; transcript_id "chem3.12.1"; cov "48.555458"; FPKM "4500.806152"; TPM "13157.746094";
 NC_001133.9	StringTie	exon	100050	101185	1000	.	.	gene_id "chem3.12"; transcript_id "chem3.12.1"; exon_number "1"; cov "48.555458";
 NC_001133.9	StringTie	transcript	101453	105992	1000	.	.	gene_id "chem3.13"; transcript_id "chem3.13.1"; cov "5.929295"; FPKM "549.610840"; TPM "1606.743286";

@@ -1,6 +1,6 @@
 rule generate_metadata:
     input:
-        sample_file = "config/samples.tsv"
+        sample_file = config["samples_file"]
     output:
         metadata = "data/metadata.tsv"
     run:

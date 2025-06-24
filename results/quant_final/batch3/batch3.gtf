@@ -1,4 +1,4 @@
-# stringtie -e -B -p 8 -G results/quant/stringtie_merged.gtf -o results/quant_final/batch3/batch3.gtf results/align/batch3.bam
+# stringtie -e -B -p 4 -G results/quant/stringtie_merged.gtf -o results/quant_final/batch3/batch3.gtf results/align/batch3.bam
 # StringTie version 3.0.0
 NC_001133.9	StringTie	transcript	31522	33000	1000	.	.	gene_id "MSTRG.1"; transcript_id "MSTRG.1.1"; cov "4.085193"; FPKM "474.315369"; TPM "1513.165527";
 NC_001133.9	StringTie	exon	31522	33000	1000	.	.	gene_id "MSTRG.1"; transcript_id "MSTRG.1.1"; exon_number "1"; cov "4.085193";
@@ -12,13 +12,13 @@ NC_001133.9	StringTie	transcript	61287	67846	1000	.	.	gene_id "MSTRG.5"; transcr
 NC_001133.9	StringTie	exon	61287	67846	1000	.	.	gene_id "MSTRG.5"; transcript_id "MSTRG.5.1"; exon_number "1"; cov "41.862194";
 NC_001133.9	StringTie	transcript	68689	69597	1000	.	.	gene_id "MSTRG.6"; transcript_id "MSTRG.6.1"; cov "34.397141"; FPKM "3993.713379"; TPM "12740.785156";
 NC_001133.9	StringTie	exon	68689	69597	1000	.	.	gene_id "MSTRG.6"; transcript_id "MSTRG.6.1"; exon_number "1"; cov "34.397141";
-NC_001133.9	StringTie	transcript	87275	92542	1000	+	.	gene_id "MSTRG.9"; transcript_id "MSTRG.9.1"; cov "24.870029"; FPKM "2887.559082"; TPM "9211.919922";
-NC_001133.9	StringTie	exon	87275	87387	1000	+	.	gene_id "MSTRG.9"; transcript_id "MSTRG.9.1"; exon_number "1"; cov "41.663715";
-NC_001133.9	StringTie	exon	87501	92542	1000	+	.	gene_id "MSTRG.9"; transcript_id "MSTRG.9.1"; exon_number "2"; cov "24.493654";
 NC_001133.9	StringTie	transcript	71697	73432	1000	.	.	gene_id "MSTRG.7"; transcript_id "MSTRG.7.1"; cov "1262.320801"; FPKM "146562.984375"; TPM "467566.687500";
 NC_001133.9	StringTie	exon	71697	73432	1000	.	.	gene_id "MSTRG.7"; transcript_id "MSTRG.7.1"; exon_number "1"; cov "1262.320801";
 NC_001133.9	StringTie	transcript	73730	87060	1000	.	.	gene_id "MSTRG.8"; transcript_id "MSTRG.8.1"; cov "39.724777"; FPKM "4612.284180"; TPM "14714.154297";
 NC_001133.9	StringTie	exon	73730	87060	1000	.	.	gene_id "MSTRG.8"; transcript_id "MSTRG.8.1"; exon_number "1"; cov "39.724777";
+NC_001133.9	StringTie	transcript	87275	92542	1000	+	.	gene_id "MSTRG.9"; transcript_id "MSTRG.9.1"; cov "24.870029"; FPKM "2887.559082"; TPM "9211.919922";
+NC_001133.9	StringTie	exon	87275	87387	1000	+	.	gene_id "MSTRG.9"; transcript_id "MSTRG.9.1"; exon_number "1"; cov "41.663715";
+NC_001133.9	StringTie	exon	87501	92542	1000	+	.	gene_id "MSTRG.9"; transcript_id "MSTRG.9.1"; exon_number "2"; cov "24.493654";
 NC_001133.9	StringTie	transcript	92806	99788	1000	.	.	gene_id "MSTRG.10"; transcript_id "MSTRG.10.1"; cov "12.609481"; FPKM "1464.036133"; TPM "4670.582520";
 NC_001133.9	StringTie	exon	92806	99788	1000	.	.	gene_id "MSTRG.10"; transcript_id "MSTRG.10.1"; exon_number "1"; cov "12.609481";
 NC_001133.9	StringTie	transcript	100027	101187	1000	.	.	gene_id "MSTRG.11"; transcript_id "MSTRG.11.1"; cov "84.821709"; FPKM "9848.306641"; TPM "31418.169922";

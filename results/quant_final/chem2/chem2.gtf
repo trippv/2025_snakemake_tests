@@ -1,4 +1,4 @@
-# stringtie -e -B -p 8 -G results/quant/stringtie_merged.gtf -o results/quant_final/chem2/chem2.gtf results/align/chem2.bam
+# stringtie -e -B -p 4 -G results/quant/stringtie_merged.gtf -o results/quant_final/chem2/chem2.gtf results/align/chem2.bam
 # StringTie version 3.0.0
 NC_001133.9	StringTie	transcript	31522	33000	1000	.	.	gene_id "MSTRG.1"; transcript_id "MSTRG.1.1"; cov "68.277893"; FPKM "7701.571289"; TPM "28049.681641";
 NC_001133.9	StringTie	exon	31522	33000	1000	.	.	gene_id "MSTRG.1"; transcript_id "MSTRG.1.1"; exon_number "1"; cov "68.277893";
@@ -59,10 +59,10 @@ NC_001139.9	StringTie	exon	403022	403331	1000	.	.	gene_id "MSTRG.25"; transcript
 NC_001142.9	StringTie	transcript	472797	478656	1000	-	.	gene_id "MSTRG.26"; transcript_id "MSTRG.26.1"; cov "6.005255"; FPKM "677.377380"; TPM "2467.057373";
 NC_001142.9	StringTie	exon	472797	472931	1000	-	.	gene_id "MSTRG.26"; transcript_id "MSTRG.26.1"; exon_number "1"; cov "5.277034";
 NC_001142.9	StringTie	exon	478516	478656	1000	-	.	gene_id "MSTRG.26"; transcript_id "MSTRG.26.1"; exon_number "2"; cov "6.702489";
-NC_001148.4	StringTie	transcript	809972	810304	1000	.	.	gene_id "MSTRG.28"; transcript_id "MSTRG.28.1"; cov "3.847291"; FPKM "433.964569"; TPM "1580.530396";
-NC_001148.4	StringTie	exon	809972	810304	1000	.	.	gene_id "MSTRG.28"; transcript_id "MSTRG.28.1"; exon_number "1"; cov "3.847291";
 NC_001144.5	StringTie	transcript	95819	97237	1000	.	.	gene_id "MSTRG.27"; transcript_id "MSTRG.27.1"; cov "165.287521"; FPKM "18644.009766"; TPM "67902.828125";
 NC_001144.5	StringTie	exon	95819	97237	1000	.	.	gene_id "MSTRG.27"; transcript_id "MSTRG.27.1"; exon_number "1"; cov "165.287521";
+NC_001148.4	StringTie	transcript	809972	810304	1000	.	.	gene_id "MSTRG.28"; transcript_id "MSTRG.28.1"; cov "3.847291"; FPKM "433.964569"; TPM "1580.530396";
+NC_001148.4	StringTie	exon	809972	810304	1000	.	.	gene_id "MSTRG.28"; transcript_id "MSTRG.28.1"; exon_number "1"; cov "3.847291";
 2-micron	protein_coding	transcript	252	1523	.	+	.	gene_id "R0010W"; transcript_id "R0010W"; gene_name "FLP1"; cov "0.0"; FPKM "0.0"; TPM "0.0";
 2-micron	protein_coding	exon	252	1523	.	+	.	gene_id "R0010W"; transcript_id "R0010W"; exon_number "1"; gene_name "FLP1"; cov "0.0";
 2-micron	protein_coding	transcript	1887	3008	.	-	.	gene_id "R0020C"; transcript_id "R0020C"; gene_name "REP1"; cov "0.0"; FPKM "0.0"; TPM "0.0";

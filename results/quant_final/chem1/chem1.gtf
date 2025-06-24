@@ -1,4 +1,4 @@
-# stringtie -e -B -p 8 -G results/quant/stringtie_merged.gtf -o results/quant_final/chem1/chem1.gtf results/align/chem1.bam
+# stringtie -e -B -p 4 -G results/quant/stringtie_merged.gtf -o results/quant_final/chem1/chem1.gtf results/align/chem1.bam
 # StringTie version 3.0.0
 NC_001133.9	StringTie	transcript	45749	48312	1000	.	.	gene_id "MSTRG.3"; transcript_id "MSTRG.3.1"; cov "33.200863"; FPKM "4645.989746"; TPM "18205.105469";
 NC_001133.9	StringTie	exon	45749	48312	1000	.	.	gene_id "MSTRG.3"; transcript_id "MSTRG.3.1"; exon_number "1"; cov "33.200863";
