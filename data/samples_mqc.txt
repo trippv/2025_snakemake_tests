@@ -1,0 +1,12 @@
+batch1_chrI_1	batch1
+batch1_chrI_2	batch1
+batch2_chrI_1	batch2
+batch2_chrI_2	batch2
+batch3_chrI_1	batch3
+batch3_chrI_2	batch3
+chem1_chrI_1	chem1
+chem1_chrI_2	chem1
+chem2_chrI_1	chem2
+chem2_chrI_2	chem2
+chem3_chrI_1	chem3
+chem3_chrI_2	chem3

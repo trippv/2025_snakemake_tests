@@ -1,0 +1,7 @@
+Sample	PE mapped uniquely	PE mapped discordantly uniquely	PE one mate mapped uniquely	PE multimapped	PE one mate multimapped	PE neither mate aligned
+batch1	41330.0	193.0	80.0	2119.0	13.0	51.0
+batch2	56679.0	188.0	84.5	2881.0	7.5	60.0
+batch3	43863.0	180.0	86.0	2308.0	14.5	67.5
+chem1	35569.0	249.0	100.5	2345.0	10.5	51.0
+chem2	43687.0	268.0	105.5	3026.0	21.0	54.5
+chem3	52953.0	332.0	119.5	3376.0	21.0	63.5

@@ -4,6 +4,7 @@
 rule multiqc:
     input:
         # Todos los archivos que MultiQC debe escanear
+        sample_names = "data/samples_mqc.txt",
         fastp_json      = expand("results/summary_qc/{sample}_fastp.json", sample=SAMPLES),
         fastp_html      = expand("results/summary_qc/{sample}_fastp.html", sample=SAMPLES),
         hisat2_logs     = expand("results/summary_qc/{sample}.hisat2.log",   sample=SAMPLES),

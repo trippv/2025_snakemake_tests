@@ -1,0 +1,7 @@
+Sample	Missing features
+batch1	364.0
+batch2	364.0
+batch3	364.0
+chem1	364.0
+chem2	364.0
+chem3	364.0
