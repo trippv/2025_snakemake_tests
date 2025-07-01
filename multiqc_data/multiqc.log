@@ -1,0 +1,126 @@
+[2025-06-30 23:28:55,764] root                                               [DEBUG  ]  Logging to file: /tmp/tmp791lfh6q/multiqc.log
+[2025-06-30 23:28:55,772] multiqc.core.update_config                         [DEBUG  ]  This is MultiQC v1.29
+[2025-06-30 23:28:55,773] multiqc.core.update_config                         [DEBUG  ]  Running Python 3.9.22 | packaged by conda-forge | (main, Apr 14 2025, 23:35:59)  [GCC 13.3.0]
+[2025-06-30 23:28:58,754] multiqc.config                                     [INFO   ]  Loading config settings from: config/multiqc_config.yaml
+[2025-06-30 23:28:58,754] multiqc.config                                     [DEBUG  ]  New config: {'custom_logo': '/home/tripp/GENOMICA/2025_snakemake_tests/config/logo.png', 'custom_logo_url': 'https://github.com/trippv/integrity_massively', 'intro_text': 'REPORTE DE MUESTRA', 'report_header_info': [{'Nombre': 'Thalassomics'}, {'Contacto': 'info@thalassomics.com'}, {'Sitio Web': 'https://github.com/trippv/integrity_massively'}, {'Tipo de proyecto': 'RNA-seq'}, {'Platafora': 'HiSeq 2500 High Output V4'}, {'Setup': '2x125'}], 'show_analysis_paths': False, 'show_analysis_time': False, 'disable_version_detection': False, 'skip_versions_section': False, 'top_modules': ['fastp', 'samtools', 'bowtie2', 'gffcompare', 'busco'], 'custom_data': {'pca_plot': {'fn': 'pca_plot*', 'section_name': 'Abundancia y Expresión diferencial', 'description': 'Este es un modulo de abundancia y expresión diferencial'}, 'samtools': {'fn': '*samtools.stat', 'section_name': 'samtools REsults', 'description': 'Este es un modulo de abundancia y expresión diferencial'}}}
+[2025-06-30 23:28:58,767] urllib3.connectionpool                             [DEBUG  ]  Starting new HTTPS connection (1): api.multiqc.info:443
+[2025-06-30 23:28:59,509] urllib3.connectionpool                             [DEBUG  ]  https://api.multiqc.info:443 "GET /version?version_multiqc=1.29&version_python=3.9.22&operating_system=Linux&is_docker=False&is_singularity=False&is_conda=True&is_ci=False&is_notebook=False&ai_summary=False&ai_summary_full=False&ai_provider=seqera HTTP/1.1" 200 178
+[2025-06-30 23:28:59,511] multiqc.core.version_check                         [DEBUG  ]  Latest MultiQC version is v1.29, released 2025-05-22
+[2025-06-30 23:28:59,512] multiqc.multiqc                                    [DEBUG  ]  Working dir : /home/tripp/GENOMICA/2025_snakemake_tests
+[2025-06-30 23:28:59,513] multiqc.multiqc                                    [DEBUG  ]  Template    : default
+[2025-06-30 23:28:59,513] multiqc.multiqc                                    [DEBUG  ]  Command used: /home/tripp/miniconda3/envs/rnaseq_pipeline/bin/multiqc results/summary_qc/ -o ./ --config config/multiqc_config.yaml --custom-css-file config/custom.css -f
+[2025-06-30 23:28:59,513] multiqc.core.file_search                           [INFO   ]  Search path: /home/tripp/GENOMICA/2025_snakemake_tests/results/summary_qc
+[2025-06-30 23:28:59,517] multiqc.core.file_search                           [DEBUG  ]  Analysing modules: fastp, samtools, bowtie2, gffcompare, busco, bases2fastq, cellranger_arc, cells2stats, custom_content, ccs, ngsderive, purple, conpair, isoseq, lima, peddy, percolator, haplocheck, somalier, methylqa, mosdepth, phantompeakqualtools, qualimap, bamdst, preseq, hifiasm, quast, qorts, rna_seqc, rockhopper, rsem, rseqc, checkm, bustools, goleft_indexcov, disambiguate, supernova, deeptools, sargasso, verifybamid, mirtrace, happy, mirtop, glimpse, gopeaks, homer, hops, macs2, theta2, snpeff, gatk, htseq, bcftools, featurecounts, fgbio, dragen, dragen_fastqc, dedup, pbmarkdup, damageprofiler, mapdamage, biobambam2, jcvi, mtnucratio, picard, vep, bakta, prokka, checkm2, qc3C, nanoq, nanostat, samblaster, bamtools, sambamba, ngsbits, pairtools, sexdeterrmine, seqera_cli, eigenstratdatabasetools, jellyfish, vcftools, longranger, stacks, varscan2, snippy, umicollapse, umitools, truvari, megahit, ganon, gtdbtk, bbmap, bismark, biscuit, diamond, hicexplorer, hicup, hicpro, salmon, kallisto, slamdunk, star, hisat2, tophat, bowtie1, hostile, cellranger, snpsplit, odgi, vg, pangolin, nextclade, freyja, humid, kat, leehom, librarian, nonpareil, adapterremoval, bbduk, clipandmerge, cutadapt, flexbar, sourmash, kaiju, kraken, malt, motus, trimmomatic, sickle, skewer, sortmerna, biobloomtools, fastq_screen, afterqc, fastqc, sequali, filtlong, prinseqplusplus, pychopper, porechop, pycoqc, minionqc, anglerfish, multivcfanalyzer, clusterflow, checkqc, bcl2fastq, bclconvert, interop, ivar, flash, seqyclean, optitype, whatshap, spaceranger, xenome, xengsort, metaphlan, seqwho, telseq, ataqv, mgikit, mosaicatcher, software_versions
+[2025-06-30 23:28:59,518] multiqc.core.file_search                           [DEBUG  ]  Search keys: adapterremoval, afterqc, anglerfish, ataqv, bakta, bamdst, bamtools, bases2fastq, bbduk, bbmap, bcftools, bcl2fastq, bclconvert, biobambam2, biobloomtools, biscuit, bismark, bowtie1, bowtie2, busco, bustools, ccs, cellranger, cellranger_arc, cells2stats, checkm, checkm2, checkqc, clipandmerge, clusterflow, conpair, custom_content, cutadapt, damageprofiler, dedup, deeptools, diamond, disambiguate, dragen, dragen_fastqc, eigenstratdatabasetools, fastp, fastq_screen, fastqc, featurecounts, fgbio, filtlong, flash, flexbar, freyja, ganon, gatk, gffcompare, glimpse, goleft_indexcov, gopeaks, gtdbtk, haplocheck, happy, hicexplorer, hicpro, hicup, hifiasm, hisat2, homer, hops, hostile, htseq, humid, interop, isoseq, ivar, jcvi, jellyfish, kaiju, kallisto, kat, kraken, leehom, librarian, lima, longranger, macs2, malt, mapdamage, megahit, metaphlan, methylqa, mgikit, minionqc, mirtop, mirtrace, mosaicatcher, mosdepth, motus, mtnucratio, multiqc_data, multivcfanalyzer, nanoq, nanostat, nextclade, ngsbits, ngsderive, nonpareil, odgi, optitype, pairtools, pangolin, pbmarkdup, pca_plot, peddy, percolator, phantompeakqualtools, picard, porechop, preseq, prinseqplusplus, prokka, purple, pychopper, pycoqc, qc3C, qorts, qualimap, quast, rna_seqc, rockhopper, rsem, rseqc, salmon, sambamba, samblaster, samtools, samtools, sargasso, seqera_cli, sequali, seqwho, seqyclean, sexdeterrmine, sickle, skewer, slamdunk, snippy, snpeff, snpsplit, software_versions, somalier, sortmerna, sourmash, spaceranger, stacks, star, supernova, telseq, theta2, tophat, trimmomatic, truvari, umicollapse, umitools, varscan2, vcftools, vep, verifybamid, vg, whatshap, xengsort, xenome
+[2025-06-30 23:29:03,978] multiqc.report                                     [DEBUG  ]  Summary of files that were skipped by the search: |skipped_module_specific_max_filesize: 44|, |skipped_no_match: 26|, |skipped_ignore_pattern: 6|, |skipped_directory_fn_ignore_dirs: 1|
+[2025-06-30 23:29:03,999] multiqc.core.exec_modules                          [DEBUG  ]  Running module: fastp
+[2025-06-30 23:29:04,283] multiqc.modules.fastp.fastp                        [INFO   ]  Found 6 reports
+[2025-06-30 23:29:04,284] multiqc.modules.fastp.fastp                        [DEBUG  ]  No duplication rate plot data: batch1_chrI
+[2025-06-30 23:29:04,290] multiqc.modules.fastp.fastp                        [DEBUG  ]  Read quality merged_and_filtered not found: batch1_chrI
+[2025-06-30 23:29:04,291] multiqc.modules.fastp.fastp                        [DEBUG  ]  Content curve data merged_and_filtered not found: batch1_chrI
+[2025-06-30 23:29:04,292] multiqc.modules.fastp.fastp                        [DEBUG  ]  Overrepresented sequences data merged_and_filtered not found: batch1_chrI
+[2025-06-30 23:29:04,295] multiqc.modules.fastp.fastp                        [DEBUG  ]  No duplication rate plot data: batch2_chrI
+[2025-06-30 23:29:04,304] multiqc.modules.fastp.fastp                        [DEBUG  ]  Read quality merged_and_filtered not found: batch2_chrI
+[2025-06-30 23:29:04,305] multiqc.modules.fastp.fastp                        [DEBUG  ]  Content curve data merged_and_filtered not found: batch2_chrI
+[2025-06-30 23:29:04,306] multiqc.modules.fastp.fastp                        [DEBUG  ]  Overrepresented sequences data merged_and_filtered not found: batch2_chrI
+[2025-06-30 23:29:04,307] multiqc.modules.fastp.fastp                        [DEBUG  ]  No duplication rate plot data: batch3_chrI
+[2025-06-30 23:29:04,317] multiqc.modules.fastp.fastp                        [DEBUG  ]  Read quality merged_and_filtered not found: batch3_chrI
+[2025-06-30 23:29:04,319] multiqc.modules.fastp.fastp                        [DEBUG  ]  Content curve data merged_and_filtered not found: batch3_chrI
+[2025-06-30 23:29:04,320] multiqc.modules.fastp.fastp                        [DEBUG  ]  Overrepresented sequences data merged_and_filtered not found: batch3_chrI
+[2025-06-30 23:29:04,322] multiqc.modules.fastp.fastp                        [DEBUG  ]  No duplication rate plot data: chem1_chrI
+[2025-06-30 23:29:04,329] multiqc.modules.fastp.fastp                        [DEBUG  ]  Read quality merged_and_filtered not found: chem1_chrI
+[2025-06-30 23:29:04,330] multiqc.modules.fastp.fastp                        [DEBUG  ]  Content curve data merged_and_filtered not found: chem1_chrI
+[2025-06-30 23:29:04,330] multiqc.modules.fastp.fastp                        [DEBUG  ]  Overrepresented sequences data merged_and_filtered not found: chem1_chrI
+[2025-06-30 23:29:04,331] multiqc.modules.fastp.fastp                        [DEBUG  ]  No duplication rate plot data: chem2_chrI
+[2025-06-30 23:29:04,337] multiqc.modules.fastp.fastp                        [DEBUG  ]  Read quality merged_and_filtered not found: chem2_chrI
+[2025-06-30 23:29:04,338] multiqc.modules.fastp.fastp                        [DEBUG  ]  Content curve data merged_and_filtered not found: chem2_chrI
+[2025-06-30 23:29:04,338] multiqc.modules.fastp.fastp                        [DEBUG  ]  Overrepresented sequences data merged_and_filtered not found: chem2_chrI
+[2025-06-30 23:29:04,340] multiqc.modules.fastp.fastp                        [DEBUG  ]  No duplication rate plot data: chem3_chrI
+[2025-06-30 23:29:04,347] multiqc.modules.fastp.fastp                        [DEBUG  ]  Read quality merged_and_filtered not found: chem3_chrI
+[2025-06-30 23:29:04,349] multiqc.modules.fastp.fastp                        [DEBUG  ]  Content curve data merged_and_filtered not found: chem3_chrI
+[2025-06-30 23:29:04,350] multiqc.modules.fastp.fastp                        [DEBUG  ]  Overrepresented sequences data merged_and_filtered not found: chem3_chrI
+[2025-06-30 23:29:04,529] multiqc.report                                     [DEBUG  ]  Wrote data file multiqc_fastp.txt
+[2025-06-30 23:29:05,910] multiqc.report                                     [DEBUG  ]  Wrote data file multiqc_fastp.json
+[2025-06-30 23:29:08,731] multiqc.plots.table_object                         [DEBUG  ]  Table key 'samples' not found in data for 'fastp_top_overrepresented_sequences_table'. Skipping. Check for possible typos between data keys and header keys
+[2025-06-30 23:29:08,732] multiqc.plots.table_object                         [DEBUG  ]  Table key 'total_count' not found in data for 'fastp_top_overrepresented_sequences_table'. Skipping. Check for possible typos between data keys and header keys
+[2025-06-30 23:29:08,733] multiqc.plots.table_object                         [DEBUG  ]  Table key 'total_percent' not found in data for 'fastp_top_overrepresented_sequences_table'. Skipping. Check for possible typos between data keys and header keys
+[2025-06-30 23:29:08,755] multiqc.base_module                                [DEBUG  ]  fastp: deleting attribute self.fastp_data
+[2025-06-30 23:29:08,757] multiqc.base_module                                [DEBUG  ]  fastp: deleting attribute self.fastp_duplication_plotdata
+[2025-06-30 23:29:08,757] multiqc.base_module                                [DEBUG  ]  fastp: deleting attribute self.fastp_insert_size_data
+[2025-06-30 23:29:08,758] multiqc.base_module                                [DEBUG  ]  fastp: deleting attribute self.fastp_all_data
+[2025-06-30 23:29:08,772] multiqc.base_module                                [DEBUG  ]  fastp: deleting attribute self.fastp_qual_plotdata
+[2025-06-30 23:29:08,774] multiqc.base_module                                [DEBUG  ]  fastp: deleting attribute self.fastp_gc_content_data
+[2025-06-30 23:29:08,775] multiqc.base_module                                [DEBUG  ]  fastp: deleting attribute self.fastp_n_content_data
+[2025-06-30 23:29:08,775] multiqc.base_module                                [DEBUG  ]  fastp: deleting attribute self.fastp_overrepresented_sequences
+[2025-06-30 23:29:08,776] multiqc.core.exec_modules                          [DEBUG  ]  Running module: samtools
+[2025-06-30 23:29:09,521] multiqc.report                                     [DEBUG  ]  Wrote data file multiqc_samtools_stats.txt
+[2025-06-30 23:29:09,534] multiqc.report                                     [DEBUG  ]  Wrote data file multiqc_samtools_stats.json
+[2025-06-30 23:29:09,535] multiqc.modules.samtools.samtools                  [INFO   ]  Found 6 stats reports
+[2025-06-30 23:29:09,541] multiqc.base_module                                [DEBUG  ]  samtools: deleting attribute self.samtools_idxstats
+[2025-06-30 23:29:09,542] multiqc.core.exec_modules                          [DEBUG  ]  Running module: bowtie2
+[2025-06-30 23:29:09,608] multiqc.modules.bowtie2.bowtie2                    [INFO   ]  Found 6 reports
+[2025-06-30 23:29:09,613] multiqc.report                                     [DEBUG  ]  Wrote data file multiqc_bowtie2.txt
+[2025-06-30 23:29:09,619] multiqc.report                                     [DEBUG  ]  Wrote data file multiqc_bowtie2.json
+[2025-06-30 23:29:09,871] multiqc.base_module                                [DEBUG  ]  bowtie2: deleting attribute self.bowtie2_data
+[2025-06-30 23:29:09,872] multiqc.base_module                                [DEBUG  ]  bowtie2: deleting attribute self.num_se
+[2025-06-30 23:29:09,873] multiqc.base_module                                [DEBUG  ]  bowtie2: deleting attribute self.num_pe
+[2025-06-30 23:29:09,874] multiqc.core.exec_modules                          [DEBUG  ]  Running module: gffcompare
+[2025-06-30 23:29:09,907] multiqc.modules.gffcompare.gffcompare              [INFO   ]  Found 6 reports
+[2025-06-30 23:29:09,911] multiqc.report                                     [DEBUG  ]  Wrote data file multiqc_gffcompare.txt
+[2025-06-30 23:29:09,922] multiqc.report                                     [DEBUG  ]  Wrote data file multiqc_gffcompare.json
+[2025-06-30 23:29:10,460] multiqc.base_module                                [DEBUG  ]  gffcompare: deleting attribute self.gffcompare_data
+[2025-06-30 23:29:10,461] multiqc.core.exec_modules                          [DEBUG  ]  Running module: custom_content
+[2025-06-30 23:29:10,733] multiqc.report                                     [DEBUG  ]  Wrote data file multiqc_custom_data_yaml_box_plot.txt
+[2025-06-30 23:29:10,736] multiqc.report                                     [DEBUG  ]  Wrote data file multiqc_custom_data_yaml_box_plot.json
+[2025-06-30 23:29:10,738] multiqc.core.special_case_modules.custom_content   [INFO   ]  custom_box: Found 2 samples (PlotType.BOX)
+[2025-06-30 23:29:11,032] multiqc.report                                     [DEBUG  ]  Wrote data file multiqc_annotation_alignment_stats.txt
+[2025-06-30 23:29:11,035] multiqc.report                                     [DEBUG  ]  Wrote data file multiqc_annotation_alignment_stats.json
+[2025-06-30 23:29:11,036] multiqc.core.special_case_modules.custom_content   [INFO   ]  annotation_alignment_stats: Found 2 samples (PlotType.HEATMAP)
+[2025-06-30 23:29:11,178] multiqc.report                                     [DEBUG  ]  Wrote data file multiqc_mqc_pca_scatter_plot.txt
+[2025-06-30 23:29:11,181] multiqc.report                                     [DEBUG  ]  Wrote data file multiqc_mqc_pca_scatter_plot.json
+[2025-06-30 23:29:11,184] multiqc.report                                     [DEBUG  ]  Wrote data file multiqc_mqc_pca_scatter_plot_1.txt
+[2025-06-30 23:29:11,186] multiqc.report                                     [DEBUG  ]  Wrote data file multiqc_mqc_pca_scatter_plot_1.json
+[2025-06-30 23:29:11,188] multiqc.report                                     [DEBUG  ]  Wrote data file multiqc_mqc_pca_scatter_plot_2.txt
+[2025-06-30 23:29:11,191] multiqc.report                                     [DEBUG  ]  Wrote data file multiqc_mqc_pca_scatter_plot_2.json
+[2025-06-30 23:29:11,192] multiqc.core.special_case_modules.custom_content   [INFO   ]  mqc_pca2: Found 3 samples (PlotType.SCATTER)
+[2025-06-30 23:29:11,193] multiqc.core.special_case_modules.custom_content   [INFO   ]  pca_plot: Found 1 sample (html)
+[2025-06-30 23:29:11,197] multiqc.core.software_versions                     [DEBUG  ]  Reading software versions from config.software_versions
+[2025-06-30 23:29:11,209] multiqc.report                                     [DEBUG  ]  Wrote data file multiqc_software_versions.txt
+[2025-06-30 23:29:11,212] multiqc.core.write_results                         [DEBUG  ]  Rendering plots
+[2025-06-30 23:29:12,065] multiqc.report                                     [DEBUG  ]  Wrote data file multiqc_general_stats.txt
+[2025-06-30 23:29:12,072] multiqc.report                                     [DEBUG  ]  Wrote data file multiqc_general_stats.json
+[2025-06-30 23:29:12,397] multiqc.core.write_results                         [DEBUG  ]  Exporting plot data to files
+[2025-06-30 23:29:12,399] multiqc.report                                     [DEBUG  ]  Wrote data file fastp_filtered_reads_plot.txt
+[2025-06-30 23:29:12,423] multiqc.report                                     [DEBUG  ]  Wrote data file fastp-insert-size-plot.txt
+[2025-06-30 23:29:12,437] multiqc.report                                     [DEBUG  ]  Wrote data file fastp-seq-quality-plot_Read_1_Before_filtering.txt
+[2025-06-30 23:29:12,458] multiqc.report                                     [DEBUG  ]  Wrote data file fastp-seq-quality-plot_Read_1_After_filtering.txt
+[2025-06-30 23:29:12,470] multiqc.report                                     [DEBUG  ]  Wrote data file fastp-seq-quality-plot_Read_2_Before_filtering.txt
+[2025-06-30 23:29:12,494] multiqc.report                                     [DEBUG  ]  Wrote data file fastp-seq-quality-plot_Read_2_After_filtering.txt
+[2025-06-30 23:29:12,510] multiqc.report                                     [DEBUG  ]  Wrote data file fastp-seq-content-gc-plot_Read_1_Before_filtering.txt
+[2025-06-30 23:29:12,535] multiqc.report                                     [DEBUG  ]  Wrote data file fastp-seq-content-gc-plot_Read_1_After_filtering.txt
+[2025-06-30 23:29:12,556] multiqc.report                                     [DEBUG  ]  Wrote data file fastp-seq-content-gc-plot_Read_2_Before_filtering.txt
+[2025-06-30 23:29:12,582] multiqc.report                                     [DEBUG  ]  Wrote data file fastp-seq-content-gc-plot_Read_2_After_filtering.txt
+[2025-06-30 23:29:12,614] multiqc.report                                     [DEBUG  ]  Wrote data file fastp-seq-content-n-plot_Read_1_Before_filtering.txt
+[2025-06-30 23:29:12,633] multiqc.report                                     [DEBUG  ]  Wrote data file fastp-seq-content-n-plot_Read_1_After_filtering.txt
+[2025-06-30 23:29:12,651] multiqc.report                                     [DEBUG  ]  Wrote data file fastp-seq-content-n-plot_Read_2_Before_filtering.txt
+[2025-06-30 23:29:12,665] multiqc.report                                     [DEBUG  ]  Wrote data file fastp-seq-content-n-plot_Read_2_After_filtering.txt
+[2025-06-30 23:29:12,668] multiqc.report                                     [DEBUG  ]  Wrote data file samtools_alignment_plot.txt
+[2025-06-30 23:29:12,672] multiqc.report                                     [DEBUG  ]  Wrote data file samtools-stats-dp.txt
+[2025-06-30 23:29:12,676] multiqc.report                                     [DEBUG  ]  Wrote data file bowtie2_pe_plot.txt
+[2025-06-30 23:29:12,680] multiqc.report                                     [DEBUG  ]  Wrote data file gffcompare_accuracy_plot_Base.txt
+[2025-06-30 23:29:12,682] multiqc.report                                     [DEBUG  ]  Wrote data file gffcompare_accuracy_plot_Exon.txt
+[2025-06-30 23:29:12,684] multiqc.report                                     [DEBUG  ]  Wrote data file gffcompare_accuracy_plot_Intron.txt
+[2025-06-30 23:29:12,686] multiqc.report                                     [DEBUG  ]  Wrote data file gffcompare_accuracy_plot_Intron_chain.txt
+[2025-06-30 23:29:12,689] multiqc.report                                     [DEBUG  ]  Wrote data file gffcompare_accuracy_plot_Transcript.txt
+[2025-06-30 23:29:12,691] multiqc.report                                     [DEBUG  ]  Wrote data file gffcompare_accuracy_plot_Locus.txt
+[2025-06-30 23:29:12,695] multiqc.report                                     [DEBUG  ]  Wrote data file gffcompare_novel_plot_Exons.txt
+[2025-06-30 23:29:12,697] multiqc.report                                     [DEBUG  ]  Wrote data file gffcompare_novel_plot_Introns.txt
+[2025-06-30 23:29:12,699] multiqc.report                                     [DEBUG  ]  Wrote data file gffcompare_novel_plot_Loci.txt
+[2025-06-30 23:29:12,702] multiqc.report                                     [DEBUG  ]  Wrote data file gffcompare_missing_plot_Exons.txt
+[2025-06-30 23:29:12,703] multiqc.report                                     [DEBUG  ]  Wrote data file gffcompare_missing_plot_Introns.txt
+[2025-06-30 23:29:12,706] multiqc.report                                     [DEBUG  ]  Wrote data file gffcompare_missing_plot_Loci.txt
+[2025-06-30 23:29:12,708] multiqc.core.write_results                         [DEBUG  ]  Moving data file from '/tmp/tmp791lfh6q/multiqc_data' to '/home/tripp/GENOMICA/2025_snakemake_tests/multiqc_data'
+[2025-06-30 23:29:16,419] multiqc.core.write_results                         [INFO   ]  Data        : multiqc_data   (overwritten)
+[2025-06-30 23:29:16,631] multiqc.core.write_results                         [DEBUG  ]  Compressing plot data
+[2025-06-30 23:29:19,812] multiqc.core.write_results                         [INFO   ]  Report      : multiqc_report.html   (overwritten)
+[2025-06-30 23:29:19,813] multiqc.core.write_results                         [DEBUG  ]  Report HTML written to /home/tripp/GENOMICA/2025_snakemake_tests/multiqc_report.html

@@ -1,0 +1,2 @@
+Sample	x	y	name
+sample1	14848	246728	sample1

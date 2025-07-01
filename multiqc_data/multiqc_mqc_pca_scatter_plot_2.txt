@@ -1,0 +1,2 @@
+Sample	x	y	name
+sample1	0	30389	sample1

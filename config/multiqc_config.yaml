@@ -30,6 +30,16 @@ top_modules:
   - "bowtie2"
   - "gffcompare"
   - "busco"
- 
+
+
+custom_data:
+  pca_plot:
+    fn: "pca_plot*"
+    section_name: "Abundancia y Expresión diferencial"
+    description: "Este es un modulo de abundancia y expresión diferencial"
+  samtools:
+    fn: "*samtools.stat"
+    section_name: "samtools REsults"
+    description: "Este es un modulo de abundancia y expresión diferencial"
 
 
