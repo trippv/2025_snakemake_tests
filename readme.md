@@ -89,7 +89,9 @@ Crea el archivo samples.tsv dentro de `config/`. Ejemplo de contenido
 
 
 >include: define si la muestra se procesa (1) o se omite (0)
+
 > extension: define la extension del archivo (.fastq, .fq, .fastq.gz, .fq.gz)
+
 > Cada columna tiene que estar separada por tabulador (\t)
 
 ## Archivo de configuración
