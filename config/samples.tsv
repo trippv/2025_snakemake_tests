@@ -1,4 +1,4 @@
-sample_id	group	fastq1	fastq2	file_extension  include
+sample_id	group	fastq1	fastq2	extension	include
 batch1	batch	testdata/raw/batch1_chrI_1.fastq	testdata/raw/batch1_chrI_2.fastq	fastq	1
 batch2	batch	testdata/raw/batch2_chrI_1.fastq	testdata/raw/batch2_chrI_2.fastq	fastq	1
 batch3	batch	testdata/raw/batch3_chrI_1.fastq	testdata/raw/batch3_chrI_2.fastq	fastq	1

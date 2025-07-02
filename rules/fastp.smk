@@ -1,12 +1,31 @@
-rule fastp:
+# regla para crear softlinks temporales con los nombres modificados de las lecturas crudas
+rule create_soft_links:
     input:
         r1 = get_fastq1,
         r2 = get_fastq2
     output:
-        r1_clean="results/fastp/{sample}_R1.clean.fastq.gz",
-        r2_clean="results/fastp/{sample}_R2.clean.fastq.gz",
-        json="results/summary_qc/{sample}_fastp.json",
-        html="results/summary_qc/{sample}_fastp.html"
+        r1_link = temp("results/fastp/raw/{sample}_R1.raw.{ext}"),
+        r2_link = temp("results/fastp/raw/{sample}_R2.raw.{ext}")
+    params:
+        ext = get_extension,
+        r1_abs = lambda wildcards: os.path.abspath(get_fastq1(wildcards)),
+        r2_abs = lambda wildcards: os.path.abspath(get_fastq2(wildcards))
+    shell:
+        """
+        ln -sf {params.r1_abs} {output.r1_link}
+        ln -sf {params.r2_abs} {output.r2_link}
+        """
+
+
+rule fastp:
+    input:
+        r1 = lambda wildcards: f"results/fastp/raw/{wildcards.sample}_R1.raw.{SAMPLE_DICT[wildcards.sample]['extension']}",
+        r2 = lambda wildcards: f"results/fastp/raw/{wildcards.sample}_R2.raw.{SAMPLE_DICT[wildcards.sample]['extension']}"
+    output:
+        r1_clean = "results/fastp/{sample}_R1.clean.fastq.gz",
+        r2_clean = "results/fastp/{sample}_R2.clean.fastq.gz",
+        json = "results/summary_qc/{sample}_fastp.json",
+        html = "results/summary_qc/{sample}_fastp.html"
     conda:
         "../envs/fastp.yaml"
     threads: 4
