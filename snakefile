@@ -14,7 +14,8 @@ SAMPLE_DICT = {
     row["sample_id"]: {
         "group": row["group"],
         "fastq1": row["fastq1"],
-        "fastq2": row["fastq2"]
+        "fastq2": row["fastq2"],
+        "extension": row["extension"]
     }
     for _, row in INCLUDED_SAMPLES.iterrows()
 }
@@ -28,6 +29,9 @@ def get_fastq1(wildcards):
 
 def get_fastq2(wildcards):
     return SAMPLE_DICT[wildcards.sample]["fastq2"]
+# obtiene la extension del archivo
+def get_extension(wildcards):
+    return SAMPLE_DICT[wildcards.sample]["extension"]
 
 # Regla principal para ejecutar todo el flujo
 rule all:
@@ -37,6 +41,9 @@ rule all:
         expand("results/summary_qc/gffcompare/{sample}.stats", sample=SAMPLES),
         expand("results/summary_qc/gffcompare/{sample}.loci", sample=SAMPLES),
         expand("results/summary_qc/gffcompare/{sample}.tracking", sample=SAMPLES),
+        # incluir archivos temporales de fastp
+        expand("results/fastp/{sample}_R1.clean.fastq.gz", sample=SAMPLES),
+        expand("results/fastp/{sample}_R2.clean.fastq.gz", sample=SAMPLES),
         expand("results/summary_qc/{sample}_fastp.html", sample=SAMPLES),
         expand("results/summary_qc/{sample}_fastp.json", sample=SAMPLES),
         expand("results/summary_qc/{sample}.hisat2.log", sample=SAMPLES),
