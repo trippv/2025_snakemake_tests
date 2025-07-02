@@ -82,14 +82,14 @@ Crea el archivo samples.tsv dentro de `config/`. Ejemplo de contenido
 
 ### Ejemplo de `samples.tsv`
 
-| sample_id | group | fastq1                               | fastq2                               | include |
-|-----------|--------|--------------------------------------|--------------------------------------|---------|
-| batch1    | batch | testdata/raw/batch1_chrI_1.fastq     | testdata/raw/batch1_chrI_2.fastq     | 1       |
-| chem1     | chem  | testdata/raw/chem1_chrI_1.fastq      | testdata/raw/chem1_chrI_2.fastq      | 1       |
+| sample_id | group | fastq1                               | fastq2                           |extension    | include |
+|-----------|--------|--------------------------------------|---------------------------------|-----|---------|
+| batch1    | batch | testdata/raw/batch1_chrI_1.fastq     | testdata/raw/batch1_chrI_2.fastq |fastq    | 1       |
+| chem1     | chem  | testdata/raw/chem1_chrI_1.fastq      | testdata/raw/chem1_chrI_2.fastq   |fastq   | 1       |
 
 
 >include: define si la muestra se procesa (1) o se omite (0)
-
+> extension: define la extension del archivo (.fastq, .fq, .fastq.gz, .fq.gz)
 > Cada columna tiene que estar separada por tabulador (\t)
 
 ## Archivo de configuración
