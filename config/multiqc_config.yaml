@@ -105,19 +105,19 @@ sp:
         fn: 'example_coverage_*'
 
 custom_data:
-    concordance:
-        id: 'concordance'
-        section_name: 'Concordance Rates'
+    distance:
+        id: 'distance'
+        section_name: 'Matriz de distancia'
         plot_type: 'heatmap'
         pconfig:
-            id: 'concordance_heatmap'
+            id: 'distancia_heatmap'
         cluster_cols: true
         sort_rows: true
         legend: 'abundancia'
         colorscale: 'viridis'
 
 sp:
-    concordance:
-        fn: '*concordance.txt'
+    distance:
+        fn: '*distance_matrix.txt'
 
 
