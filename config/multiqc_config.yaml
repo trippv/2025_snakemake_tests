@@ -32,23 +32,7 @@ top_modules:
   - "busco"
 
 custom_data:
-  example_coverage:
-    file_format: 'txt'
-    section_name: 'Coverage Decay'
-    description: 'This plot comes from files accompanied by a multiqc_config.yaml file for configuration'
-    plot_type: 'scatter'
-    pconfig:
-      id: 'mqc_pca_scatter_plot'
-      title: 'PCA'
-      xlab: 'Componente 1'
-      ylab: 'Componente 2'
-      series_label: 'Label'
-      color:
-        'red'
-
-      
-
-  distance:
+    distance:
     id: 'distance'
     section_name: 'Matriz de distancia'
     plot_type: 'heatmap'
@@ -61,7 +45,5 @@ custom_data:
     colorscale: 'viridis'
 
 sp:
-  example_coverage:
-    fn: 'pca_df*'
   distance:
     fn: '*distance_matrix.txt'

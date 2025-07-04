@@ -92,3 +92,18 @@ res_df_volcano$color <- ifelse(res_df$significant != "Significativo", '#b3aaaa',
 
 # guardar tabla para volcano plot
 write.table(res_df_volcano, "results/summary_qc/volcano.txt" , row.names = FALSE, quote = FALSE, sep = "\t")
+
+
+## Heatmap con los valores de abundancia de los genes expresados diferencialmente 
+counts_de <- counts[rownames(res_df), ] # Algunos de estos no son significativos. Corregir en posterior
+
+counts_de_mx <- as.matrix(counts_de)
+
+# Escalar manualmente por fila
+counts_de_mx <- t(scale(t(counts_de_mx), center = TRUE, scale = TRUE))
+
+counts_de_df <- as.data.frame(counts_de_mx)
+counts_de_df <- rownames_to_column(counts_de_df, "gene")
+
+# Exportar matriz de abundancia para heatmap
+write.table(counts_de_df, "results/summary_qc/abundance_de_matrix.txt" , row.names = FALSE, quote = FALSE, sep = "\t")
