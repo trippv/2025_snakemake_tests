@@ -1,0 +1,35 @@
+id: mqc_pca
+section_name: Análisis PCA
+description: Este gráfico muestra los resultados del PCA con colores por grupo
+plot_type: scatter
+pconfig:
+  id: mqc_pca_scatter_plot
+  title: PCA
+  ylab: Componente 2
+  xlab: Componente 1
+data:
+  batch1:
+    x: -4.803
+    'y': 1.8038
+    color: '#a85632'
+  batch2:
+    x: -5.0392
+    'y': -0.5031
+    color: '#a85632'
+  batch3:
+    x: -5.1766
+    'y': -1.2864
+    color: '#a85632'
+  chem1:
+    x: 4.8314
+    'y': -0.0447
+    color: '#313a66'
+  chem2:
+    x: 5.3283
+    'y': -0.9844
+    color: '#313a66'
+  chem3:
+    x: 4.859
+    'y': 1.0148
+    color: '#313a66'
+

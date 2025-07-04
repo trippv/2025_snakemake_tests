@@ -780,7 +780,7 @@
             }
         }
     },
-    "report_creation_date": "2025-07-03, 14:28 CST",
+    "report_creation_date": "2025-07-03, 23:33 CST",
     "report_plot_data": {
         "fastp_filtered_reads_plot": {
             "id": "fastp_filtered_reads_plot",
@@ -41061,6 +41061,273 @@
             "section_anchor": null,
             "module_anchor": null
         },
+        "mqc_pca_scatter_plot": {
+            "id": "mqc_pca_scatter_plot",
+            "anchor": "mqc_pca_scatter_plot",
+            "plot_type": "scatter plot",
+            "layout": {
+                "autosize": true,
+                "colorway": [
+                    "#7cb5ec",
+                    "#434348",
+                    "#90ed7d",
+                    "#f7a35c",
+                    "#8085e9",
+                    "#f15c80",
+                    "#e4d354",
+                    "#2b908f",
+                    "#f45b5b",
+                    "#91e8e1"
+                ],
+                "font": {
+                    "family": "'Lucida Grande', 'Open Sans', verdana, arial, sans-serif"
+                },
+                "height": 500,
+                "hoverlabel": {
+                    "namelength": -1
+                },
+                "margin": {
+                    "b": 65,
+                    "l": 60,
+                    "pad": 5,
+                    "r": 15,
+                    "t": 50
+                },
+                "modebar": {
+                    "activecolor": "rgba(0, 0, 0, 1)",
+                    "bgcolor": "rgba(0, 0, 0, 0)",
+                    "color": "rgba(0, 0, 0, 0.5)"
+                },
+                "paper_bgcolor": "white",
+                "plot_bgcolor": "white",
+                "showlegend": false,
+                "title": {
+                    "font": {
+                        "size": 20
+                    },
+                    "text": "PCA",
+                    "x": 0.5,
+                    "xanchor": "center"
+                },
+                "xaxis": {
+                    "automargin": true,
+                    "color": "rgba(0,0,0,0.3)",
+                    "gridcolor": "rgba(0,0,0,0.05)",
+                    "tickfont": {
+                        "color": "rgba(0,0,0,1)",
+                        "size": 10
+                    },
+                    "zerolinecolor": "rgba(0,0,0,0.05)"
+                },
+                "yaxis": {
+                    "automargin": true,
+                    "color": "rgba(0,0,0,0.3)",
+                    "gridcolor": "rgba(0,0,0,0.05)",
+                    "tickfont": {
+                        "color": "rgba(0,0,0,1)",
+                        "size": 10
+                    },
+                    "zerolinecolor": "rgba(0,0,0,0.05)"
+                },
+                "hoverdistance": -1
+            },
+            "datasets": [
+                {
+                    "plot_id": "mqc_pca_scatter_plot",
+                    "label": "1",
+                    "uid": "mqc_pca_scatter_plot",
+                    "dconfig": {
+                        "title": "PCA",
+                        "subtitle": "6 Label"
+                    },
+                    "layout": {
+                        "title": {
+                            "text": "PCA<br><sup>6 Label</sup>"
+                        },
+                        "xaxis": {
+                            "hoverformat": null,
+                            "ticksuffix": "",
+                            "title": {
+                                "text": "Componente 1"
+                            },
+                            "rangemode": "normal",
+                            "autorangeoptions": {
+                                "clipmin": null,
+                                "clipmax": null,
+                                "minallowed": null,
+                                "maxallowed": null
+                            }
+                        },
+                        "yaxis": {
+                            "hoverformat": null,
+                            "ticksuffix": "",
+                            "title": {
+                                "text": "Componente 2"
+                            },
+                            "rangemode": "normal",
+                            "autorangeoptions": {
+                                "clipmin": null,
+                                "clipmax": null,
+                                "minallowed": null,
+                                "maxallowed": null
+                            }
+                        }
+                    },
+                    "trace_params": {
+                        "hovertemplate": "<b>%{text}</b><br><b>X</b>: %{x}<br><b>Y</b>: %{y}<extra></extra>",
+                        "textfont": {
+                            "size": 8
+                        },
+                        "marker": {
+                            "size": 10,
+                            "line": {
+                                "width": 1
+                            },
+                            "opacity": 1,
+                            "color": "rgba(124, 181, 236, .5)"
+                        }
+                    },
+                    "pct_range": {
+                        "xaxis": {
+                            "min": 0,
+                            "max": 100
+                        },
+                        "yaxis": {
+                            "min": 0,
+                            "max": 100
+                        }
+                    },
+                    "n_samples": 6,
+                    "points": [
+                        {
+                            "x": -4.80299266011678,
+                            "y": 1.8038480321862,
+                            "name": "batch1",
+                            "color": "red"
+                        },
+                        {
+                            "x": -5.03915692843207,
+                            "y": -0.50312556959278,
+                            "name": "batch2",
+                            "color": "red"
+                        },
+                        {
+                            "x": -5.17659338908571,
+                            "y": -1.2863711995827,
+                            "name": "batch3",
+                            "color": "red"
+                        },
+                        {
+                            "x": 4.83140944724842,
+                            "y": -0.044726613533971,
+                            "name": "chem1",
+                            "color": "red"
+                        },
+                        {
+                            "x": 5.32832288528455,
+                            "y": -0.984381010792897,
+                            "name": "chem2",
+                            "color": "red"
+                        },
+                        {
+                            "x": 4.85901064510159,
+                            "y": 1.01475636131621,
+                            "name": "chem3",
+                            "color": "red"
+                        }
+                    ]
+                }
+            ],
+            "pconfig": {
+                "id": "mqc_pca_scatter_plot",
+                "title": "PCA",
+                "subtitle": null,
+                "anchor": "mqc_pca_scatter_plot",
+                "table_title": null,
+                "height": null,
+                "width": null,
+                "square": false,
+                "logswitch": false,
+                "logswitch_active": false,
+                "logswitch_label": "Log10",
+                "cpswitch": true,
+                "cpswitch_c_active": true,
+                "cpswitch_counts_label": "Counts",
+                "cpswitch_percent_label": "Percentages",
+                "xLog": null,
+                "yLog": null,
+                "xlog": false,
+                "ylog": false,
+                "data_labels": [],
+                "xTitle": null,
+                "yTitle": null,
+                "xlab": "Componente 1",
+                "ylab": "Componente 2",
+                "xsuffix": null,
+                "ysuffix": null,
+                "tt_suffix": null,
+                "xLabFormat": null,
+                "yLabFormat": null,
+                "xLabelFormat": null,
+                "yLabelFormat": null,
+                "xlab_format": null,
+                "ylab_format": null,
+                "tt_label": null,
+                "xDecimals": null,
+                "yDecimals": null,
+                "decimalPlaces": null,
+                "x_decimals": null,
+                "y_decimals": null,
+                "tt_decimals": null,
+                "xmin": null,
+                "xmax": null,
+                "ymin": null,
+                "ymax": null,
+                "xFloor": null,
+                "xCeiling": null,
+                "yFloor": null,
+                "yCeiling": null,
+                "x_clipmin": null,
+                "x_clipmax": null,
+                "y_clipmin": null,
+                "y_clipmax": null,
+                "save_data_file": false,
+                "showlegend": null,
+                "xMinRange": null,
+                "yMinRange": null,
+                "x_minrange": null,
+                "y_minrange": null,
+                "xPlotBands": null,
+                "yPlotBands": null,
+                "xPlotLines": null,
+                "yPlotLines": null,
+                "x_bands": null,
+                "y_bands": null,
+                "x_lines": null,
+                "y_lines": null,
+                "series_label": "Label",
+                "categories": null,
+                "extra_series": null,
+                "marker_size": null,
+                "marker_line_width": null,
+                "color": "red",
+                "opacity": null
+            },
+            "add_log_tab": false,
+            "add_pct_tab": false,
+            "l_active": false,
+            "p_active": false,
+            "pct_axis_update": {
+                "ticksuffix": "%",
+                "hoverformat": ".1f"
+            },
+            "axis_controlled_by_switches": [],
+            "square": false,
+            "flat": false,
+            "defer_render": false,
+            "section_anchor": null,
+            "module_anchor": null
+        },
         "distancia_heatmap": {
             "id": "distancia_heatmap",
             "anchor": "distancia_heatmap",
@@ -42814,9 +43081,9 @@
             "max": 1.0,
             "cluster_switch_clustered_active": false
         },
-        "mqc_pca_scatter_plot": {
+        "mqc_pca_scatter_plot-1": {
             "id": "mqc_pca_scatter_plot",
-            "anchor": "mqc_pca_scatter_plot",
+            "anchor": "mqc_pca_scatter_plot-1",
             "plot_type": "scatter plot",
             "layout": {
                 "autosize": true,
@@ -43152,6 +43419,678 @@
                 "yTitle": null,
                 "xlab": "Component 2",
                 "ylab": "Component 1",
+                "xsuffix": null,
+                "ysuffix": null,
+                "tt_suffix": null,
+                "xLabFormat": null,
+                "yLabFormat": null,
+                "xLabelFormat": null,
+                "yLabelFormat": null,
+                "xlab_format": null,
+                "ylab_format": null,
+                "tt_label": null,
+                "xDecimals": null,
+                "yDecimals": null,
+                "decimalPlaces": null,
+                "x_decimals": null,
+                "y_decimals": null,
+                "tt_decimals": null,
+                "xmin": null,
+                "xmax": null,
+                "ymin": null,
+                "ymax": null,
+                "xFloor": null,
+                "xCeiling": null,
+                "yFloor": null,
+                "yCeiling": null,
+                "x_clipmin": null,
+                "x_clipmax": null,
+                "y_clipmin": null,
+                "y_clipmax": null,
+                "save_data_file": false,
+                "showlegend": null,
+                "xMinRange": null,
+                "yMinRange": null,
+                "x_minrange": null,
+                "y_minrange": null,
+                "xPlotBands": null,
+                "yPlotBands": null,
+                "xPlotLines": null,
+                "yPlotLines": null,
+                "x_bands": null,
+                "y_bands": null,
+                "x_lines": null,
+                "y_lines": null,
+                "series_label": "samples",
+                "categories": null,
+                "extra_series": null,
+                "marker_size": null,
+                "marker_line_width": null,
+                "color": null,
+                "opacity": null
+            },
+            "add_log_tab": false,
+            "add_pct_tab": false,
+            "l_active": false,
+            "p_active": false,
+            "pct_axis_update": {
+                "ticksuffix": "%",
+                "hoverformat": ".1f"
+            },
+            "axis_controlled_by_switches": [],
+            "square": false,
+            "flat": false,
+            "defer_render": false,
+            "section_anchor": null,
+            "module_anchor": null
+        },
+        "mqc_pca_scatter_plot-2": {
+            "id": "mqc_pca_scatter_plot",
+            "anchor": "mqc_pca_scatter_plot-2",
+            "plot_type": "scatter plot",
+            "layout": {
+                "autosize": true,
+                "colorway": [
+                    "#7cb5ec",
+                    "#434348",
+                    "#90ed7d",
+                    "#f7a35c",
+                    "#8085e9",
+                    "#f15c80",
+                    "#e4d354",
+                    "#2b908f",
+                    "#f45b5b",
+                    "#91e8e1"
+                ],
+                "font": {
+                    "family": "'Lucida Grande', 'Open Sans', verdana, arial, sans-serif"
+                },
+                "height": 500,
+                "hoverlabel": {
+                    "namelength": -1
+                },
+                "margin": {
+                    "b": 65,
+                    "l": 60,
+                    "pad": 5,
+                    "r": 15,
+                    "t": 50
+                },
+                "modebar": {
+                    "activecolor": "rgba(0, 0, 0, 1)",
+                    "bgcolor": "rgba(0, 0, 0, 0)",
+                    "color": "rgba(0, 0, 0, 0.5)"
+                },
+                "paper_bgcolor": "white",
+                "plot_bgcolor": "white",
+                "showlegend": false,
+                "title": {
+                    "font": {
+                        "size": 20
+                    },
+                    "text": "PCA",
+                    "x": 0.5,
+                    "xanchor": "center"
+                },
+                "xaxis": {
+                    "automargin": true,
+                    "color": "rgba(0,0,0,0.3)",
+                    "gridcolor": "rgba(0,0,0,0.05)",
+                    "tickfont": {
+                        "color": "rgba(0,0,0,1)",
+                        "size": 10
+                    },
+                    "zerolinecolor": "rgba(0,0,0,0.05)"
+                },
+                "yaxis": {
+                    "automargin": true,
+                    "color": "rgba(0,0,0,0.3)",
+                    "gridcolor": "rgba(0,0,0,0.05)",
+                    "tickfont": {
+                        "color": "rgba(0,0,0,1)",
+                        "size": 10
+                    },
+                    "zerolinecolor": "rgba(0,0,0,0.05)"
+                },
+                "hoverdistance": -1
+            },
+            "datasets": [
+                {
+                    "plot_id": "mqc_pca_scatter_plot",
+                    "label": "1",
+                    "uid": "mqc_pca_scatter_plot",
+                    "dconfig": {
+                        "title": "PCA",
+                        "subtitle": "6 samples"
+                    },
+                    "layout": {
+                        "title": {
+                            "text": "PCA<br><sup>6 samples</sup>"
+                        },
+                        "xaxis": {
+                            "hoverformat": null,
+                            "ticksuffix": "",
+                            "title": {
+                                "text": "Componente 1"
+                            },
+                            "rangemode": "normal",
+                            "autorangeoptions": {
+                                "clipmin": null,
+                                "clipmax": null,
+                                "minallowed": null,
+                                "maxallowed": null
+                            }
+                        },
+                        "yaxis": {
+                            "hoverformat": null,
+                            "ticksuffix": "",
+                            "title": {
+                                "text": "Componente 2"
+                            },
+                            "rangemode": "normal",
+                            "autorangeoptions": {
+                                "clipmin": null,
+                                "clipmax": null,
+                                "minallowed": null,
+                                "maxallowed": null
+                            }
+                        }
+                    },
+                    "trace_params": {
+                        "hovertemplate": "<b>%{text}</b><br><b>X</b>: %{x}<br><b>Y</b>: %{y}<extra></extra>",
+                        "textfont": {
+                            "size": 8
+                        },
+                        "marker": {
+                            "size": 10,
+                            "line": {
+                                "width": 1
+                            },
+                            "opacity": 1,
+                            "color": "rgba(124, 181, 236, .5)"
+                        }
+                    },
+                    "pct_range": {
+                        "xaxis": {
+                            "min": 0,
+                            "max": 100
+                        },
+                        "yaxis": {
+                            "min": 0,
+                            "max": 100
+                        }
+                    },
+                    "n_samples": 6,
+                    "points": [
+                        {
+                            "x": -4.803,
+                            "y": 1.8038,
+                            "color": "#a85632",
+                            "name": "batch1"
+                        },
+                        {
+                            "x": -5.0392,
+                            "y": -0.5031,
+                            "color": "#a85632",
+                            "name": "batch2"
+                        },
+                        {
+                            "x": -5.1766,
+                            "y": -1.2864,
+                            "color": "#a85632",
+                            "name": "batch3"
+                        },
+                        {
+                            "x": 4.8314,
+                            "y": -0.0447,
+                            "color": "#313a66",
+                            "name": "chem1"
+                        },
+                        {
+                            "x": 5.3283,
+                            "y": -0.9844,
+                            "color": "#313a66",
+                            "name": "chem2"
+                        },
+                        {
+                            "x": 4.859,
+                            "y": 1.0148,
+                            "color": "#313a66",
+                            "name": "chem3"
+                        }
+                    ]
+                }
+            ],
+            "pconfig": {
+                "id": "mqc_pca_scatter_plot",
+                "title": "PCA",
+                "subtitle": null,
+                "anchor": "mqc_pca_scatter_plot",
+                "table_title": null,
+                "height": null,
+                "width": null,
+                "square": false,
+                "logswitch": false,
+                "logswitch_active": false,
+                "logswitch_label": "Log10",
+                "cpswitch": true,
+                "cpswitch_c_active": true,
+                "cpswitch_counts_label": "Counts",
+                "cpswitch_percent_label": "Percentages",
+                "xLog": null,
+                "yLog": null,
+                "xlog": false,
+                "ylog": false,
+                "data_labels": [],
+                "xTitle": null,
+                "yTitle": null,
+                "xlab": "Componente 1",
+                "ylab": "Componente 2",
+                "xsuffix": null,
+                "ysuffix": null,
+                "tt_suffix": null,
+                "xLabFormat": null,
+                "yLabFormat": null,
+                "xLabelFormat": null,
+                "yLabelFormat": null,
+                "xlab_format": null,
+                "ylab_format": null,
+                "tt_label": null,
+                "xDecimals": null,
+                "yDecimals": null,
+                "decimalPlaces": null,
+                "x_decimals": null,
+                "y_decimals": null,
+                "tt_decimals": null,
+                "xmin": null,
+                "xmax": null,
+                "ymin": null,
+                "ymax": null,
+                "xFloor": null,
+                "xCeiling": null,
+                "yFloor": null,
+                "yCeiling": null,
+                "x_clipmin": null,
+                "x_clipmax": null,
+                "y_clipmin": null,
+                "y_clipmax": null,
+                "save_data_file": false,
+                "showlegend": null,
+                "xMinRange": null,
+                "yMinRange": null,
+                "x_minrange": null,
+                "y_minrange": null,
+                "xPlotBands": null,
+                "yPlotBands": null,
+                "xPlotLines": null,
+                "yPlotLines": null,
+                "x_bands": null,
+                "y_bands": null,
+                "x_lines": null,
+                "y_lines": null,
+                "series_label": "samples",
+                "categories": null,
+                "extra_series": null,
+                "marker_size": null,
+                "marker_line_width": null,
+                "color": null,
+                "opacity": null
+            },
+            "add_log_tab": false,
+            "add_pct_tab": false,
+            "l_active": false,
+            "p_active": false,
+            "pct_axis_update": {
+                "ticksuffix": "%",
+                "hoverformat": ".1f"
+            },
+            "axis_controlled_by_switches": [],
+            "square": false,
+            "flat": false,
+            "defer_render": false,
+            "section_anchor": null,
+            "module_anchor": null
+        },
+        "mqc_volcano_plot": {
+            "id": "mqc_volcano_plot",
+            "anchor": "mqc_volcano_plot",
+            "plot_type": "scatter plot",
+            "layout": {
+                "autosize": true,
+                "colorway": [
+                    "#7cb5ec",
+                    "#434348",
+                    "#90ed7d",
+                    "#f7a35c",
+                    "#8085e9",
+                    "#f15c80",
+                    "#e4d354",
+                    "#2b908f",
+                    "#f45b5b",
+                    "#91e8e1"
+                ],
+                "font": {
+                    "family": "'Lucida Grande', 'Open Sans', verdana, arial, sans-serif"
+                },
+                "height": 500,
+                "hoverlabel": {
+                    "namelength": -1
+                },
+                "margin": {
+                    "b": 65,
+                    "l": 60,
+                    "pad": 5,
+                    "r": 15,
+                    "t": 50
+                },
+                "modebar": {
+                    "activecolor": "rgba(0, 0, 0, 1)",
+                    "bgcolor": "rgba(0, 0, 0, 0)",
+                    "color": "rgba(0, 0, 0, 0.5)"
+                },
+                "paper_bgcolor": "white",
+                "plot_bgcolor": "white",
+                "showlegend": false,
+                "title": {
+                    "font": {
+                        "size": 20
+                    },
+                    "text": "Volcano plot",
+                    "x": 0.5,
+                    "xanchor": "center"
+                },
+                "xaxis": {
+                    "automargin": true,
+                    "color": "rgba(0,0,0,0.3)",
+                    "gridcolor": "rgba(0,0,0,0.05)",
+                    "tickfont": {
+                        "color": "rgba(0,0,0,1)",
+                        "size": 10
+                    },
+                    "zerolinecolor": "rgba(0,0,0,0.05)"
+                },
+                "yaxis": {
+                    "automargin": true,
+                    "color": "rgba(0,0,0,0.3)",
+                    "gridcolor": "rgba(0,0,0,0.05)",
+                    "tickfont": {
+                        "color": "rgba(0,0,0,1)",
+                        "size": 10
+                    },
+                    "zerolinecolor": "rgba(0,0,0,0.05)"
+                },
+                "hoverdistance": -1
+            },
+            "datasets": [
+                {
+                    "plot_id": "mqc_volcano_plot",
+                    "label": "1",
+                    "uid": "mqc_volcano_plot",
+                    "dconfig": {
+                        "title": "Volcano plot",
+                        "subtitle": "29 samples"
+                    },
+                    "layout": {
+                        "title": {
+                            "text": "Volcano plot<br><sup>29 samples</sup>"
+                        },
+                        "xaxis": {
+                            "hoverformat": null,
+                            "ticksuffix": "",
+                            "title": {
+                                "text": "log2 Fold Change"
+                            },
+                            "rangemode": "normal",
+                            "autorangeoptions": {
+                                "clipmin": null,
+                                "clipmax": null,
+                                "minallowed": null,
+                                "maxallowed": null
+                            }
+                        },
+                        "yaxis": {
+                            "hoverformat": null,
+                            "ticksuffix": "",
+                            "title": {
+                                "text": "-log10(p-valor)"
+                            },
+                            "rangemode": "normal",
+                            "autorangeoptions": {
+                                "clipmin": null,
+                                "clipmax": null,
+                                "minallowed": null,
+                                "maxallowed": null
+                            }
+                        }
+                    },
+                    "trace_params": {
+                        "hovertemplate": "<b>%{text}</b><br><b>X</b>: %{x}<br><b>Y</b>: %{y}<extra></extra>",
+                        "textfont": {
+                            "size": 8
+                        },
+                        "marker": {
+                            "size": 10,
+                            "line": {
+                                "width": 1
+                            },
+                            "opacity": 1,
+                            "color": "rgba(124, 181, 236, .5)"
+                        }
+                    },
+                    "pct_range": {
+                        "xaxis": {
+                            "min": 0,
+                            "max": 100
+                        },
+                        "yaxis": {
+                            "min": 0,
+                            "max": 100
+                        }
+                    },
+                    "n_samples": 29,
+                    "points": [
+                        {
+                            "x": -4.2267,
+                            "y": 487.8351,
+                            "color": "blue",
+                            "name": "MSTRG.1.1"
+                        },
+                        {
+                            "x": -2.5766,
+                            "y": 473.9756,
+                            "color": "blue",
+                            "name": "MSTRG.2.1"
+                        },
+                        {
+                            "x": -0.3389,
+                            "y": 8.3544,
+                            "color": "#b3aaaa",
+                            "name": "MSTRG.3.1"
+                        },
+                        {
+                            "x": -0.075,
+                            "y": 2.0627,
+                            "color": "#b3aaaa",
+                            "name": "MSTRG.4.1"
+                        },
+                        {
+                            "x": 0.5552,
+                            "y": 70.2439,
+                            "color": "#b3aaaa",
+                            "name": "MSTRG.5.1"
+                        },
+                        {
+                            "x": -0.3343,
+                            "y": 3.858,
+                            "color": "#b3aaaa",
+                            "name": "MSTRG.6.1"
+                        },
+                        {
+                            "x": 0.809,
+                            "y": 14.7232,
+                            "color": "#b3aaaa",
+                            "name": "MSTRG.7.1"
+                        },
+                        {
+                            "x": 0.3247,
+                            "y": 14.8825,
+                            "color": "#b3aaaa",
+                            "name": "MSTRG.8.1"
+                        },
+                        {
+                            "x": 0.4907,
+                            "y": 19.2685,
+                            "color": "#b3aaaa",
+                            "name": "MSTRG.9.1"
+                        },
+                        {
+                            "x": -0.0418,
+                            "y": 0.4598,
+                            "color": "#b3aaaa",
+                            "name": "MSTRG.10.1"
+                        },
+                        {
+                            "x": 0.9222,
+                            "y": 42.4731,
+                            "color": "#b3aaaa",
+                            "name": "MSTRG.11.1"
+                        },
+                        {
+                            "x": 0.7801,
+                            "y": 123.4129,
+                            "color": "#b3aaaa",
+                            "name": "MSTRG.12.1"
+                        },
+                        {
+                            "x": -0.8337,
+                            "y": 37.2034,
+                            "color": "#b3aaaa",
+                            "name": "MSTRG.13.1"
+                        },
+                        {
+                            "x": 0.2005,
+                            "y": 7.2491,
+                            "color": "#b3aaaa",
+                            "name": "MSTRG.14.1"
+                        },
+                        {
+                            "x": -2.129,
+                            "y": 228.5753,
+                            "color": "blue",
+                            "name": "MSTRG.15.1"
+                        },
+                        {
+                            "x": 0.7209,
+                            "y": 75.435,
+                            "color": "#b3aaaa",
+                            "name": "MSTRG.16.1"
+                        },
+                        {
+                            "x": -0.2132,
+                            "y": 2.3238,
+                            "color": "#b3aaaa",
+                            "name": "MSTRG.17.1"
+                        },
+                        {
+                            "x": -0.2776,
+                            "y": 0.3364,
+                            "color": "#b3aaaa",
+                            "name": "MSTRG.17.2"
+                        },
+                        {
+                            "x": 0.3142,
+                            "y": 32.8755,
+                            "color": "#b3aaaa",
+                            "name": "MSTRG.18.1"
+                        },
+                        {
+                            "x": 0.2468,
+                            "y": 3.9515,
+                            "color": "#b3aaaa",
+                            "name": "MSTRG.19.1"
+                        },
+                        {
+                            "x": 0.896,
+                            "y": 126.0261,
+                            "color": "#b3aaaa",
+                            "name": "MSTRG.20.1"
+                        },
+                        {
+                            "x": -0.9034,
+                            "y": 111.4976,
+                            "color": "#b3aaaa",
+                            "name": "MSTRG.21.1"
+                        },
+                        {
+                            "x": -1.0401,
+                            "y": 9.0843,
+                            "color": "blue",
+                            "name": "MSTRG.22.1"
+                        },
+                        {
+                            "x": -0.4124,
+                            "y": 1.147,
+                            "color": "#b3aaaa",
+                            "name": "MSTRG.23.1"
+                        },
+                        {
+                            "x": 0.3545,
+                            "y": 0.4935,
+                            "color": "#b3aaaa",
+                            "name": "MSTRG.24.1"
+                        },
+                        {
+                            "x": -1.1648,
+                            "y": 2.7523,
+                            "color": "#b3aaaa",
+                            "name": "MSTRG.25.1"
+                        },
+                        {
+                            "x": 0.4152,
+                            "y": 0.6975,
+                            "color": "#b3aaaa",
+                            "name": "MSTRG.26.1"
+                        },
+                        {
+                            "x": -0.7645,
+                            "y": 46.0124,
+                            "color": "#b3aaaa",
+                            "name": "MSTRG.27.1"
+                        },
+                        {
+                            "x": 0.5281,
+                            "y": 1.037,
+                            "color": "#b3aaaa",
+                            "name": "MSTRG.28.1"
+                        }
+                    ]
+                }
+            ],
+            "pconfig": {
+                "id": "mqc_volcano_plot",
+                "title": "Volcano plot",
+                "subtitle": null,
+                "anchor": "mqc_volcano_plot",
+                "table_title": null,
+                "height": null,
+                "width": null,
+                "square": false,
+                "logswitch": false,
+                "logswitch_active": false,
+                "logswitch_label": "Log10",
+                "cpswitch": true,
+                "cpswitch_c_active": true,
+                "cpswitch_counts_label": "Counts",
+                "cpswitch_percent_label": "Percentages",
+                "xLog": null,
+                "yLog": null,
+                "xlog": false,
+                "ylog": false,
+                "data_labels": [],
+                "xTitle": null,
+                "yTitle": null,
+                "xlab": "log2 Fold Change",
+                "ylab": "-log10(p-valor)",
                 "xsuffix": null,
                 "ysuffix": null,
                 "tt_suffix": null,
@@ -102095,6 +103034,44 @@
                 }
             }
         },
+        "multiqc_mqc_pca_scatter_plot": {
+            "batch1": {
+                "x": -4.80299266011678,
+                "y": 1.8038480321862,
+                "name": "batch1",
+                "color": "red"
+            },
+            "batch2": {
+                "x": -5.03915692843207,
+                "y": -0.50312556959278,
+                "name": "batch2",
+                "color": "red"
+            },
+            "batch3": {
+                "x": -5.17659338908571,
+                "y": -1.2863711995827,
+                "name": "batch3",
+                "color": "red"
+            },
+            "chem1": {
+                "x": 4.83140944724842,
+                "y": -0.044726613533971,
+                "name": "chem1",
+                "color": "red"
+            },
+            "chem2": {
+                "x": 5.32832288528455,
+                "y": -0.984381010792897,
+                "name": "chem2",
+                "color": "red"
+            },
+            "chem3": {
+                "x": 4.85901064510159,
+                "y": 1.01475636131621,
+                "name": "chem3",
+                "color": "red"
+            }
+        },
         "multiqc_distancia_heatmap": [
             [
                 0,
@@ -102195,14 +103172,14 @@
                 "six": 0.3
             }
         },
-        "multiqc_mqc_pca_scatter_plot": {
+        "multiqc_mqc_pca_scatter_plot_1": {
             "sample1": {
                 "x": 14848,
                 "y": 246728,
                 "name": "sample1"
             }
         },
-        "multiqc_mqc_pca_scatter_plot_1": {
+        "multiqc_mqc_pca_scatter_plot_1_1": {
             "sample1": {
                 "x": 5479,
                 "y": 187685,
@@ -102214,6 +103191,220 @@
                 "x": 0,
                 "y": 30389,
                 "name": "sample1"
+            }
+        },
+        "multiqc_mqc_pca_scatter_plot_3": {
+            "batch1": {
+                "x": -4.803,
+                "y": 1.8038,
+                "color": "#a85632",
+                "name": "batch1"
+            },
+            "batch2": {
+                "x": -5.0392,
+                "y": -0.5031,
+                "color": "#a85632",
+                "name": "batch2"
+            },
+            "batch3": {
+                "x": -5.1766,
+                "y": -1.2864,
+                "color": "#a85632",
+                "name": "batch3"
+            },
+            "chem1": {
+                "x": 4.8314,
+                "y": -0.0447,
+                "color": "#313a66",
+                "name": "chem1"
+            },
+            "chem2": {
+                "x": 5.3283,
+                "y": -0.9844,
+                "color": "#313a66",
+                "name": "chem2"
+            },
+            "chem3": {
+                "x": 4.859,
+                "y": 1.0148,
+                "color": "#313a66",
+                "name": "chem3"
+            }
+        },
+        "multiqc_mqc_volcano_plot": {
+            "MSTRG.1.1": {
+                "x": -4.2267,
+                "y": 487.8351,
+                "color": "blue",
+                "name": "MSTRG.1.1"
+            },
+            "MSTRG.2.1": {
+                "x": -2.5766,
+                "y": 473.9756,
+                "color": "blue",
+                "name": "MSTRG.2.1"
+            },
+            "MSTRG.3.1": {
+                "x": -0.3389,
+                "y": 8.3544,
+                "color": "#b3aaaa",
+                "name": "MSTRG.3.1"
+            },
+            "MSTRG.4.1": {
+                "x": -0.075,
+                "y": 2.0627,
+                "color": "#b3aaaa",
+                "name": "MSTRG.4.1"
+            },
+            "MSTRG.5.1": {
+                "x": 0.5552,
+                "y": 70.2439,
+                "color": "#b3aaaa",
+                "name": "MSTRG.5.1"
+            },
+            "MSTRG.6.1": {
+                "x": -0.3343,
+                "y": 3.858,
+                "color": "#b3aaaa",
+                "name": "MSTRG.6.1"
+            },
+            "MSTRG.7.1": {
+                "x": 0.809,
+                "y": 14.7232,
+                "color": "#b3aaaa",
+                "name": "MSTRG.7.1"
+            },
+            "MSTRG.8.1": {
+                "x": 0.3247,
+                "y": 14.8825,
+                "color": "#b3aaaa",
+                "name": "MSTRG.8.1"
+            },
+            "MSTRG.9.1": {
+                "x": 0.4907,
+                "y": 19.2685,
+                "color": "#b3aaaa",
+                "name": "MSTRG.9.1"
+            },
+            "MSTRG.10.1": {
+                "x": -0.0418,
+                "y": 0.4598,
+                "color": "#b3aaaa",
+                "name": "MSTRG.10.1"
+            },
+            "MSTRG.11.1": {
+                "x": 0.9222,
+                "y": 42.4731,
+                "color": "#b3aaaa",
+                "name": "MSTRG.11.1"
+            },
+            "MSTRG.12.1": {
+                "x": 0.7801,
+                "y": 123.4129,
+                "color": "#b3aaaa",
+                "name": "MSTRG.12.1"
+            },
+            "MSTRG.13.1": {
+                "x": -0.8337,
+                "y": 37.2034,
+                "color": "#b3aaaa",
+                "name": "MSTRG.13.1"
+            },
+            "MSTRG.14.1": {
+                "x": 0.2005,
+                "y": 7.2491,
+                "color": "#b3aaaa",
+                "name": "MSTRG.14.1"
+            },
+            "MSTRG.15.1": {
+                "x": -2.129,
+                "y": 228.5753,
+                "color": "blue",
+                "name": "MSTRG.15.1"
+            },
+            "MSTRG.16.1": {
+                "x": 0.7209,
+                "y": 75.435,
+                "color": "#b3aaaa",
+                "name": "MSTRG.16.1"
+            },
+            "MSTRG.17.1": {
+                "x": -0.2132,
+                "y": 2.3238,
+                "color": "#b3aaaa",
+                "name": "MSTRG.17.1"
+            },
+            "MSTRG.17.2": {
+                "x": -0.2776,
+                "y": 0.3364,
+                "color": "#b3aaaa",
+                "name": "MSTRG.17.2"
+            },
+            "MSTRG.18.1": {
+                "x": 0.3142,
+                "y": 32.8755,
+                "color": "#b3aaaa",
+                "name": "MSTRG.18.1"
+            },
+            "MSTRG.19.1": {
+                "x": 0.2468,
+                "y": 3.9515,
+                "color": "#b3aaaa",
+                "name": "MSTRG.19.1"
+            },
+            "MSTRG.20.1": {
+                "x": 0.896,
+                "y": 126.0261,
+                "color": "#b3aaaa",
+                "name": "MSTRG.20.1"
+            },
+            "MSTRG.21.1": {
+                "x": -0.9034,
+                "y": 111.4976,
+                "color": "#b3aaaa",
+                "name": "MSTRG.21.1"
+            },
+            "MSTRG.22.1": {
+                "x": -1.0401,
+                "y": 9.0843,
+                "color": "blue",
+                "name": "MSTRG.22.1"
+            },
+            "MSTRG.23.1": {
+                "x": -0.4124,
+                "y": 1.147,
+                "color": "#b3aaaa",
+                "name": "MSTRG.23.1"
+            },
+            "MSTRG.24.1": {
+                "x": 0.3545,
+                "y": 0.4935,
+                "color": "#b3aaaa",
+                "name": "MSTRG.24.1"
+            },
+            "MSTRG.25.1": {
+                "x": -1.1648,
+                "y": 2.7523,
+                "color": "#b3aaaa",
+                "name": "MSTRG.25.1"
+            },
+            "MSTRG.26.1": {
+                "x": 0.4152,
+                "y": 0.6975,
+                "color": "#b3aaaa",
+                "name": "MSTRG.26.1"
+            },
+            "MSTRG.27.1": {
+                "x": -0.7645,
+                "y": 46.0124,
+                "color": "#b3aaaa",
+                "name": "MSTRG.27.1"
+            },
+            "MSTRG.28.1": {
+                "x": 0.5281,
+                "y": 1.037,
+                "color": "#b3aaaa",
+                "name": "MSTRG.28.1"
             }
         },
         "multiqc_general_stats": {

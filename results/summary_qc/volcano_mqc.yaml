@@ -1,0 +1,127 @@
+id: mqc_volcano
+section_name: Gráfico Volcano
+description: Este gráfico muestra los resultados del análisis de expresión diferencial
+plot_type: scatter
+pconfig:
+  id: mqc_volcano_plot
+  title: Volcano plot
+  xlab: log2 Fold Change
+  ylab: -log10(p-valor)
+data:
+  MSTRG.1.1:
+    x: -4.2267
+    'y': 487.8351
+    color: blue
+  MSTRG.2.1:
+    x: -2.5766
+    'y': 473.9756
+    color: blue
+  MSTRG.3.1:
+    x: -0.3389
+    'y': 8.3544
+    color: '#b3aaaa'
+  MSTRG.4.1:
+    x: -0.075
+    'y': 2.0627
+    color: '#b3aaaa'
+  MSTRG.5.1:
+    x: 0.5552
+    'y': 70.2439
+    color: '#b3aaaa'
+  MSTRG.6.1:
+    x: -0.3343
+    'y': 3.858
+    color: '#b3aaaa'
+  MSTRG.7.1:
+    x: 0.809
+    'y': 14.7232
+    color: '#b3aaaa'
+  MSTRG.8.1:
+    x: 0.3247
+    'y': 14.8825
+    color: '#b3aaaa'
+  MSTRG.9.1:
+    x: 0.4907
+    'y': 19.2685
+    color: '#b3aaaa'
+  MSTRG.10.1:
+    x: -0.0418
+    'y': 0.4598
+    color: '#b3aaaa'
+  MSTRG.11.1:
+    x: 0.9222
+    'y': 42.4731
+    color: '#b3aaaa'
+  MSTRG.12.1:
+    x: 0.7801
+    'y': 123.4129
+    color: '#b3aaaa'
+  MSTRG.13.1:
+    x: -0.8337
+    'y': 37.2034
+    color: '#b3aaaa'
+  MSTRG.14.1:
+    x: 0.2005
+    'y': 7.2491
+    color: '#b3aaaa'
+  MSTRG.15.1:
+    x: -2.129
+    'y': 228.5753
+    color: blue
+  MSTRG.16.1:
+    x: 0.7209
+    'y': 75.435
+    color: '#b3aaaa'
+  MSTRG.17.1:
+    x: -0.2132
+    'y': 2.3238
+    color: '#b3aaaa'
+  MSTRG.17.2:
+    x: -0.2776
+    'y': 0.3364
+    color: '#b3aaaa'
+  MSTRG.18.1:
+    x: 0.3142
+    'y': 32.8755
+    color: '#b3aaaa'
+  MSTRG.19.1:
+    x: 0.2468
+    'y': 3.9515
+    color: '#b3aaaa'
+  MSTRG.20.1:
+    x: 0.896
+    'y': 126.0261
+    color: '#b3aaaa'
+  MSTRG.21.1:
+    x: -0.9034
+    'y': 111.4976
+    color: '#b3aaaa'
+  MSTRG.22.1:
+    x: -1.0401
+    'y': 9.0843
+    color: blue
+  MSTRG.23.1:
+    x: -0.4124
+    'y': 1.147
+    color: '#b3aaaa'
+  MSTRG.24.1:
+    x: 0.3545
+    'y': 0.4935
+    color: '#b3aaaa'
+  MSTRG.25.1:
+    x: -1.1648
+    'y': 2.7523
+    color: '#b3aaaa'
+  MSTRG.26.1:
+    x: 0.4152
+    'y': 0.6975
+    color: '#b3aaaa'
+  MSTRG.27.1:
+    x: -0.7645
+    'y': 46.0124
+    color: '#b3aaaa'
+  MSTRG.28.1:
+    x: 0.5281
+    'y': 1.037
+    color: '#b3aaaa'
+

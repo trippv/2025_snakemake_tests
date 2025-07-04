@@ -8,7 +8,7 @@ library(here)
 
 
 
-here()
+#here()
 
 # Definir rutas absolutas basadas en el parámetro 'main'
 main_path <- here()
@@ -50,19 +50,19 @@ write.table(sampleDistMatrix, "results/summary_qc/distance_matrix.txt" , row.nam
 #dds <- DESeqDataSetFromMatrix(countData = counts, colData = samples, design = ~ group)
 #vsd <- vst(dds)
 
+
+
 # Extraer datos de la PCA
 pcaData <- plotPCA(vsd, intgroup = "group", returnData = TRUE)
 percentVar <- round(100 * attr(pcaData, "percentVar"))
 
-# Graficar PCA con ggplot2 + plotly
-gg <- ggplot(pcaData, aes(x = PC1, y = PC2, color = group)) +
-  geom_point(size = 3) +
-  xlab(paste0("PC1: ", percentVar[1], "% var")) +
-  ylab(paste0("PC2: ", percentVar[2], "% var")) +
-  theme_minimal() 
+# convert
+pcaData_df <- data.frame(name = pcaData$name, 
+x = pcaData$PC1, 
+y = pcaData$PC2, 
+color = pcaData$group) # falta modificar este parametro para asignar un color a cada grupo
 
-ggplotly(gg)
-```
+write.table(pcaData_df, "results/summary_qc/pca.txt" , row.names = FALSE, quote = FALSE, sep = "\t")
 
 
 # Expresion diferencial
@@ -81,15 +81,14 @@ res_df$gene <- rownames(res_df)
 res_df$significant <- "No significativo"
 res_df$significant[which(res_df$padj < 0.01 & abs(res_df$log2FoldChange) >= 1)] <- "Significativo"
 
+res_df_volcano <- data.frame(gene = rownames(res_df), 
+      logFC = res_df$log2FoldChange, 
+      pval = -log(res_df$padj),
+      significant = res_df$significant)
 
 
-# Volcano Plot interactivo
-gg_volcano <- ggplot(res_df, aes(x = log2FoldChange, y = -log10(padj), text = gene)) +
-  geom_point(aes(color = significant), alpha = 0.7) +
-  scale_color_manual(values = c("gray", "red")) +
-  theme_minimal() +
-  labs(title = "Volcano plot", 
-  x = "Log2 Fold Change", 
-  y = "-Log10(padj)")
+res_df_volcano$color <- ifelse(res_df$significant != "Significativo", '#b3aaaa', 
+        ifelse(res_df$log2FoldChange > 1 , 'red', 'blue'))
 
-ggplotly(gg_volcano, tooltip = "text")
+# guardar tabla para volcano plot
+write.table(res_df_volcano, "results/summary_qc/volcano.txt" , row.names = FALSE, quote = FALSE, sep = "\t")
