@@ -107,3 +107,16 @@ counts_de_df <- rownames_to_column(counts_de_df, "gene")
 
 # Exportar matriz de abundancia para heatmap
 write.table(counts_de_df, "results/summary_qc/abundance_de_matrix.txt" , row.names = FALSE, quote = FALSE, sep = "\t")
+
+
+# Exportar lista de genes expresados diferencialmente (top 50)
+deg_df <- data.frame(gene = res_df$gene,
+                    baseMean = res_df$baseMean,
+                    log2FC = res_df$log2FoldChange,
+                    pval = res_df$pvalue,
+                    adjustPval = res_df$padj)
+
+
+deg_df <- deg_df[order(deg_df$adjustPval, decreasing = FALSE), ]
+
+
