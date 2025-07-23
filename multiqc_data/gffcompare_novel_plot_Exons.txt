@@ -1,7 +1,0 @@
-Sample	Novel features
-batch1	34.0
-batch2	42.0
-batch3	38.0
-chem1	41.0
-chem2	40.0
-chem3	36.0

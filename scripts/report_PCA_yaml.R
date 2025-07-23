@@ -2,7 +2,7 @@
 library(yaml)
 
 # Leer el archivo PCA
-pca <- read.delim("results/summary_qc/pca_df.txt", header = TRUE, sep = "\t")
+pca <- read.delim("results/summary_qc/pca.txt", header = TRUE, sep = "\t")
 
 # Crear la lista de puntos
 pca_points <- lapply(seq_len(nrow(pca)), function(i) {

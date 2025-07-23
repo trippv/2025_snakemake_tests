@@ -1,7 +1,0 @@
-Sample	x	y	color	name
-batch1	-4.803	1.8038	#a85632	batch1
-batch2	-5.0392	-0.5031	#a85632	batch2
-batch3	-5.1766	-1.2864	#a85632	batch3
-chem1	4.8314	-0.0447	#313a66	chem1
-chem2	5.3283	-0.9844	#313a66	chem2
-chem3	4.859	1.0148	#313a66	chem3

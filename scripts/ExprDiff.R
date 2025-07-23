@@ -1,21 +1,16 @@
-# Cargar librerías
+#!/usr/bin/env Rscript
+
 library(DESeq2)
 library(ggplot2)
 library(readr)
 library(tibble)
-library(plotly)
-library(here)
-
-# Definir rutas
-main_path <- here()
-metadata_path <- file.path(main_path, "data/metadata.tsv")
-counts_path <- file.path(main_path, "results/quant/transcript_count_matrix.csv")
+library(RColorBrewer)
 
 # Cargar datos
-samples <- read.table(metadata_path, header = TRUE, sep = "\t", stringsAsFactors = FALSE)
+samples <- read.table(snakemake@input[["metadata"]], header = TRUE, sep = "\t", stringsAsFactors = FALSE)
 rownames(samples) <- samples$sample
 
-counts <- read.csv(counts_path, header = TRUE, row.names = 1)
+counts <- read.csv(snakemake@input[["counts"]],, header = TRUE, row.names = 1)
 counts <- counts[, samples$sample, drop = FALSE]  # Asegura orden y correspondencia
 
 # Filtrar genes con poca representación
@@ -35,19 +30,31 @@ rownames(sampleDistMatrix) <- samples$sample
 colnames(sampleDistMatrix) <- samples$sample
 sampleDistMatrix <- rownames_to_column(as.data.frame(sampleDistMatrix), "sample")
 
+
+#write.csv(counts, snakemake@output[["gene_matrix"]], row.names = FALSE, quote = FALSE)
 # Guardar matriz de distancias
-write.table(sampleDistMatrix, "results/summary_qc/distance_matrix.txt", 
+write.table(sampleDistMatrix, snakemake@output[["dist_matrix"]], 
             row.names = FALSE, quote = FALSE, sep = "\t")
+
+# ========== Paleta de colores por grupo ==========
+groups <- unique(samples$group)
+n_groups <- length(groups)
+colors <- setNames(brewer.pal(min(max(n_groups, 3), 8), "Set1")[1:n_groups], groups)
+
 
 # Análisis de PCA
 pcaData <- plotPCA(vsd, intgroup = "group", returnData = TRUE)
+pcaData$color <- colors[as.character(pcaData$group)]
+
 pcaData_df <- data.frame(
-  name = pcaData$name,
-  x = pcaData$PC1,
-  y = pcaData$PC2,
-  color = pcaData$group
+  sample = pcaData$name,
+  PC1 = pcaData$PC1,
+  PC2 = pcaData$PC2,
+  group = pcaData$group,
+  color = pcaData$color
 )
-write.table(pcaData_df, "results/summary_qc/pca.txt", 
+
+write.table(pcaData_df, snakemake@output[["pca"]],
             row.names = FALSE, quote = FALSE, sep = "\t")
 
 # ====== Expresión diferencial ======
@@ -79,7 +86,7 @@ res_df_volcano$color <- ifelse(
   ifelse(res_df$log2FoldChange > 1, "red", "blue")
 )
 
-write.table(res_df_volcano, "results/summary_qc/volcano.txt", 
+write.table(res_df_volcano, snakemake@output[["volcano"]], 
             row.names = FALSE, quote = FALSE, sep = "\t")
 
 # ====== Matriz para heatmap ======
@@ -92,7 +99,7 @@ counts_de_mx <- as.matrix(counts_de)
 counts_de_mx <- t(scale(t(counts_de_mx), center = TRUE, scale = TRUE))
 counts_de_df <- rownames_to_column(as.data.frame(counts_de_mx), "gene")
 
-write.table(counts_de_df, "results/summary_qc/abundance_de_matrix.txt", 
+write.table(counts_de_df, snakemake@output[["abundance"]], 
             row.names = FALSE, quote = FALSE, sep = "\t")
 
 # ====== Top DEGs ======
@@ -106,5 +113,5 @@ deg_df <- data.frame(
 )
 
 deg_df <- deg_df[order(deg_df$adjustPval), ]
-write.table(deg_df[1:50, ], "results/summary_qc/top50_DEGs.txt",
+write.table(deg_df[1:50, ], snakemake@output[["deg"]],
             row.names = FALSE, quote = FALSE, sep = "\t")

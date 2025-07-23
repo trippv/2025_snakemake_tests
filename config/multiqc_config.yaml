@@ -25,24 +25,28 @@ skip_versions_section: false
 
 # orden de los modulos
 top_modules:
-  - "fastp"
-  - "samtools"
-  - "bowtie2"
-  - "gffcompare"
-  - "busco"
+  - fastp
+  - samtools
+  - bowtie
+  - gffcompare
+  - distance
+  - mqc_pca_scatter_plot
+  - mqc_volcano_plot
+  - mqc_abundance_heatmap
+
 
 custom_data:
     distance:
-    id: 'distance'
-    section_name: 'Matriz de distancia'
-    plot_type: 'heatmap'
-    file_format: 'txt'
-    pconfig:
-      id: 'distancia_heatmap'
-    cluster_cols: true
-    sort_rows: true
-    legend: 'abundancia'
-    colorscale: 'viridis'
+      id: 'distance'
+      section_name: 'Matriz de distancia'
+      plot_type: 'heatmap'
+      file_format: 'txt'
+      pconfig:
+        id: 'distancia_heatmap'
+      cluster_cols: true
+      sort_rows: true
+      legend: 'abundancia'
+      colorscale: 'viridis'
 
 sp:
   distance:

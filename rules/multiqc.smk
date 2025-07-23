@@ -12,7 +12,9 @@ rule multiqc:
         gff_stats       = expand("results/summary_qc/gffcompare/{sample}.stats",        sample=SAMPLES),
         gff_tracking    = expand("results/summary_qc/gffcompare/{sample}.tracking",     sample=SAMPLES),
         gff_loci        = expand("results/summary_qc/gffcompare/{sample}.loci",         sample=SAMPLES),
-        pca_html        = "results/summary_qc/pca_plot_mqc.html"
+        heatmap = "results/summary_qc/abundance_heatmap_mqc.yaml",
+        pca = "results/summary_qc/pca_mqc.yaml",
+        volcano = "results/summary_qc/volcano_mqc.yaml",
     output:
         report = "results/summary_qc/multiqc_report.html"
     conda:
