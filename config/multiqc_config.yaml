@@ -27,7 +27,7 @@ skip_versions_section: false
 top_modules:
   - fastp
   - samtools
-  - bowtie
+  - bowtie2
   - gffcompare
   - distance
   - mqc_pca_scatter_plot

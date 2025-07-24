@@ -15,7 +15,7 @@ names(abund_data) <- abund$gene
 abund_yaml <- list(
   id = "mqc_abundance",
   section_name = "Mapa de calor de abundancias",
-  description = "Este heatmap muestra los valores de abundancia normalizados por gen",
+  description = "Mapa de calor (heatmap) con los valores de abundancia de los  genes/transcritos expresados diferencialmente (valores normalizados)",
   plot_type = "heatmap",
   pconfig = list(
     id = "mqc_abundance_heatmap",
@@ -44,7 +44,7 @@ names(pca_points) <- pca$sample
 pca_yaml <- list(
   id = "mqc_pca",
   section_name = "Análisis PCA",
-  description = "Este gráfico muestra los resultados del PCA con colores por grupo",
+  description = "Este gráfico muestra los resultados del Análisis de Componentes Principales (PCA) con valores normalizados (VSD) con colores por grupo",
   plot_type = "scatter",
   pconfig = list(
     id = "mqc_pca_scatter_plot",
@@ -77,7 +77,7 @@ names(volcano_points) <- volcano$gene
 volcano_yaml <- list(
   id = "mqc_volcano",
   section_name = "Gráfico Volcano",
-  description = "Este gráfico muestra los resultados del análisis de expresión diferencial",
+  description = "Gráfico de volcan los resultados del análisis de expresión diferencial",
   plot_type = "scatter",
   pconfig = list(
     id = "mqc_volcano_plot",
