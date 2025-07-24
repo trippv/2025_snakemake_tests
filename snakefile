@@ -53,7 +53,11 @@ rule all:
         "results/quant/samples_quant_table.txt",
         "results/quant/gene_count_matrix.csv",
         "results/quant/transcript_count_matrix.csv",
-        "results/summary_qc/pca_plot_mqc.html",
+        #"results/summary_qc/pca_plot_mqc.html",
+        #resultados para multiqc
+        "results/summary_qc/abundance_heatmap_mqc.yaml",
+        "results/summary_qc/pca_mqc.yaml",
+        "results/summary_qc/volcano_mqc.yaml",
         "results/summary_qc/multiqc_report.html"
 
 
@@ -65,5 +69,6 @@ include: "rules/stringtie.smk"
 include: "rules/gffcompare.smk"
 include: "rules/prepde.smk"
 include: "rules/metadata.smk"
-include: "rules/pca.smk"
+include: "rules/expr_diff.smk"
+include: "rules/mqc_reformat.smk"
 include: "rules/multiqc.smk"
