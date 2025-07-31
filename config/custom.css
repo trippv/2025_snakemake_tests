@@ -15,24 +15,3 @@
     color: #000000;
 }
 
-/* Ocultar el logo original de MultiQC si aún está */
-.multiqc_logo {
-    display: none;
-}
-
-/* Centramos el logo personalizado */
-.custom_logo {
-    display: inline-block;
-    width: 150px;      /* Ajusta el tamaño según tu necesidad */
-    height: auto;
-    vertical-align: middle;
-    margin-bottom: 10px;
-}
-
-/* Evitamos que se flote el contenedor del logo */
-.pull-right {
-    float: none !important;
-    display: block;
-    text-align: center;
-}
-

@@ -1,7 +1,7 @@
 # Configuración personalizada para MultiQC
 # Configurar el logotipo personalizado
-custom_logo: "./config/logo.png"  # Ruta al archivo del logo (puede ser relativa o absoluta)
-custom_logo_url: "https://github.com/trippv/integrity_massively"  # URL opcional a la que enlazará el logo
+#custom_logo: "./config/logo.png"  # Ruta al archivo del logo (puede ser relativa o absoluta)
+#custom_logo_url: "https://github.com/trippv/integrity_massively"  # URL opcional a la que enlazará el logo
 
 intro_text: "REPORTE DE MUESTRA"
 
@@ -9,7 +9,7 @@ intro_text: "REPORTE DE MUESTRA"
 report_header_info:
   - Nombre: "Thalassomics"
   - Contacto: "info@thalassomics.com"
-  - Sitio Web: "https://github.com/trippv/integrity_massively"
+  - Sitio Web: "https://thalassomics.com"
   - Tipo de proyecto: "RNA-seq"
   - Platafora: "HiSeq 2500 High Output V4"
   - Setup: "2x125"
@@ -25,9 +25,18 @@ skip_versions_section: false
 
 # orden de los modulos
 top_modules:
-  - fastp
-  - samtools
-  - bowtie2
+  - fastp:
+      info: "Análisis de calidad de lecturas con Fastp"
+      extra: "Este módulo analiza la calidad de las lecturas utilizando Fastp, proporcionando estadísticas detalladas sobre la calidad de las secuencias."
+  - fastp-filtered-reads-chart:
+      info: "Lecturas filtradas por Fastp"
+      extra: "Este módulo muestra las lecturas que han sido filtradas por Fastp, proporcionando información sobre las lecturas de alta calidad."
+  - samtools:
+      info: "Análisis de archivos BAM con Samtools"
+      extra: "Este módulo utiliza Samtools para analizar archivos BAM, proporcionando estadísticas sobre la alineación y cobertura de las lecturas."
+  - bowtie2:
+      info: "Alineamiento de lecturas con Bowtie2"
+      extra: "Este módulo utiliza Bowtie2 para alinear las lecturas a un genoma de referencia, proporcionando estadísticas sobre el alineamiento."
   - gffcompare
   - distance
   - mqc_pca_scatter_plot
@@ -35,6 +44,30 @@ top_modules:
   - mqc_abundance_heatmap
 
 
+
+# --- Personalización de Columnas de la Tabla General Statistics ---
+# ---- SOlo mostrar resultados de fastp. Ocultar alineamientos ---
+table_columns_visible:
+  fastp:
+    fastp-after_filtering_q30_rate: True
+    fastp-filtering_result_passed_filter_reads: True
+    fastp-after_filtering_gc_content: True
+    fastp-pct_surviving: True
+    fastp-pct_adapter: True
+    fastp-pct_duplication: True
+  samtools_stats-error_rate: False
+  samtools_stats-non_primary_alignments: False
+  samtools_stats-reads_mapped: False
+  samtools_stats-reads_mapped_percent: False
+  samtools_stats-reads_properly_paired_percent: False
+  samtools_stats-raw_total_sequences: False
+  bowtie_2_hisat2-overall_alignment_rate: False
+
+
+
+
+
+# Agrega la matriz de distancia como un módulo personalizado
 custom_data:
     distance:
       id: 'distance'
