@@ -11,11 +11,26 @@ rule hisat2_extract_splicesites:
         hisat2_extract_splice_sites.py {input.gtf} > {output}
         """
 
+# Regla para extraer exones para HISAT2
+rule hisat2_extract_exons:
+    input:
+        gtf=config["gtf"]
+    output:
+        "results/hisat2/exons.txt"
+    conda:
+        "../envs/hisat2.yaml"
+    shell:
+        """
+        hisat2_extract_exons.py {input.gtf} > {output}
+        """
+
+
 # Regla para indexar el genoma con HISAT2
 rule hisat2_index:
     input:
         fasta=config["genome_fasta"],
         splice_sites="results/hisat2/splice_sites.txt"
+        exons="results/hisat2/exons.txt"
     output:
         directory("results/hisat2_index")
     conda:
@@ -26,7 +41,7 @@ rule hisat2_index:
     shell:
         """
         mkdir -p {output}
-        hisat2-build -p {threads} --ss {input.splice_sites} {input.fasta} {output}/index
+        hisat2-build -p {threads} --ss {input.splice_sites} --exon {input.exons} {input.fasta} {output}/index
         """
 
 # Regla para alinear lecturas con HISAT2
