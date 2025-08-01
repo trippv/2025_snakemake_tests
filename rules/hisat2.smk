@@ -29,7 +29,7 @@ rule hisat2_extract_exons:
 rule hisat2_index:
     input:
         fasta=config["genome_fasta"],
-        splice_sites="results/hisat2/splice_sites.txt"
+        splice_sites="results/hisat2/splice_sites.txt",
         exons="results/hisat2/exons.txt"
     output:
         directory("results/hisat2_index")
