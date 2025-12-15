@@ -4,7 +4,7 @@ library(yaml)
 
 ### --- Abundance heatmap YAML ---
 
-abund <- read.delim("results/summary_qc/abundance_de_matrix_150.txt", header = TRUE, sep = "\t")
+abund <- read.delim("results/summary_qc/counts_top500_variance.txt", header = TRUE, sep = "\t")
 
 abund_data <- lapply(seq_len(nrow(abund)), function(i) {
   gene_values <- abund[i, -1]

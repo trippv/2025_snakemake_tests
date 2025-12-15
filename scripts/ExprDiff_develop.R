@@ -4,6 +4,7 @@ library(ggplot2)
 library(readr)
 library(tibble)
 library(RColorBrewer)
+library(pheatmap)
 
 
 #here()
@@ -49,6 +50,27 @@ write.table(sampleDistMatrix, "results/summary_qc/distance_matrix.txt" , row.nam
 #vsd <- vst(dds)
 
 
+#####################################################
+#----------- heatmap con genes con vayor varianza-
+#####################################################
+
+# Calcular varianza por gen
+gene_variances <- apply(assay(vsd), 1, var)
+
+# Seleccionar los 500 genes con mayor varianza
+top500_genes <- names(sort(gene_variances, decreasing = TRUE))[1:500]
+
+# Subset de la matriz para esos genes
+mat_top500 <- assay(vsd)[top500_genes, ]
+
+
+
+
+
+#####################################################
+#--------------- PCA --------------------------------
+#####################################################  
+
 # ========== Paleta de colores por grupo ==========
 groups <- unique(samples$group)
 n_groups <- length(groups)
@@ -88,7 +110,10 @@ pcaData_df <- data.frame(
 write.table(pcaData_df, "results/summary_qc/pca.txt" , row.names = FALSE, quote = FALSE, sep = "\t")
 
 
-# Expresion diferencial
+##################################################
+# Expresion diferencial --------------------------
+##################################################
+
 
 # Realizar análisis de expresión diferencial
 dds <- DESeq(dds)
@@ -142,6 +167,7 @@ res_df_volcano_150$color <- ifelse(res_df_volcano_150$significant != "Significat
 write.table(res_df_volcano_150, "results/summary_qc/volcano_150.txt" , row.names = FALSE, quote = FALSE, sep = "\t")
 
 
+## Borrar de aqui ---------------------------------
 ## Heatmap con los valores de abundancia de los genes expresados diferencialmente 
 counts_de <- counts[rownames(res_df_150), ] 
 
@@ -155,6 +181,8 @@ counts_de_df <- rownames_to_column(counts_de_df, "gene")
 
 # Exportar matriz de abundancia para heatmap
 write.table(counts_de_df, "results/summary_qc/abundance_de_matrix_150.txt" , row.names = FALSE, quote = FALSE, sep = "\t")
+##----Hasta aqui ---------------------------------
+
 
 
 # Exportar lista de genes expresados diferencialmente (top 50)

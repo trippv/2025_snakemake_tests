@@ -4,6 +4,7 @@ library(readr)
 library(tibble)
 library(RColorBrewer)
 library(here)
+library(pheatmap)
 
 
 #here()
@@ -48,6 +49,48 @@ write.table(sampleDistMatrix, "results/summary_qc/distance_matrix.txt" , row.nam
 #dds <- DESeqDataSetFromMatrix(countData = counts, colData = samples, design = ~ group)
 #vsd <- vst(dds)
 
+
+
+
+
+#####################################################
+#----------- heatmap con genes con vayor varianza-
+#####################################################
+
+# Calcular varianza por gen
+gene_variances <- apply(assay(vsd), 1, var)
+
+# Seleccionar los 500 genes con mayor varianza
+top500_genes <- names(sort(gene_variances, decreasing = TRUE))[1:500]
+
+# Subset de la matriz para esos genes
+mat_top500 <- assay(vsd)[top500_genes, ]
+
+# Scale data
+mat_top500 <- t(scale(t(mat_top500), center = TRUE, scale = TRUE))
+
+# exportar matriz de genes con mayor varianza
+
+
+mat_top500_df <- as.data.frame(mat_top500)
+mat_top500_df <- rownames_to_column(mat_top500_df, "gene")
+
+# Exportar matriz de abundancia para heatmap
+write.table(mat_top500_df, "results/summary_qc/counts_top500_variance.txt" , row.names = FALSE, quote = FALSE, sep = "\t")
+
+#pheatmap(mat_top500,
+#         show_rownames = FALSE,
+#         show_colnames = TRUE,
+#         scale = "row",  # estandariza cada gen
+#         clustering_distance_rows = "euclidean",
+#         clustering_distance_cols = "euclidean",
+#         clustering_method = "complete",
+#         fontsize_row = 6)
+
+
+#####################################################
+#--------------- PCA --------------------------------
+##################################################### 
 
 # ========== Paleta de colores por grupo ==========
 groups <- unique(samples$group)
