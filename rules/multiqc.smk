@@ -17,10 +17,12 @@ rule multiqc:
         volcano = "results/summary_qc/volcano_mqc.yaml",
     output:
         report = "results/summary_qc/multiqc_report.html"
+    params:
+        comment = config["multiqc_comment"]
     conda:
         "../envs/multiqc.yaml"
     threads: 4
     shell:
         """
-        multiqc results/summary_qc -o results/summary_qc -f --config config/multiqc_config.yaml --template mi_multiqc 
+        multiqc results/summary_qc -o results/summary_qc -f --config config/multiqc_config.yaml --template mi_multiqc --comment "{params.comment}"
         """
