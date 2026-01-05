@@ -52,7 +52,7 @@ rule all:
         expand("results/summary_qc/rseqc/{sample}.read_distribution.txt", sample=SAMPLES),
         expand("results/summary_qc/rseqc/{sample}.inner_distance.txt", sample=SAMPLES),
         expand("results/summary_qc/rseqc/{sample}.geneBodyCoverage.txt", sample=SAMPLES),
-        expand("results/summary_qc/rseqc/{sample}.read_duplication.txt", sample=SAMPLES),
+        expand("results/summary_qc/rseqc/{sample}.seq.DupRate.xls", sample=SAMPLES),
 
         "results/quant/samples_table.txt",
         "results/quant/stringtie_merged.gtf",

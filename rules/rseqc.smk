@@ -23,6 +23,7 @@ rule rseqc_read_distribution:
     shell:
         """
         read_distribution.py -i {input.bam} -r {input.bed} > {output.txt}
+
         """
 
 # Inner distance para evaluar la distancia entre pares de lecturas
@@ -32,7 +33,7 @@ rule rseqc_inner_distance:
         bed="results/summary_qc/rseqc/annotation.bed"
     output:
         txt="results/summary_qc/rseqc/{sample}.inner_distance.txt",
-        pdf="results/summary_qc/rseqc/{sample}.inner_distance.pdf"
+        pdf="results/summary_qc/rseqc/{sample}.inner_distance_plot.pdf"
     conda:
         "../envs/rseqc.yaml"
     shell:
@@ -40,7 +41,7 @@ rule rseqc_inner_distance:
         inner_distance.py \
             -i {input.bam} \
             -r {input.bed} \
-            -o results/summary_qc/rseqc/{wildcards.sample}.inner_distance
+            -o results/summary_qc/rseqc/{wildcards.sample}
         """
 
 
@@ -51,7 +52,7 @@ rule rseqc_gene_body_coverage:
         bed="results/summary_qc/rseqc/annotation.bed"
     output:
         txt="results/summary_qc/rseqc/{sample}.geneBodyCoverage.txt",
-        pdf="results/summary_qc/rseqc/{sample}.geneBodyCoverage.pdf"
+        pdf="results/summary_qc/rseqc/{sample}.geneBodyCoverage.curves.pdf"
     conda:
         "../envs/rseqc.yaml"
     shell:
@@ -68,13 +69,13 @@ rule rseqc_read_duplication:
     input:
         bam="results/align/{sample}.bam"
     output:
-        txt="results/summary_qc/rseqc/{sample}.read_duplication.txt",
-        pdf="results/summary_qc/rseqc/{sample}.read_duplication.pdf"
+        pos="results/summary_qc/rseqc/{sample}.pos.DupRate.xls",
+        seq="results/summary_qc/rseqc/{sample}.seq.DupRate.xls"
     conda:
         "../envs/rseqc.yaml"
     shell:
         """
         read_duplication.py \
             -i {input.bam} \
-            -o results/summary_qc/rseqc/{wildcards.sample}.read_duplication
+            -o results/summary_qc/rseqc/{wildcards.sample}
         """
