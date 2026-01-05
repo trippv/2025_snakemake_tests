@@ -1,0 +1,13 @@
+name: rseqc
+channels:
+  - bioconda
+  - conda-forge
+dependencies:
+  - python=3.9
+  - rseqc=5.0.1
+  - pysam
+  - numpy
+  - pandas
+  - samtools
+  - bedtools
+  - matplotlib

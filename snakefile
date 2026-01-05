@@ -48,6 +48,12 @@ rule all:
         expand("results/summary_qc/{sample}_fastp.json", sample=SAMPLES),
         expand("results/summary_qc/{sample}.hisat2.log", sample=SAMPLES),
         expand("results/summary_qc/samtools/{sample}.samtools.stats", sample=SAMPLES),
+        # refseQC results
+        expand("results/summary_qc/rseqc/{sample}.read_distribution.txt", sample=SAMPLES),
+        expand("results/summary_qc/rseqc/{sample}.inner_distance.txt", sample=SAMPLES),
+        expand("results/summary_qc/rseqc/{sample}.geneBodyCoverage.txt", sample=SAMPLES),
+        expand("results/summary_qc/rseqc/{sample}.read_duplication.txt", sample=SAMPLES),
+
         "results/quant/samples_table.txt",
         "results/quant/stringtie_merged.gtf",
         "results/quant/samples_quant_table.txt",
@@ -65,6 +71,7 @@ rule all:
 include: "rules/fastp.smk"
 include: "rules/hisat2.smk"
 include: "rules/samtools.smk"
+include: "rules/rseqc.smk"
 include: "rules/stringtie.smk"
 include: "rules/gffcompare.smk"
 include: "rules/prepde.smk"

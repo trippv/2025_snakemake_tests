@@ -1,7 +1,7 @@
 rule gffcompare:
     input:
         gtf="results/quant/{sample}/{sample}.gtf",
-        ref=config["gtf"]
+        ref=config["gtf_quant"]
     output:
         stat="results/summary_qc/gffcompare/{sample}.stats",
         loci="results/summary_qc/gffcompare/{sample}.loci",

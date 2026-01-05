@@ -2,7 +2,7 @@
 rule stringtie_quant:
     input:
         bam="results/align/{sample}.bam",
-        gtf=config["gtf"]
+        gtf=config["gtf_quant"]
     output:
         gtf="results/quant/{sample}/{sample}.gtf"
     conda:
@@ -29,7 +29,7 @@ rule build_samples_table:
 rule stringtie_merge:
     input:
         table="results/quant/samples_table.txt",
-        gtf=config["gtf"]
+        gtf=config["gtf_quant"]
     output:
         merged="results/quant/stringtie_merged.gtf"
     conda:

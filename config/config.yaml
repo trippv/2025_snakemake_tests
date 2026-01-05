@@ -1,6 +1,7 @@
 samples_file: "config/samples.tsv"
-genome_fasta: "testdata/genome/genome.fna"
-gtf: "testdata/genome/genes.gtf"
+genome_fasta: "testdata/genome/s288c_genome_ncbi.fna"
+gtf: "testdata/genome/s288c_genome_ncbi.gtf"
+gtf_quant: "testdata/genome/s288c_genome_ncbi_stringtie.gtf"
 
 
 
