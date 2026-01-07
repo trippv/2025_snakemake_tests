@@ -34,6 +34,8 @@ skip_versions_section: false
 exclude_modules:
   - fastp
   - rseqc
+  - gffcompare
+  
 
 
 # orden de los modulos
@@ -105,6 +107,9 @@ sp:
     fn: "*.inner_distance_freq.txt"
   mi_rseqc/gene_body_coverage:
     fn: "*.geneBodyCoverage.txt"
+  mi_gffcompare:
+    fn: "*_gff.stats"
+
   mi_bowtie2:
     contents: "overall alignment rate" # Bowtie2 se reconoce mejor por esta frase
     # Si tus logs tienen una extensión fija, añádela para que sea más rápido:

@@ -37,10 +37,10 @@ def get_extension(wildcards):
 rule all:
     input:
         expand("results/quant/{sample}/{sample}.gtf", sample=SAMPLES),
-        expand("results/summary_qc/gffcompare/{sample}.annotated.gtf", sample=SAMPLES),
-        expand("results/summary_qc/gffcompare/{sample}.stats", sample=SAMPLES),
-        expand("results/summary_qc/gffcompare/{sample}.loci", sample=SAMPLES),
-        expand("results/summary_qc/gffcompare/{sample}.tracking", sample=SAMPLES),
+        expand("results/summary_qc/gffcompare/{sample}_gff.annotated.gtf", sample=SAMPLES),
+        expand("results/summary_qc/gffcompare/{sample}_gff.stats", sample=SAMPLES),
+        expand("results/summary_qc/gffcompare/{sample}_gff.loci", sample=SAMPLES),
+        expand("results/summary_qc/gffcompare/{sample}_gff.tracking", sample=SAMPLES),
         # incluir archivos temporales de fastp
         expand("results/fastp/{sample}_R1.clean.fastq.gz", sample=SAMPLES),
         expand("results/fastp/{sample}_R2.clean.fastq.gz", sample=SAMPLES),
