@@ -35,6 +35,7 @@ exclude_modules:
   - fastp
   - rseqc
   - gffcompare
+  #- mi_bowtie2
   
 
 

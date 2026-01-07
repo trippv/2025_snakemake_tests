@@ -1,3 +1,0 @@
-sp:
-  mi_fastp:
-    fn: "*fastp.json"  # <--- Esto le dice: "Busca archivos que terminen en .json"
