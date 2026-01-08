@@ -30,34 +30,28 @@ skip_versions_section: false
 # Los modulos personalizados se encuentran en ~/mi_multiqc_pkg
 
 
-# se excluyen modulos no deseados para usar los personalizados
+# 1. ESTO DEFINE EL ORDEN Y EVITA DUPLICADOS
+module_order:
+  - mi_fastp
+  - mi_rseqc
+  - samtools
+  - mi_bowtie2
+  - mi_gffcompare
+  - custom_content
+  - distance
+  - mqc_pca_scatter_plot
+  - mqc_volcano_plot
+  - mqc_abundance_heatmap
+
+# 2. MANTÉN ESTO PARA QUE LOS ORIGINALES NO MOLESTEN
 exclude_modules:
   - fastp
+  - bowtie2
+  - hisat2
   - rseqc
   - gffcompare
-  #- mi_bowtie2
+
   
-
-
-# orden de los modulos
-#top_modules:
-#  - mi_fastp:
-#      info: "Análisis de calidad de lecturas con Fastp"
-#      extra: "Este módulo analiza la calidad de las lecturas utilizando Fastp, proporcionando estadísticas detalladas sobre la calidad de las secuencias."
-#  - samtools:
-#      info: "Análisis de archivos BAM con Samtools"
-#      extra: "Este módulo utiliza Samtools para analizar archivos BAM, proporcionando estadísticas sobre la alineación y cobertura de las lecturas."
-#  - bowtie2:
-#      info: "Alineamiento de lecturas con Bowtie2"
-#      extra: "Este módulo utiliza Bowtie2 para alinear las lecturas a un genoma de referencia, proporcionando estadísticas sobre el alineamiento."
-#  - gffcompare
-#  - distance
-#  - mqc_pca_scatter_plot
-#  - mqc_volcano_plot
-#  - mqc_abundance_heatmap
-#
-#
-
 # --- Personalización de Columnas de la Tabla General Statistics ---
 # ---- SOlo mostrar resultados de fastp. Ocultar alineamientos ---
 table_columns_visible:
