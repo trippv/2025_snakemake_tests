@@ -8,7 +8,7 @@ rule rseqc_gtf_to_bed:
         "../envs/rseqc.yaml"
     shell:
         """
-        perl scripts/gtf2bed.pl < {input.gtf} > {output.bed}
+        gffread {input.gtf} --bed -o {output.bed}
         """
 
 # Read distribution para evaluar donde cae las lecturas en el genoma
