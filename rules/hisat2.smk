@@ -35,9 +35,9 @@ rule hisat2_index:
         directory("results/hisat2_index")
     conda:
         "../envs/hisat2.yaml"
-    threads: 8
-    params:
-        memory=28
+    threads: config["hisat2_threads"]
+    resources:
+        mem_mb=config["hisat2_mem_mb"]
     shell:
         """
         mkdir -p {output}
@@ -57,7 +57,9 @@ rule hisat2_align:
         log="results/summary_qc/{sample}.hisat2.log"
     conda:
         "../envs/hisat2.yaml"
-    threads: 8
+    threads: config["hisat2_align_threads"]
+    resources:
+        mem_mb=config["hisat2_align_mem"]
     shell:
         """
         hisat2 -p {threads} \

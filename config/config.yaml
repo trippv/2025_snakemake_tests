@@ -1,11 +1,34 @@
 samples_file: "config/samples.tsv"
 genome_fasta: "testdata/genome/s288c_genome_ncbi.fna"
 gtf: "testdata/genome/s288c_genome_ncbi.gtf"
-gtf_quant: "testdata/genome/s288c_genome_ncbi_stringtie.gtf"
 
 
 
 # parametros adicionales
+# RECURSOS PARA LAS REGLAS
+# Recursos para fastp
+fastp_threads: 4
+fastp_mem: 4000  # fastp es muy ligero, 4GB es sobra.
+
+# Recursos para hisat2 (INDEXACIÓN)
+hisat2_threads: 4
+hisat2_mem_mb: 8000 # Solo si indexas SOLO el FASTA. 
+                    # Si usas --ss y --exon, esto fallará en laptop.
+
+# Recursos para HISAT2 (ALINEAMIENTO)
+hisat2_align_threads: 4
+hisat2_align_mem: 8000 # Suficiente para genoma humano.
+
+# Recursos para StringTie
+stringtie_threads: 4        # Bajado de 8 a 4 para evitar saturación.
+stringtie_mem: 4000         # Stringtie es eficiente con la RAM.
+stringtie_merge_threads: 4  # Consistencia.
+stringtie_merge_mem: 8000   # Un poco más para el merge de muchos archivos.
+
+# Recursos para reglas de Python (Ligeras)
+python_default_threads: 1
+python_default_mem: 1000    # 1GB es más que suficiente para escribir un .txt
+
 
 # Reporte global 
 multiqc_comment: "Los datos para este muestra provienen del artículo A comprehensive comparison of RNA-Seq-based transcriptome analysis from reads to differential gene expression and cross-comparison with microarrays: a case study in Saccharomyces cerevisiae de Nookaew et al., en el cual se estudia la cepa de S. cerevisiae CEN.PK 113-7D (levadura) bajo dos condiciones metabólicas distintas: exceso de glucosa (batch) y limitación de glucosa (chemostat)."

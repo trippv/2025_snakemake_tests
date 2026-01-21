@@ -19,8 +19,8 @@ rule multiqc:
         report = "results/summary_qc/multiqc_report.html"
     params:
         comment = config["multiqc_comment"]
-    conda:
-        "../envs/multiqc.yaml"
+#    conda:
+#        "../envs/multiqc.yaml"
     threads: 4
     shell:
         """

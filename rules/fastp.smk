@@ -28,9 +28,9 @@ rule fastp:
         html = "results/summary_qc/{sample}_fastp.html"
     conda:
         "../envs/fastp.yaml"
-    threads: 4
-    params:
-        memory=8
+    threads: config["fastp_threads"]
+    resources:
+        mem_mb=config["fastp_mem"]
     shell:
         """
         fastp --in1 {input.r1} --in2 {input.r2} \

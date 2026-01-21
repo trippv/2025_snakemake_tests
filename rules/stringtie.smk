@@ -1,3 +1,6 @@
+# reformatear el gtf si es necesario. Stringtie no acepta ciertos formatos de gtf
+# En caso de que el formato sea incorrecto, se genera un nuevo gtf corregido
+
 rule fix_gtf_format:
     input:
         gtf = config["gtf"]
@@ -29,7 +32,9 @@ rule stringtie_quant:
         gtf="results/quant/{sample}/{sample}.gtf"
     conda:
         "../envs/stringtie.yaml"
-    threads: 8
+    threads: config["stringtie_threads"]
+    resources:
+        mem_mb=config["stringtie_mem"]
     shell:
         """
         mkdir -p results/quant/{wildcards.sample}
@@ -56,9 +61,9 @@ rule stringtie_merge:
         merged="results/quant/stringtie_merged.gtf"
     conda:
         "../envs/stringtie.yaml"
-    threads: 8
-    params:
-        memory=16
+    threads: config["stringtie_merge_threads"]
+    resources:
+        mem_mb=config["stringtie_merge_mem"]
     shell:
         """
         stringtie --merge -p {threads} -G {input.gtf} -o {output.merged} {input.table}
@@ -73,7 +78,9 @@ rule stringtie_final_quant:
         gtf="results/quant_final/{sample}/{sample}.gtf"
     conda:
         "../envs/stringtie.yaml"
-    threads: 8
+    threads: config["stringtie_threads"]
+    resources:
+        mem_mb=config["stringtie_mem"]
     shell:
         """
         mkdir -p results/quant_final/{wildcards.sample}
