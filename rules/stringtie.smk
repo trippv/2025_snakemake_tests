@@ -1,8 +1,26 @@
+rule fix_gtf_format:
+    input:
+        gtf = config["gtf"]
+    output:
+        fixed_gtf = "results/genome/fixed_genome.gtf"
+    shell:
+        """
+        # Verificamos si el archivo tiene el error 'transcript_id ""'
+        if grep -q 'transcript_id ""' {input.gtf}; then
+            echo "Detectado formato NCBI incompatible. Limpiando..."
+            awk '$3 != "gene" && $0 !~ /transcript_id ""/' {input.gtf} > {output.fixed_gtf}
+        else
+            echo "El GTF parece correcto. Procediendo sin cambios."
+            cp {input.gtf} {output.fixed_gtf}
+        fi
+        """
+
+
 #Cuantificación inicial con ensamblaje
 rule stringtie_quant:
     input:
         bam="results/align/{sample}.bam",
-        gtf=config["gtf_quant"]
+        gtf="results/genome/fixed_genome.gtf"
     output:
         gtf="results/quant/{sample}/{sample}.gtf"
     conda:
@@ -29,7 +47,7 @@ rule build_samples_table:
 rule stringtie_merge:
     input:
         table="results/quant/samples_table.txt",
-        gtf=config["gtf_quant"]
+        gtf="results/genome/fixed_genome.gtf"
     output:
         merged="results/quant/stringtie_merged.gtf"
     conda:
