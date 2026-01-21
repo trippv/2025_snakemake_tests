@@ -3,14 +3,18 @@ rule fix_gtf_format:
         gtf = config["gtf"]
     output:
         fixed_gtf = "results/genome/fixed_genome.gtf"
+    log:
+        "results/logs/fix_gtf_format.log"
     shell:
         """
-        # Verificamos si el archivo tiene el error 'transcript_id ""'
+        # Redirigimos la salida de los mensajes al archivo log definido en la regla
+        exec > {log} 2>&1
+
         if grep -q 'transcript_id ""' {input.gtf}; then
-            echo "Detectado formato NCBI incompatible. Limpiando..."
+            echo "[$(date)] Detectado formato NCBI incompatible con stringtie. El GTF corregido se guardará en {log}."
             awk '$3 != "gene" && $0 !~ /transcript_id ""/' {input.gtf} > {output.fixed_gtf}
         else
-            echo "El GTF parece correcto. Procediendo sin cambios."
+            echo "[$(date)] El GTF parece correcto. Procediendo sin cambios."
             cp {input.gtf} {output.fixed_gtf}
         fi
         """
