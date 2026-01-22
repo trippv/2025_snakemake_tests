@@ -144,7 +144,10 @@ snakemake --cores 24 --use-conda
 
 ## Notas
 
-### Sobre gtf2bed.pl
+### Sobre el gtf gff
 
-Este paso se utiliza para el control de calidad de RSEQC. Otros scripts para convertir GTF a BED como los BEDOPS o GTF2BED.py no producen un formato adecuado para RSEQC por lo que se utilizó el script de Stefanie Koenig del 2016 disponible [aquí](https://bioinf.uni-greifswald.de/augustus/binaries/scripts/gtf2bed.pl)
+Una complicación es que el GTF o GFF puede tener un formato que cuase conflictos con Stringtie o con RSEQC. Previo a correr snakemake es recomendable verificar el formato, confertit GFF a GTF y verificar que no haya pseudogenes. 
+
+GFFREAD es una herramienta que facilita este proceso
+
 
