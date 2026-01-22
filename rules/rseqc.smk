@@ -1,7 +1,7 @@
 
 rule rseqc_gtf_to_bed:
     input:
-        gtf=config["gtf"]
+        gtf="results/genome/fixed_genome.gtf"
     output:
         bed="results/summary_qc/rseqc/annotation.bed"
     conda:
