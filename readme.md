@@ -141,3 +141,13 @@ snakemake --cores 24 --use-conda
 
 
 ```
+
+## Notas
+
+### Sobre el gtf gff
+
+Una complicación es que el GTF o GFF puede tener un formato que cuase conflictos con Stringtie o con RSEQC. Previo a correr snakemake es recomendable verificar el formato, confertit GFF a GTF y verificar que no haya pseudogenes. 
+
+GFFREAD es una herramienta que facilita este proceso
+
+

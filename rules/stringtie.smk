@@ -1,13 +1,40 @@
+# reformatear el gtf si es necesario. Stringtie no acepta ciertos formatos de gtf
+# En caso de que el formato sea incorrecto, se genera un nuevo gtf corregido
+
+rule fix_gtf_format:
+    input:
+        gtf = config["gtf"]
+    output:
+        fixed_gtf = "results/genome/fixed_genome.gtf"
+    log:
+        "results/logs/fix_gtf_format.log"
+    shell:
+        """
+        # Redirigimos la salida de los mensajes al archivo log definido en la regla
+        exec > {log} 2>&1
+
+        if grep -q 'transcript_id ""' {input.gtf}; then
+            echo "[$(date)] Detectado formato NCBI incompatible con stringtie. El GTF corregido se guardará en {log}."
+            awk '$3 != "gene" && $0 !~ /transcript_id ""/' {input.gtf} > {output.fixed_gtf}
+        else
+            echo "[$(date)] El GTF parece correcto. Procediendo sin cambios."
+            cp {input.gtf} {output.fixed_gtf}
+        fi
+        """
+
+
 #Cuantificación inicial con ensamblaje
 rule stringtie_quant:
     input:
         bam="results/align/{sample}.bam",
-        gtf=config["gtf"]
+        gtf="results/genome/fixed_genome.gtf"
     output:
         gtf="results/quant/{sample}/{sample}.gtf"
     conda:
         "../envs/stringtie.yaml"
-    threads: 8
+    threads: config["stringtie_threads"]
+    resources:
+        mem_mb=config["stringtie_mem"]
     shell:
         """
         mkdir -p results/quant/{wildcards.sample}
@@ -29,14 +56,14 @@ rule build_samples_table:
 rule stringtie_merge:
     input:
         table="results/quant/samples_table.txt",
-        gtf=config["gtf"]
+        gtf="results/genome/fixed_genome.gtf"
     output:
         merged="results/quant/stringtie_merged.gtf"
     conda:
         "../envs/stringtie.yaml"
-    threads: 8
-    params:
-        memory=16
+    threads: config["stringtie_merge_threads"]
+    resources:
+        mem_mb=config["stringtie_merge_mem"]
     shell:
         """
         stringtie --merge -p {threads} -G {input.gtf} -o {output.merged} {input.table}
@@ -51,7 +78,9 @@ rule stringtie_final_quant:
         gtf="results/quant_final/{sample}/{sample}.gtf"
     conda:
         "../envs/stringtie.yaml"
-    threads: 8
+    threads: config["stringtie_threads"]
+    resources:
+        mem_mb=config["stringtie_mem"]
     shell:
         """
         mkdir -p results/quant_final/{wildcards.sample}

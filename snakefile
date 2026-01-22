@@ -37,10 +37,10 @@ def get_extension(wildcards):
 rule all:
     input:
         expand("results/quant/{sample}/{sample}.gtf", sample=SAMPLES),
-        expand("results/summary_qc/gffcompare/{sample}.annotated.gtf", sample=SAMPLES),
-        expand("results/summary_qc/gffcompare/{sample}.stats", sample=SAMPLES),
-        expand("results/summary_qc/gffcompare/{sample}.loci", sample=SAMPLES),
-        expand("results/summary_qc/gffcompare/{sample}.tracking", sample=SAMPLES),
+        expand("results/summary_qc/gffcompare/{sample}_gff.annotated.gtf", sample=SAMPLES),
+        expand("results/summary_qc/gffcompare/{sample}_gff.stats", sample=SAMPLES),
+        expand("results/summary_qc/gffcompare/{sample}_gff.loci", sample=SAMPLES),
+        expand("results/summary_qc/gffcompare/{sample}_gff.tracking", sample=SAMPLES),
         # incluir archivos temporales de fastp
         expand("results/fastp/{sample}_R1.clean.fastq.gz", sample=SAMPLES),
         expand("results/fastp/{sample}_R2.clean.fastq.gz", sample=SAMPLES),
@@ -48,6 +48,12 @@ rule all:
         expand("results/summary_qc/{sample}_fastp.json", sample=SAMPLES),
         expand("results/summary_qc/{sample}.hisat2.log", sample=SAMPLES),
         expand("results/summary_qc/samtools/{sample}.samtools.stats", sample=SAMPLES),
+        # refseQC results
+        expand("results/summary_qc/rseqc/{sample}.read_distribution.txt", sample=SAMPLES),
+        expand("results/summary_qc/rseqc/{sample}.inner_distance.txt", sample=SAMPLES),
+        expand("results/summary_qc/rseqc/{sample}.geneBodyCoverage.txt", sample=SAMPLES),
+        expand("results/summary_qc/rseqc/{sample}.seq.DupRate.xls", sample=SAMPLES),
+
         "results/quant/samples_table.txt",
         "results/quant/stringtie_merged.gtf",
         "results/quant/samples_quant_table.txt",
@@ -65,6 +71,7 @@ rule all:
 include: "rules/fastp.smk"
 include: "rules/hisat2.smk"
 include: "rules/samtools.smk"
+include: "rules/rseqc.smk"
 include: "rules/stringtie.smk"
 include: "rules/gffcompare.smk"
 include: "rules/prepde.smk"
