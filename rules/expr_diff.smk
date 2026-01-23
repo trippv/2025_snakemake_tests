@@ -1,6 +1,6 @@
 rule expr_diff:
     input:
-        counts = "results/quant/transcript_count_matrix.csv",
+        counts = "results/abundance/gene_count_matrix.csv",
         metadata = "data/metadata.tsv"
     output:
         dist_matrix="results/summary_qc/distance_matrix.txt",

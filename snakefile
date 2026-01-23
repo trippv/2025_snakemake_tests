@@ -54,11 +54,11 @@ rule all:
         expand("results/summary_qc/rseqc/{sample}.geneBodyCoverage.txt", sample=SAMPLES),
         expand("results/summary_qc/rseqc/{sample}.seq.DupRate.xls", sample=SAMPLES),
 
-        "results/quant/samples_table.txt",
-        "results/quant/stringtie_merged.gtf",
-        "results/quant/samples_quant_table.txt",
-        "results/quant/gene_count_matrix.csv",
-        "results/quant/transcript_count_matrix.csv",
+        "results/abundance/samples_table.txt",
+        "results/abundance/stringtie_merged.gtf",
+        "results/abundance/samples_quant_table.txt",
+        "results/abundance/gene_count_matrix.csv",
+        "results/abundance/transcript_count_matrix.csv",
         #"results/summary_qc/pca_plot_mqc.html",
         #resultados para multiqc
         "results/summary_qc/abundance_heatmap_mqc.yaml",
