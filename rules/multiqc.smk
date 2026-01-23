@@ -18,11 +18,19 @@ rule multiqc:
     output:
         report = "results/summary_qc/multiqc_report.html"
     params:
-        comment = config["multiqc_comment"]
-#    conda:
-#        "../envs/multiqc.yaml"
+        comment = config["multiqc_comment"],
+        # Lógica compacta para el template
+        extra = "--template mi_multiqc" if config.get("Thalassomics") else ""
+    # Snakemake permite evaluar el config aquí mismo
+    conda:
+        None if config.get("Thalassomics") else "../envs/multiqc.yaml"
     threads: 4
     shell:
         """
-        multiqc results/summary_qc -o results/summary_qc -f --config config/multiqc_config.yaml --template mi_multiqc --comment "{params.comment}"
+        multiqc results/summary_qc \
+            -o results/summary_qc \
+            -f \
+            --config config/multiqc_config.yaml \
+            {params.extra} \
+            --comment "{params.comment}" --verbose
         """
