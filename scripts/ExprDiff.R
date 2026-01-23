@@ -59,6 +59,11 @@ write.table(pcaData_df, snakemake@output[["pca"]],
 
 # ====== Expresión diferencial ======
 
+# Leer umbrales desde el config de Snakemake
+# Se usa un valor por defecto (default) por si no están en el yaml
+fdr_limit <- snakemake@config[["diff_exp"]][["fdr_threshold"]]
+lfc_limit <- snakemake@config[["diff_exp"]][["lfc_threshold"]]
+
 # ==== Importante: A partir de aqui solo se ilustra los resultados de los dos primeros grupos. Para mas grupos
 # se debera realizar el análisis de forma manual
 
@@ -69,9 +74,18 @@ res <- results(dds, contrast = c("group", group_names[1], group_names[2]))
 res_df <- as.data.frame(res)
 res_df$gene <- rownames(res_df)
 
-# Etiquetar genes significativos
+
+# Etiquetar genes significativos usando las variables del config
 res_df$significant <- "No significativo"
-res_df$significant[which(res_df$padj < 0.01 & abs(res_df$log2FoldChange) >= 1)] <- "Significativo"
+res_df$significant[which(res_df$padj < fdr_limit & abs(res_df$log2FoldChange) >= lfc_limit)] <- "Significativo"
+
+#retener solo significativos
+res_df_significant <- res_df[res_df$significant == "Significativo", ]
+
+# si res_df__significant tiene mas de 200 filas, quedarnos con las primeras 200 ordenadas por pvalor
+if (nrow(res_df_significant) > 200) {
+  res_df_significant <- res_df_significant[order(res_df_significant$padj), ][1:200, ]
+}
 
 # Preparar tabla para volcano plot
 res_df_volcano <- data.frame(
@@ -81,9 +95,10 @@ res_df_volcano <- data.frame(
   significant = res_df$significant
 )
 
+# El color del volcano ahora respeta el lfc_limit del config
 res_df_volcano$color <- ifelse(
   res_df$significant != "Significativo", "#b3aaaa",
-  ifelse(res_df$log2FoldChange > 1, "red", "blue")
+  ifelse(res_df$log2FoldChange >= lfc_limit, "red", "blue")
 )
 
 write.table(res_df_volcano, snakemake@output[["volcano"]], 
@@ -92,7 +107,7 @@ write.table(res_df_volcano, snakemake@output[["volcano"]],
 # ====== Matriz para heatmap ======
 
 # Solo genes con resultados
-counts_de <- counts[rownames(res_df), ]
+counts_de <- counts[rownames(res_df_significant), ]
 counts_de_mx <- as.matrix(counts_de)
 
 # Escalar por fila
