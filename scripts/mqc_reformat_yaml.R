@@ -63,6 +63,8 @@ writeLines(as.yaml(pca_yaml), snakemake@output[["pca_yaml"]])
 # Leer el archivo volcano.txt
 volcano <- read.delim(snakemake@input[["volcano"]], header = TRUE, sep = "\t")
 
+volvano_title <- volcano$contraste[1]
+
 # Crear lista de puntos con coordenadas y color
 volcano_points <- lapply(seq_len(nrow(volcano)), function(i) {
   list(
@@ -81,7 +83,7 @@ volcano_yaml <- list(
   plot_type = "scatter",
   pconfig = list(
     id = "mqc_volcano_plot",
-    title = "Volcano plot",
+    title = paste("Volcano plot -", volvano_title),
     xlab = "log2 Fold Change",
     ylab = "-log10(p-valor)"  # Cambia esto si estás usando -log10(p)
   ),

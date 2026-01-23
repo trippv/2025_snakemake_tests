@@ -146,7 +146,8 @@ res_df_volcano <- data.frame(
   gene = rownames(res_df_volcano),
   logFC = res_df_volcano$log2FoldChange,
   pval = -log(res_df_volcano$padj),
-  significant = res_df_volcano$significant
+  significant = res_df_volcano$significant,
+  contraste = res_name
 )
 
 # El color del volcano ahora respeta el lfc_limit del config
