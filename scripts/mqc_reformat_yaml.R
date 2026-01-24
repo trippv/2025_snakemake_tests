@@ -78,8 +78,8 @@ names(volcano_points) <- volcano$gene
 # Crear el objeto completo
 volcano_yaml <- list(
   id = "mqc_volcano",
-  section_name = "Gráfico Volcano",
-  description = "Gráfico de volcan los resultados del análisis de expresión diferencial",
+  section_name = "Gráfico Volcano (Solo se muestra un contraste)",
+  description = "Gráfico de volcan los resultados del análisis de expresión diferencial. Cada punto representa un gen, con el eje X mostrando el log2 Fold Change y el eje Y mostrando el -log10(p-valor). Los colores indican la significancia y dirección del cambio en la expresión génica.",
   plot_type = "scatter",
   pconfig = list(
     id = "mqc_volcano_plot",
