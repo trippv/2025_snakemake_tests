@@ -68,12 +68,13 @@ project/
 ├── results                # Salida del análisis
 │   ├── abundance               # matrices de abundancia (genes y trancritos)
 │   ├── align                   # Resultados de mapeo Hisat (bams)
+│   ├── Exp_Diff                # Lista de transcritos expresados diferencialmente
 │   ├── fastp                   # Lecturas procesadas con Fastp
 │   ├── genome                  # Archivo GTF corregido
 │   ├── hisat2                  # archivo con exones y splice sites que usa Jisat
 │   ├── hisat2_index            # indice de Hisat
 │   ├── logs
-│   ├── quant             # Abundancias por muestra
+│   ├── quant                   # Abundancias por muestra
 │   └── summary_qc              # Resumen de resultados. Contiene el reporte MultiQC
 ├── rules/                 # Reglas individuales de Snakemake
 ├── envs/                  # Entornos conda por herramienta
